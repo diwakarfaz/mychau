@@ -1,0 +1,6 @@
+D:\DO AN\DATNCBMT\Sourcecode\CBVD\DAL\bin\Debug\DAL.dll.config
+D:\DO AN\DATNCBMT\Sourcecode\CBVD\DAL\bin\Debug\DAL.dll
+D:\DO AN\DATNCBMT\Sourcecode\CBVD\DAL\bin\Debug\DAL.pdb
+D:\DO AN\DATNCBMT\Sourcecode\CBVD\DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\DO AN\DATNCBMT\Sourcecode\CBVD\DAL\obj\Debug\DAL.dll
+D:\DO AN\DATNCBMT\Sourcecode\CBVD\DAL\obj\Debug\DAL.pdb

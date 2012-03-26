@@ -1,0 +1,5 @@
+D:\DO AN\DATNCBMT\Sourcecode\CBVD\BLL\bin\Debug\BLL.dll
+D:\DO AN\DATNCBMT\Sourcecode\CBVD\BLL\bin\Debug\BLL.pdb
+D:\DO AN\DATNCBMT\Sourcecode\CBVD\BLL\obj\Debug\ResolveAssemblyReference.cache
+D:\DO AN\DATNCBMT\Sourcecode\CBVD\BLL\obj\Debug\BLL.dll
+D:\DO AN\DATNCBMT\Sourcecode\CBVD\BLL\obj\Debug\BLL.pdb

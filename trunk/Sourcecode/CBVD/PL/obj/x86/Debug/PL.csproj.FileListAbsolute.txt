@@ -1,0 +1,9 @@
+D:\DO AN\DATNCBMT\Sourcecode\CBVD\PL\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\DO AN\DATNCBMT\Sourcecode\CBVD\PL\obj\x86\Debug\PL.Properties.Resources.resources
+D:\DO AN\DATNCBMT\Sourcecode\CBVD\PL\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\DO AN\DATNCBMT\Sourcecode\CBVD\PL\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\DO AN\DATNCBMT\Sourcecode\CBVD\PL\bin\Debug\PL.exe.config
+D:\DO AN\DATNCBMT\Sourcecode\CBVD\PL\bin\Debug\PL.exe
+D:\DO AN\DATNCBMT\Sourcecode\CBVD\PL\bin\Debug\PL.pdb
+D:\DO AN\DATNCBMT\Sourcecode\CBVD\PL\obj\x86\Debug\PL.exe
+D:\DO AN\DATNCBMT\Sourcecode\CBVD\PL\obj\x86\Debug\PL.pdb
