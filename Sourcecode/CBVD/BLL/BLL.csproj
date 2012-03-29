@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D1CC5F6B-B79A-49C0-ADCF-D7E86BFF5742}</ProjectGuid>
+    <ProjectGuid>{1BC38357-AA9E-471F-B8F7-8FE1DEF39678}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BLL</RootNamespace>
@@ -42,11 +42,19 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\BLLUtility.cs" />
+    <Compile Include="Utility\COBAOContract.cs" />
+    <Compile Include="Utility\COBAOMessage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Provider\" />
-    <Folder Include="Utility\" />
     <Folder Include="Validator\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{C6A1DF7B-6432-4B2A-8714-93D3C5D1BA29}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

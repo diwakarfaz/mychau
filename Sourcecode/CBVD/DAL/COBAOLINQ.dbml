@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="COBAO" Class="COBAOLINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=COBAO;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="COBAOConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=COBAO;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="COBAOConnectionString3" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ChiTietKhamXet" Member="ChiTietKhamXets">
     <Type Name="ChiTietKhamXet">
       <Column Name="MaChiTietKX" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -34,10 +34,8 @@
       <Column Name="MaNV" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
       <Column Name="MaDM" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="MaMacTau" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="NgayNhanMay" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="GioNhanMay" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="NgayGiaoMay" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="GioGiaoMay" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NgayGioNhanMay" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NgayGioGiaoMay" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="XepLoai" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="LyDoXL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="CoBao_CoBaoLaiTau" Member="CoBaoLaiTaus" ThisKey="SoCoBao" OtherKey="SoCoBao" Type="CoBaoLaiTau" />
@@ -213,10 +211,8 @@
       <Column Name="MaThuongTruc" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MaTram" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
       <Column Name="MaNV" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
-      <Column Name="NgayBatDau" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="GioBatDau" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="GioKetThuc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NgayGioBatDau" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NgayGioKetThuc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Association Name="ThuongTruc_ChiTietThuongTruc" Member="ChiTietThuongTrucs" ThisKey="MaThuongTruc" OtherKey="MaThuongTruc" Type="ChiTietThuongTruc" />
       <Association Name="NhanVien_ThuongTruc" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
       <Association Name="Tram_ThuongTruc" Member="Tram" ThisKey="MaTram" OtherKey="MaTram" Type="Tram" IsForeignKey="true" />

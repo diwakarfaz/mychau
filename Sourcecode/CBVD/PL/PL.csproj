@@ -38,6 +38,8 @@
     <Reference Include="DevExpress.Utils.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -55,6 +57,48 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>COBAODataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="frmForm\DanhMuc\frmCNLT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmForm\DanhMuc\frmCNLT.Designer.cs">
+      <DependentUpon>frmCNLT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmForm\DanhMuc\frmCongTy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmForm\DanhMuc\frmCongTy.Designer.cs">
+      <DependentUpon>frmCongTy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmForm\DanhMuc\frmDauMay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmForm\DanhMuc\frmDauMay.Designer.cs">
+      <DependentUpon>frmDauMay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmForm\DanhMuc\frmGa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmForm\DanhMuc\frmGa.Designer.cs">
+      <DependentUpon>frmGa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmForm\DanhMuc\frmLoaiDM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmForm\DanhMuc\frmLoaiDM.Designer.cs">
+      <DependentUpon>frmLoaiDM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmForm\DanhMuc\frmMacTau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmForm\DanhMuc\frmMacTau.Designer.cs">
+      <DependentUpon>frmMacTau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmForm\DanhMuc\frmTram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmForm\DanhMuc\frmTram.Designer.cs">
+      <DependentUpon>frmTram.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmForm\frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,22 +111,68 @@
     <Compile Include="frmForm\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmForm\NhapLieu\frmCoBao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmForm\NhapLieu\frmCoBao.Designer.cs">
+      <DependentUpon>frmCoBao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmForm\NhapLieu\frmKhamXet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmForm\NhapLieu\frmKhamXet.Designer.cs">
+      <DependentUpon>frmKhamXet.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmForm\NhapLieu\frmNgayCongCNLT.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmForm\NhapLieu\frmNgayCongCNLT.Designer.cs">
       <DependentUpon>frmNgayCongCNLT.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmForm\NhapLieu\frmThuongTruc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmForm\NhapLieu\frmThuongTruc.Designer.cs">
+      <DependentUpon>frmThuongTruc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\clsFuntion.cs" />
+    <EmbeddedResource Include="frmForm\DanhMuc\frmCNLT.resx">
+      <DependentUpon>frmCNLT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmForm\DanhMuc\frmCongTy.resx">
+      <DependentUpon>frmCongTy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmForm\DanhMuc\frmDauMay.resx">
+      <DependentUpon>frmDauMay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmForm\DanhMuc\frmGa.resx">
+      <DependentUpon>frmGa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmForm\DanhMuc\frmLoaiDM.resx">
+      <DependentUpon>frmLoaiDM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmForm\DanhMuc\frmMacTau.resx">
+      <DependentUpon>frmMacTau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmForm\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmForm\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmForm\NhapLieu\frmCoBao.resx">
+      <DependentUpon>frmCoBao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmForm\NhapLieu\frmKhamXet.resx">
+      <DependentUpon>frmKhamXet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmForm\NhapLieu\frmNgayCongCNLT.resx">
       <DependentUpon>frmNgayCongCNLT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmForm\NhapLieu\frmThuongTruc.resx">
+      <DependentUpon>frmThuongTruc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -118,13 +208,23 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="COBAOReport\" />
-    <Folder Include="frmForm\DanhMuc\" />
     <Folder Include="frmForm\HeThong\" />
-    <Folder Include="frmForm\Report\" />
     <Folder Include="frmForm\TimKiem\" />
     <Folder Include="frmForm\TroGiup\" />
     <Folder Include="Icon\" />
-    <Folder Include="Utility\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{1BC38357-AA9E-471F-B8F7-8FE1DEF39678}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{C6A1DF7B-6432-4B2A-8714-93D3C5D1BA29}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
