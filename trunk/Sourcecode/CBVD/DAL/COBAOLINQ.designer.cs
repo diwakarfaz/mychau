@@ -96,7 +96,7 @@ namespace DAL
     #endregion
 		
 		public COBAOLINQDataContext() : 
-				base(global::DAL.Properties.Settings.Default.COBAOConnectionString, mappingSource)
+				base(global::DAL.Properties.Settings.Default.COBAOConnectionString3, mappingSource)
 		{
 			OnCreated();
 		}
@@ -882,13 +882,9 @@ namespace DAL
 		
 		private string _MaMacTau;
 		
-		private System.DateTime _NgayNhanMay;
+		private System.DateTime _NgayGioNhanMay;
 		
-		private System.DateTime _GioNhanMay;
-		
-		private System.DateTime _NgayGiaoMay;
-		
-		private System.DateTime _GioGiaoMay;
+		private System.DateTime _NgayGioGiaoMay;
 		
 		private string _XepLoai;
 		
@@ -918,14 +914,10 @@ namespace DAL
     partial void OnMaDMChanged();
     partial void OnMaMacTauChanging(string value);
     partial void OnMaMacTauChanged();
-    partial void OnNgayNhanMayChanging(System.DateTime value);
-    partial void OnNgayNhanMayChanged();
-    partial void OnGioNhanMayChanging(System.DateTime value);
-    partial void OnGioNhanMayChanged();
-    partial void OnNgayGiaoMayChanging(System.DateTime value);
-    partial void OnNgayGiaoMayChanged();
-    partial void OnGioGiaoMayChanging(System.DateTime value);
-    partial void OnGioGiaoMayChanged();
+    partial void OnNgayGioNhanMayChanging(System.DateTime value);
+    partial void OnNgayGioNhanMayChanged();
+    partial void OnNgayGioGiaoMayChanging(System.DateTime value);
+    partial void OnNgayGioGiaoMayChanged();
     partial void OnXepLoaiChanging(string value);
     partial void OnXepLoaiChanged();
     partial void OnLyDoXLChanging(string value);
@@ -1035,82 +1027,42 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayNhanMay", DbType="Date NOT NULL")]
-		public System.DateTime NgayNhanMay
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayGioNhanMay", DbType="DateTime NOT NULL")]
+		public System.DateTime NgayGioNhanMay
 		{
 			get
 			{
-				return this._NgayNhanMay;
+				return this._NgayGioNhanMay;
 			}
 			set
 			{
-				if ((this._NgayNhanMay != value))
+				if ((this._NgayGioNhanMay != value))
 				{
-					this.OnNgayNhanMayChanging(value);
+					this.OnNgayGioNhanMayChanging(value);
 					this.SendPropertyChanging();
-					this._NgayNhanMay = value;
-					this.SendPropertyChanged("NgayNhanMay");
-					this.OnNgayNhanMayChanged();
+					this._NgayGioNhanMay = value;
+					this.SendPropertyChanged("NgayGioNhanMay");
+					this.OnNgayGioNhanMayChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GioNhanMay", DbType="DateTime NOT NULL")]
-		public System.DateTime GioNhanMay
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayGioGiaoMay", DbType="DateTime NOT NULL")]
+		public System.DateTime NgayGioGiaoMay
 		{
 			get
 			{
-				return this._GioNhanMay;
+				return this._NgayGioGiaoMay;
 			}
 			set
 			{
-				if ((this._GioNhanMay != value))
+				if ((this._NgayGioGiaoMay != value))
 				{
-					this.OnGioNhanMayChanging(value);
+					this.OnNgayGioGiaoMayChanging(value);
 					this.SendPropertyChanging();
-					this._GioNhanMay = value;
-					this.SendPropertyChanged("GioNhanMay");
-					this.OnGioNhanMayChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayGiaoMay", DbType="Date NOT NULL")]
-		public System.DateTime NgayGiaoMay
-		{
-			get
-			{
-				return this._NgayGiaoMay;
-			}
-			set
-			{
-				if ((this._NgayGiaoMay != value))
-				{
-					this.OnNgayGiaoMayChanging(value);
-					this.SendPropertyChanging();
-					this._NgayGiaoMay = value;
-					this.SendPropertyChanged("NgayGiaoMay");
-					this.OnNgayGiaoMayChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GioGiaoMay", DbType="DateTime NOT NULL")]
-		public System.DateTime GioGiaoMay
-		{
-			get
-			{
-				return this._GioGiaoMay;
-			}
-			set
-			{
-				if ((this._GioGiaoMay != value))
-				{
-					this.OnGioGiaoMayChanging(value);
-					this.SendPropertyChanging();
-					this._GioGiaoMay = value;
-					this.SendPropertyChanged("GioGiaoMay");
-					this.OnGioGiaoMayChanged();
+					this._NgayGioGiaoMay = value;
+					this.SendPropertyChanged("NgayGioGiaoMay");
+					this.OnNgayGioGiaoMayChanged();
 				}
 			}
 		}
@@ -4641,13 +4593,9 @@ namespace DAL
 		
 		private System.Guid _MaNV;
 		
-		private System.DateTime _NgayBatDau;
+		private System.DateTime _NgayGioBatDau;
 		
-		private System.DateTime _GioBatDau;
-		
-		private System.DateTime _NgayKetThuc;
-		
-		private System.DateTime _GioKetThuc;
+		private System.DateTime _NgayGioKetThuc;
 		
 		private EntitySet<ChiTietThuongTruc> _ChiTietThuongTrucs;
 		
@@ -4665,14 +4613,10 @@ namespace DAL
     partial void OnMaTramChanged();
     partial void OnMaNVChanging(System.Guid value);
     partial void OnMaNVChanged();
-    partial void OnNgayBatDauChanging(System.DateTime value);
-    partial void OnNgayBatDauChanged();
-    partial void OnGioBatDauChanging(System.DateTime value);
-    partial void OnGioBatDauChanged();
-    partial void OnNgayKetThucChanging(System.DateTime value);
-    partial void OnNgayKetThucChanged();
-    partial void OnGioKetThucChanging(System.DateTime value);
-    partial void OnGioKetThucChanged();
+    partial void OnNgayGioBatDauChanging(System.DateTime value);
+    partial void OnNgayGioBatDauChanged();
+    partial void OnNgayGioKetThucChanging(System.DateTime value);
+    partial void OnNgayGioKetThucChanged();
     #endregion
 		
 		public ThuongTruc()
@@ -4751,82 +4695,42 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayBatDau", DbType="Date NOT NULL")]
-		public System.DateTime NgayBatDau
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayGioBatDau", DbType="DateTime NOT NULL")]
+		public System.DateTime NgayGioBatDau
 		{
 			get
 			{
-				return this._NgayBatDau;
+				return this._NgayGioBatDau;
 			}
 			set
 			{
-				if ((this._NgayBatDau != value))
+				if ((this._NgayGioBatDau != value))
 				{
-					this.OnNgayBatDauChanging(value);
+					this.OnNgayGioBatDauChanging(value);
 					this.SendPropertyChanging();
-					this._NgayBatDau = value;
-					this.SendPropertyChanged("NgayBatDau");
-					this.OnNgayBatDauChanged();
+					this._NgayGioBatDau = value;
+					this.SendPropertyChanged("NgayGioBatDau");
+					this.OnNgayGioBatDauChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GioBatDau", DbType="DateTime NOT NULL")]
-		public System.DateTime GioBatDau
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayGioKetThuc", DbType="DateTime NOT NULL")]
+		public System.DateTime NgayGioKetThuc
 		{
 			get
 			{
-				return this._GioBatDau;
+				return this._NgayGioKetThuc;
 			}
 			set
 			{
-				if ((this._GioBatDau != value))
+				if ((this._NgayGioKetThuc != value))
 				{
-					this.OnGioBatDauChanging(value);
+					this.OnNgayGioKetThucChanging(value);
 					this.SendPropertyChanging();
-					this._GioBatDau = value;
-					this.SendPropertyChanged("GioBatDau");
-					this.OnGioBatDauChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayKetThuc", DbType="Date NOT NULL")]
-		public System.DateTime NgayKetThuc
-		{
-			get
-			{
-				return this._NgayKetThuc;
-			}
-			set
-			{
-				if ((this._NgayKetThuc != value))
-				{
-					this.OnNgayKetThucChanging(value);
-					this.SendPropertyChanging();
-					this._NgayKetThuc = value;
-					this.SendPropertyChanged("NgayKetThuc");
-					this.OnNgayKetThucChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GioKetThuc", DbType="DateTime NOT NULL")]
-		public System.DateTime GioKetThuc
-		{
-			get
-			{
-				return this._GioKetThuc;
-			}
-			set
-			{
-				if ((this._GioKetThuc != value))
-				{
-					this.OnGioKetThucChanging(value);
-					this.SendPropertyChanging();
-					this._GioKetThuc = value;
-					this.SendPropertyChanged("GioKetThuc");
-					this.OnGioKetThucChanged();
+					this._NgayGioKetThuc = value;
+					this.SendPropertyChanged("NgayGioKetThuc");
+					this.OnNgayGioKetThucChanged();
 				}
 			}
 		}

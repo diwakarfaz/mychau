@@ -15,5 +15,6 @@ namespace PL.frmForm.NhapLieu
         {
             InitializeComponent();
         }
+       
     }
 }
