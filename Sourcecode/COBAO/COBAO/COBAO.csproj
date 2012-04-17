@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B67634AB-2EE6-479C-B1A7-A293241EC13C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>COBAO</RootNamespace>
+    <AssemblyName>COBAO</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\ChiTietKhamXetProvider.cs" />
+    <Compile Include="BLL\ChiTietThuongTrucProvider.cs" />
+    <Compile Include="BLL\clsFunction.cs" />
+    <Compile Include="BLL\CoBao1Provider.cs" />
+    <Compile Include="BLL\CoBaoLaiTauProvider.cs" />
+    <Compile Include="BLL\COBAOMessage.cs" />
+    <Compile Include="BLL\COBAOProvider.cs" />
+    <Compile Include="BLL\CongTyProvider.cs" />
+    <Compile Include="BLL\DauMayProvider.cs" />
+    <Compile Include="BLL\DoiProvider.cs" />
+    <Compile Include="BLL\DonGiaLuongBoSungProvider.cs" />
+    <Compile Include="BLL\DonGiaLuongXLProvider.cs" />
+    <Compile Include="BLL\GaProvider.cs" />
+    <Compile Include="BLL\HanhTrinhProvider.cs" />
+    <Compile Include="BLL\HopPhepOmProvider.cs" />
+    <Compile Include="BLL\KhamXetProvider.cs" />
+    <Compile Include="BLL\LoaiDMProvider.cs" />
+    <Compile Include="BLL\MacTauProvider.cs" />
+    <Compile Include="BLL\NhanVienProvider.cs" />
+    <Compile Include="BLL\NhatKyDonGiaLuongXLProvider.cs" />
+    <Compile Include="BLL\NhatKyLuongBoSungProvider.cs" />
+    <Compile Include="BLL\TaiXeProvider.cs" />
+    <Compile Include="BLL\TheoTauProvider.cs" />
+    <Compile Include="BLL\ThuongTrucProvider.cs" />
+    <Compile Include="BLL\ToProvider.cs" />
+    <Compile Include="BLL\TramProvider.cs" />
+    <Compile Include="DAL\COBAODataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>COBAODataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\COBAOLINQ.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>COBAOLINQ.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="PL\DanhMuc\frmCongTy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\DanhMuc\frmCongTy.Designer.cs">
+      <DependentUpon>frmCongTy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\DanhMuc\frmDauMay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\DanhMuc\frmDauMay.Designer.cs">
+      <DependentUpon>frmDauMay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\DanhMuc\frmDoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\DanhMuc\frmDoi.Designer.cs">
+      <DependentUpon>frmDoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\DanhMuc\frmGa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\DanhMuc\frmGa.Designer.cs">
+      <DependentUpon>frmGa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\DanhMuc\frmLoaiDauMay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\DanhMuc\frmLoaiDauMay.Designer.cs">
+      <DependentUpon>frmLoaiDauMay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\DanhMuc\frmMacTau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\DanhMuc\frmMacTau.Designer.cs">
+      <DependentUpon>frmMacTau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\DanhMuc\frmTaiXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\DanhMuc\frmTaiXe.Designer.cs">
+      <DependentUpon>frmTaiXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\DanhMuc\frmTo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\DanhMuc\frmTo.Designer.cs">
+      <DependentUpon>frmTo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\DanhMuc\frmTram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\DanhMuc\frmTram.Designer.cs">
+      <DependentUpon>frmTram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\HeThong\frmQuanLyNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\HeThong\frmQuanLyNguoiDung.Designer.cs">
+      <DependentUpon>frmQuanLyNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\NhapLieu\frmCoBao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\NhapLieu\frmCoBao.Designer.cs">
+      <DependentUpon>frmCoBao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\NhapLieu\frmKhamXet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\NhapLieu\frmKhamXet.Designer.cs">
+      <DependentUpon>frmKhamXet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\NhapLieu\frmNgayCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\NhapLieu\frmNgayCong.Designer.cs">
+      <DependentUpon>frmNgayCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\NhapLieu\frmThuongTruc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\NhapLieu\frmThuongTruc.Designer.cs">
+      <DependentUpon>frmThuongTruc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\QuanLyLuong\frmQuanLyLuongBS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\QuanLyLuong\frmQuanLyLuongBS.Designer.cs">
+      <DependentUpon>frmQuanLyLuongBS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\QuanLyLuong\frmQuanLyLuongXL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\QuanLyLuong\frmQuanLyLuongXL.Designer.cs">
+      <DependentUpon>frmQuanLyLuongXL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="app.config" />
+    <None Include="DAL\COBAODataSet.xsc">
+      <DependentUpon>COBAODataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\COBAODataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>COBAODataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAL\COBAODataSet.xss">
+      <DependentUpon>COBAODataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\COBAOLINQ.dbml.layout">
+      <DependentUpon>COBAOLINQ.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="PL\DanhMuc\frmCongTy.resx">
+      <DependentUpon>frmCongTy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\DanhMuc\frmDauMay.resx">
+      <DependentUpon>frmDauMay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\DanhMuc\frmDoi.resx">
+      <DependentUpon>frmDoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\DanhMuc\frmGa.resx">
+      <DependentUpon>frmGa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\DanhMuc\frmLoaiDauMay.resx">
+      <DependentUpon>frmLoaiDauMay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\DanhMuc\frmMacTau.resx">
+      <DependentUpon>frmMacTau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\DanhMuc\frmTaiXe.resx">
+      <DependentUpon>frmTaiXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\DanhMuc\frmTo.resx">
+      <DependentUpon>frmTo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\DanhMuc\frmTram.resx">
+      <DependentUpon>frmTram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\HeThong\frmQuanLyNguoiDung.resx">
+      <DependentUpon>frmQuanLyNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\NhapLieu\frmCoBao.resx">
+      <DependentUpon>frmCoBao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\NhapLieu\frmKhamXet.resx">
+      <DependentUpon>frmKhamXet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\NhapLieu\frmNgayCong.resx">
+      <DependentUpon>frmNgayCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\NhapLieu\frmThuongTruc.resx">
+      <DependentUpon>frmThuongTruc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\QuanLyLuong\frmQuanLyLuongBS.resx">
+      <DependentUpon>frmQuanLyLuongBS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\QuanLyLuong\frmQuanLyLuongXL.resx">
+      <DependentUpon>frmQuanLyLuongXL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="DAL\COBAOLINQ.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>COBAOLINQ.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Icon\" />
+    <Folder Include="PL\BaoCao\" />
+    <Folder Include="PL\TimKiem\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

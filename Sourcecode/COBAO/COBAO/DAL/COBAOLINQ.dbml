@@ -1,0 +1,1145 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="COBAO" Class="COBAOLINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=COBAO;Integrated Security=True" SettingsObjectName="COBAO.Properties.Settings" SettingsPropertyName="COBAOConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ChiTietKhamXet" Member="ChiTietKhamXets">
+    <Type Name="ChiTietKhamXet" Id="ID1">
+      <Column Name="MaKhamXet" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaTaiXe" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Tai" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="KhamXet_ChiTietKhamXet" Member="KhamXet" ThisKey="MaKhamXet" OtherKey="MaKhamXet" Type="KhamXet" IsForeignKey="true" />
+      <Association Name="TaiXe_ChiTietKhamXet" Member="TaiXe" ThisKey="MaTaiXe" OtherKey="MaTaiXe" Type="TaiXe" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tram" Member="Trams">
+    <Type Name="Tram" Id="ID22">
+      <Column Name="MaTram" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenTram" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Tram_Doi" Member="Dois" ThisKey="MaTram" OtherKey="MaTram" Type="Doi" />
+      <Association Name="Tram_ThuongTruc" Member="ThuongTrucs" ThisKey="MaTram" OtherKey="MaTram" Type="ThuongTruc" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChiTietThuongTruc" Member="ChiTietThuongTrucs">
+    <Type Name="ChiTietThuongTruc" Id="ID2">
+      <Column Name="MaThuongTruc" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaTaiXe" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Tai" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TaiXe_ChiTietThuongTruc" Member="TaiXe" ThisKey="MaTaiXe" OtherKey="MaTaiXe" Type="TaiXe" IsForeignKey="true" />
+      <Association Name="ThuongTruc_ChiTietThuongTruc" Member="ThuongTruc" ThisKey="MaThuongTruc" OtherKey="MaThuongTruc" Type="ThuongTruc" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CoBao" Member="CoBaos">
+    <Type Name="CoBao" Id="ID3">
+      <Column Name="SoCoBao" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="MaDM" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="MaMacTau" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayGioNhanMay" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NgayGioGiaoMay" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="XepLoai" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="LyDoXL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="CoBao_CoBaoLaiTau" Member="CoBaoLaiTaus" ThisKey="SoCoBao" OtherKey="SoCoBao" Type="CoBaoLaiTau" />
+      <Association Name="CoBao_HanhTrinh" Member="HanhTrinhs" ThisKey="SoCoBao" OtherKey="SoCoBao" Type="HanhTrinh" />
+      <Association Name="CoBao_TheoTau" Member="TheoTaus" ThisKey="SoCoBao" OtherKey="SoCoBao" Type="TheoTau" />
+      <Association Name="DauMay_CoBao" Member="DauMay" ThisKey="MaDM" OtherKey="MaDM" Type="DauMay" IsForeignKey="true" />
+      <Association Name="MacTau_CoBao" Member="MacTau" ThisKey="MaMacTau" OtherKey="MaMacTau" Type="MacTau" IsForeignKey="true" />
+      <Association Name="NhanVien_CoBao" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CoBaoLaiTau" Member="CoBaoLaiTaus">
+    <Type Name="CoBaoLaiTau" Id="ID4">
+      <Column Name="SoCoBao" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaTaiXe" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Tai" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="GioLuuTru" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="CoBao_CoBaoLaiTau" Member="CoBao" ThisKey="SoCoBao" OtherKey="SoCoBao" Type="CoBao" IsForeignKey="true" />
+      <Association Name="TaiXe_CoBaoLaiTau" Member="TaiXe" ThisKey="MaTaiXe" OtherKey="MaTaiXe" Type="TaiXe" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CongTy" Member="CongTies">
+    <Type Name="CongTy" Id="ID5">
+      <Column Name="MaCT" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenCT" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="CongTy_MacTau" Member="MacTaus" ThisKey="MaCT" OtherKey="MaCT" Type="MacTau" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DauMay" Member="DauMays">
+    <Type Name="DauMay" Id="ID6">
+      <Column Name="MaDM" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaLoai" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TenDM" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="DauMay_CoBao" Member="CoBaos" ThisKey="MaDM" OtherKey="MaDM" Type="CoBao" />
+      <Association Name="DauMay_KhamXet" Member="KhamXets" ThisKey="MaDM" OtherKey="MaDM" Type="KhamXet" />
+      <Association Name="LoaiDauMay_DauMay" Member="LoaiDauMay" ThisKey="MaLoai" OtherKey="MaLoai" Type="LoaiDauMay" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Doi" Member="Dois">
+    <Type Name="Doi" Id="ID7">
+      <Column Name="MaDoi" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenDoi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MaTram" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="Doi_To" Member="Tos" ThisKey="MaDoi" OtherKey="MaDoi" Type="To" />
+      <Association Name="Tram_Doi" Member="Tram" ThisKey="MaTram" OtherKey="MaTram" Type="Tram" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DonGiaLuongBoSung" Member="DonGiaLuongBoSungs">
+    <Type Name="DonGiaLuongBoSung" Id="ID8">
+      <Column Name="MaDonGia" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MoTa" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DonViTinh" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="DonGiaLuongBoSung_NhatKyThayDoiDonGiaBoSung" Member="NhatKyThayDoiDonGiaBoSungs" ThisKey="MaDonGia" OtherKey="MaDonGia" Type="NhatKyThayDoiDonGiaBoSung" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DonGiaLuongXL" Member="DonGiaLuongXLs">
+    <Type Name="DonGiaLuongXL" Id="ID9">
+      <Column Name="MaLuongXL" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MoTa" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DonViTinh" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="DonGiaLuongXL_MacTau" Member="MacTaus" ThisKey="MaLuongXL" OtherKey="MaLuongXL" Type="MacTau" />
+      <Association Name="DonGiaLuongXL_NhatKyThayDoiGiaXL" Member="NhatKyThayDoiGiaXLs" ThisKey="MaLuongXL" OtherKey="MaLuongXL" Type="NhatKyThayDoiGiaXL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ga" Member="Gas">
+    <Type Name="Ga" Id="ID10">
+      <Column Name="MaGa" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenGa" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Km" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="Ga_HanhTrinh" Member="HanhTrinhs" ThisKey="MaGa" OtherKey="MaGa" Type="HanhTrinh" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HanhTrinh" Member="HanhTrinhs">
+    <Type Name="HanhTrinh" Id="ID11">
+      <Column Name="SoCoBao" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaGa" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TrangThaiGa" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayGioDen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayGioDi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="CoBao_HanhTrinh" Member="CoBao" ThisKey="SoCoBao" OtherKey="SoCoBao" Type="CoBao" IsForeignKey="true" />
+      <Association Name="Ga_HanhTrinh" Member="Ga" ThisKey="MaGa" OtherKey="MaGa" Type="Ga" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HopPhepOm" Member="HopPhepOms">
+    <Type Name="HopPhepOm" Id="ID12">
+      <Column Name="MaHPO" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaTaiXe" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayBatDau" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="SoNgay" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="TaiXe_HopPhepOm" Member="TaiXe" ThisKey="MaTaiXe" OtherKey="MaTaiXe" Type="TaiXe" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhamXet" Member="KhamXets">
+    <Type Name="KhamXet" Id="ID13">
+      <Column Name="MaKhamXet" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaDM" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayGioBatDau" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NgayGioKetThuc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="KhamXet_ChiTietKhamXet" Member="ChiTietKhamXets" ThisKey="MaKhamXet" OtherKey="MaKhamXet" Type="ChiTietKhamXet" />
+      <Association Name="DauMay_KhamXet" Member="DauMay" ThisKey="MaDM" OtherKey="MaDM" Type="DauMay" IsForeignKey="true" />
+      <Association Name="NhanVien_KhamXet" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoaiDauMay" Member="LoaiDauMays">
+    <Type Name="LoaiDauMay" Id="ID14">
+      <Column Name="MaLoai" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenLoai" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TanSoThap" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Trongluong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="LoaiDauMay_DauMay" Member="DauMays" ThisKey="MaLoai" OtherKey="MaLoai" Type="DauMay" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MacTau" Member="MacTaus">
+    <Type Name="MacTau" Id="ID15">
+      <Column Name="MaMacTau" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaCT" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="MaLuongXL" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TenMacTau" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="MacTau_CoBao" Member="CoBaos" ThisKey="MaMacTau" OtherKey="MaMacTau" Type="CoBao" />
+      <Association Name="CongTy_MacTau" Member="CongTy" ThisKey="MaCT" OtherKey="MaCT" Type="CongTy" IsForeignKey="true" />
+      <Association Name="DonGiaLuongXL_MacTau" Member="DonGiaLuongXL" ThisKey="MaLuongXL" OtherKey="MaLuongXL" Type="DonGiaLuongXL" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhanVien" Member="NhanViens">
+    <Type Name="NhanVien" Id="ID16">
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Pass" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DienThoai" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="ChucDanh" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="NhanVien_CoBao" Member="CoBaos" ThisKey="MaNV" OtherKey="MaNV" Type="CoBao" />
+      <Association Name="NhanVien_KhamXet" Member="KhamXets" ThisKey="MaNV" OtherKey="MaNV" Type="KhamXet" />
+      <Association Name="NhanVien_NhatKyThayDoiDonGiaBoSung" Member="NhatKyThayDoiDonGiaBoSungs" ThisKey="MaNV" OtherKey="MaNV" Type="NhatKyThayDoiDonGiaBoSung" />
+      <Association Name="NhanVien_NhatKyThayDoiGiaXL" Member="NhatKyThayDoiGiaXLs" ThisKey="MaNV" OtherKey="MaNV" Type="NhatKyThayDoiGiaXL" />
+      <Association Name="NhanVien_ThuongTruc" Member="ThuongTrucs" ThisKey="MaNV" OtherKey="MaNV" Type="ThuongTruc" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhatKyThayDoiDonGiaBoSung" Member="NhatKyThayDoiDonGiaBoSungs">
+    <Type Name="NhatKyThayDoiDonGiaBoSung" Id="ID17">
+      <Column Name="MaNhayKyBS" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaDonGia" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="DonGiaCu" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DonGiaMoi" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayThayDoi" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="DonGiaLuongBoSung_NhatKyThayDoiDonGiaBoSung" Member="DonGiaLuongBoSung" ThisKey="MaDonGia" OtherKey="MaDonGia" Type="DonGiaLuongBoSung" IsForeignKey="true" />
+      <Association Name="NhanVien_NhatKyThayDoiDonGiaBoSung" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhatKyThayDoiGiaXL" Member="NhatKyThayDoiGiaXLs">
+    <Type Name="NhatKyThayDoiGiaXL" Id="ID18">
+      <Column Name="MaNhatKyXL" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaLuongXL" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="LoaiACu" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="LoaiBCu" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="LoaiCCu" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="LoaiAMoi" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="LoaiBMoi" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="LoaiCMoi" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayThayDoi" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="DonGiaLuongXL_NhatKyThayDoiGiaXL" Member="DonGiaLuongXL" ThisKey="MaLuongXL" OtherKey="MaLuongXL" Type="DonGiaLuongXL" IsForeignKey="true" />
+      <Association Name="NhanVien_NhatKyThayDoiGiaXL" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaiXe" Member="TaiXes">
+    <Type Name="TaiXe" Id="ID19">
+      <Column Name="MaTaiXe" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenTaiXe" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DienThoai" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Tai" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="HeSoLuong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MaTo" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="TaiXe_ChiTietKhamXet" Member="ChiTietKhamXets" ThisKey="MaTaiXe" OtherKey="MaTaiXe" Type="ChiTietKhamXet" />
+      <Association Name="TaiXe_ChiTietThuongTruc" Member="ChiTietThuongTrucs" ThisKey="MaTaiXe" OtherKey="MaTaiXe" Type="ChiTietThuongTruc" />
+      <Association Name="TaiXe_CoBaoLaiTau" Member="CoBaoLaiTaus" ThisKey="MaTaiXe" OtherKey="MaTaiXe" Type="CoBaoLaiTau" />
+      <Association Name="TaiXe_HopPhepOm" Member="HopPhepOms" ThisKey="MaTaiXe" OtherKey="MaTaiXe" Type="HopPhepOm" />
+      <Association Name="TaiXe_TheoTau" Member="TheoTaus" ThisKey="MaTaiXe" OtherKey="MaTaiXe" Type="TheoTau" />
+      <Association Name="To_TaiXe" Member="To" ThisKey="MaTo" OtherKey="MaTo" Type="To" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TheoTau" Member="TheoTaus">
+    <Type Name="TheoTau" Id="ID20">
+      <Column Name="SoCoBao" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaTaiXe" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Tai" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="GioTheoTau" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="GioLuuTru" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="CoBao_TheoTau" Member="CoBao" ThisKey="SoCoBao" OtherKey="SoCoBao" Type="CoBao" IsForeignKey="true" />
+      <Association Name="TaiXe_TheoTau" Member="TaiXe" ThisKey="MaTaiXe" OtherKey="MaTaiXe" Type="TaiXe" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ThuongTruc" Member="ThuongTrucs">
+    <Type Name="ThuongTruc" Id="ID23">
+      <Column Name="MaThuongTruc" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaTram" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayGioBatDau" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NgayGioKetThuc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="ThuongTruc_ChiTietThuongTruc" Member="ChiTietThuongTrucs" ThisKey="MaThuongTruc" OtherKey="MaThuongTruc" Type="ChiTietThuongTruc" />
+      <Association Name="NhanVien_ThuongTruc" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
+      <Association Name="Tram_ThuongTruc" Member="Tram" ThisKey="MaTram" OtherKey="MaTram" Type="Tram" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[To]" Member="Tos">
+    <Type Name="To" Id="ID21">
+      <Column Name="MaTo" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenTo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MaDoi" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="To_TaiXe" Member="TaiXes" ThisKey="MaTo" OtherKey="MaTo" Type="TaiXe" />
+      <Association Name="Doi_To" Member="Doi" ThisKey="MaDoi" OtherKey="MaDoi" Type="Doi" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sp_UpdateTram" Method="sp_UpdateTram">
+    <Parameter Name="MaTram" Parameter="maTram" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TenTram" Parameter="tenTram" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateChiTietKhamXet" Method="sp_UpdateChiTietKhamXet">
+    <Parameter Name="MaKhamXet" Parameter="maKhamXet" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Tai" Parameter="tai" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateChiTietThuongTruc" Method="sp_UpdateChiTietThuongTruc">
+    <Parameter Name="MaThuongTruc" Parameter="maThuongTruc" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Tai" Parameter="tai" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateCoBao" Method="sp_UpdateCoBao">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="MaDM" Parameter="maDM" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="MaMacTau" Parameter="maMacTau" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="NgayGioNhanMay" Parameter="ngayGioNhanMay" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="NgayGioGiaoMay" Parameter="ngayGioGiaoMay" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="XepLoai" Parameter="xepLoai" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="LyDoXL" Parameter="lyDoXL" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateCoBaoLaiTau" Method="sp_UpdateCoBaoLaiTau">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Tai" Parameter="tai" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="GioLuuTru" Parameter="gioLuuTru" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateCongTy" Method="sp_UpdateCongTy">
+    <Parameter Name="MaCT" Parameter="maCT" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TenCT" Parameter="tenCT" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateDauMay" Method="sp_UpdateDauMay">
+    <Parameter Name="MaDM" Parameter="maDM" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="MaLoai" Parameter="maLoai" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TenDM" Parameter="tenDM" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateDoi" Method="sp_UpdateDoi">
+    <Parameter Name="MaDoi" Parameter="maDoi" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TenDoi" Parameter="tenDoi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MaTram" Parameter="maTram" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateDonGiaLuongBoSung" Method="sp_UpdateDonGiaLuongBoSung">
+    <Parameter Name="MaDonGia" Parameter="maDonGia" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MoTa" Parameter="moTa" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DonViTinh" Parameter="donViTinh" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateDonGiaLuongXL" Method="sp_UpdateDonGiaLuongXL">
+    <Parameter Name="MaLuongXL" Parameter="maLuongXL" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MoTa" Parameter="moTa" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DonViTinh" Parameter="donViTinh" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateGa" Method="sp_UpdateGa">
+    <Parameter Name="MaGa" Parameter="maGa" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TenGa" Parameter="tenGa" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Km" Parameter="km" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateHanhTrinh" Method="sp_UpdateHanhTrinh">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MaGa" Parameter="maGa" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TrangThaiGa" Parameter="trangThaiGa" Type="System.String" DbType="NVarChar(5)" />
+    <Parameter Name="NgayGioDen" Parameter="ngayGioDen" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="NgayGioDi" Parameter="ngayGioDi" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateHopPhepOm" Method="sp_UpdateHopPhepOm">
+    <Parameter Name="MaHPO" Parameter="maHPO" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TrangThai" Parameter="trangThai" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="NgayBatDau" Parameter="ngayBatDau" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="SoNgay" Parameter="soNgay" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateKhamXet" Method="sp_UpdateKhamXet">
+    <Parameter Name="MaKhamXet" Parameter="maKhamXet" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaDM" Parameter="maDM" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="NgayGioBatDau" Parameter="ngayGioBatDau" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="NgayGioKetThuc" Parameter="ngayGioKetThuc" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateLoaiDauMay" Method="sp_UpdateLoaiDauMay">
+    <Parameter Name="MaLoai" Parameter="maLoai" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TenLoai" Parameter="tenLoai" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TanSoThap" Parameter="tanSoThap" Type="System.Double" DbType="Float" />
+    <Parameter Name="Trongluong" Parameter="trongluong" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateMacTau" Method="sp_UpdateMacTau">
+    <Parameter Name="MaMacTau" Parameter="maMacTau" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="MaCT" Parameter="maCT" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaLuongXL" Parameter="maLuongXL" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TenMacTau" Parameter="tenMacTau" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateNhanVien" Method="sp_UpdateNhanVien">
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TenNV" Parameter="tenNV" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DiaChi" Parameter="diaChi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Pass" Parameter="pass" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="DienThoai" Parameter="dienThoai" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="ChucDanh" Parameter="chucDanh" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateNhatKyThayDoiDonGiaBoSung" Method="sp_UpdateNhatKyThayDoiDonGiaBoSung">
+    <Parameter Name="MaNhayKyBS" Parameter="maNhayKyBS" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaDonGia" Parameter="maDonGia" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="DonGiaCu" Parameter="donGiaCu" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="DonGiaMoi" Parameter="donGiaMoi" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="NgayThayDoi" Parameter="ngayThayDoi" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateNhatKyThayDoiGiaXL" Method="sp_UpdateNhatKyThayDoiGiaXL">
+    <Parameter Name="MaNhatKyXL" Parameter="maNhatKyXL" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaLuongXL" Parameter="maLuongXL" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="LoaiACu" Parameter="loaiACu" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="LoaiBCu" Parameter="loaiBCu" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="LoaiCCu" Parameter="loaiCCu" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="LoaiAMoi" Parameter="loaiAMoi" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="LoaiBMoi" Parameter="loaiBMoi" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="LoaiCMoi" Parameter="loaiCMoi" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="NgayThayDoi" Parameter="ngayThayDoi" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateTaiXe" Method="sp_UpdateTaiXe">
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TenTaiXe" Parameter="tenTaiXe" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DiaChi" Parameter="diaChi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DienThoai" Parameter="dienThoai" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="Tai" Parameter="tai" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="HeSoLuong" Parameter="heSoLuong" Type="System.Double" DbType="Float" />
+    <Parameter Name="MaTo" Parameter="maTo" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateTheoTau" Method="sp_UpdateTheoTau">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Tai" Parameter="tai" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="GioTheoTau" Parameter="gioTheoTau" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="GioLuuTru" Parameter="gioLuuTru" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateTo" Method="sp_UpdateTo">
+    <Parameter Name="MaTo" Parameter="maTo" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TenTo" Parameter="tenTo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MaDoi" Parameter="maDoi" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteChiTietKhamXet" Method="sp_DeleteChiTietKhamXet">
+    <Parameter Name="MaKhamXet" Parameter="maKhamXet" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateTram" Method="sp_InsertUpdateTram">
+    <Parameter Name="MaTram" Parameter="maTram" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TenTram" Parameter="tenTram" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteChiTietThuongTruc" Method="sp_DeleteChiTietThuongTruc">
+    <Parameter Name="MaThuongTruc" Parameter="maThuongTruc" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteCoBao" Method="sp_DeleteCoBao">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteCoBaoLaiTau" Method="sp_DeleteCoBaoLaiTau">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteCongTy" Method="sp_DeleteCongTy">
+    <Parameter Name="MaCT" Parameter="maCT" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteDauMay" Method="sp_DeleteDauMay">
+    <Parameter Name="MaDM" Parameter="maDM" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteDoi" Method="sp_DeleteDoi">
+    <Parameter Name="MaDoi" Parameter="maDoi" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteDonGiaLuongBoSung" Method="sp_DeleteDonGiaLuongBoSung">
+    <Parameter Name="MaDonGia" Parameter="maDonGia" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteDonGiaLuongXL" Method="sp_DeleteDonGiaLuongXL">
+    <Parameter Name="MaLuongXL" Parameter="maLuongXL" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteGa" Method="sp_DeleteGa">
+    <Parameter Name="MaGa" Parameter="maGa" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteHanhTrinh" Method="sp_DeleteHanhTrinh">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MaGa" Parameter="maGa" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteHopPhepOm" Method="sp_DeleteHopPhepOm">
+    <Parameter Name="MaHPO" Parameter="maHPO" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteKhamXet" Method="sp_DeleteKhamXet">
+    <Parameter Name="MaKhamXet" Parameter="maKhamXet" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteLoaiDauMay" Method="sp_DeleteLoaiDauMay">
+    <Parameter Name="MaLoai" Parameter="maLoai" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteMacTau" Method="sp_DeleteMacTau">
+    <Parameter Name="MaMacTau" Parameter="maMacTau" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteNhanVien" Method="sp_DeleteNhanVien">
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteNhatKyThayDoiDonGiaBoSung" Method="sp_DeleteNhatKyThayDoiDonGiaBoSung">
+    <Parameter Name="MaNhayKyBS" Parameter="maNhayKyBS" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteNhatKyThayDoiGiaXL" Method="sp_DeleteNhatKyThayDoiGiaXL">
+    <Parameter Name="MaNhatKyXL" Parameter="maNhatKyXL" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteTaiXe" Method="sp_DeleteTaiXe">
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteTheoTau" Method="sp_DeleteTheoTau">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteTo" Method="sp_DeleteTo">
+    <Parameter Name="MaTo" Parameter="maTo" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteTram" Method="sp_DeleteTram">
+    <Parameter Name="MaTram" Parameter="maTram" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertChiTietKhamXet" Method="sp_InsertChiTietKhamXet">
+    <Parameter Name="MaKhamXet" Parameter="maKhamXet" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Tai" Parameter="tai" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertChiTietThuongTruc" Method="sp_InsertChiTietThuongTruc">
+    <Parameter Name="MaThuongTruc" Parameter="maThuongTruc" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Tai" Parameter="tai" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertCoBao" Method="sp_InsertCoBao">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="MaDM" Parameter="maDM" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="MaMacTau" Parameter="maMacTau" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="NgayGioNhanMay" Parameter="ngayGioNhanMay" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="NgayGioGiaoMay" Parameter="ngayGioGiaoMay" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="XepLoai" Parameter="xepLoai" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="LyDoXL" Parameter="lyDoXL" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertCoBaoLaiTau" Method="sp_InsertCoBaoLaiTau">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Tai" Parameter="tai" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="GioLuuTru" Parameter="gioLuuTru" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertCongTy" Method="sp_InsertCongTy">
+    <Parameter Name="TenCT" Parameter="tenCT" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MaCT" Parameter="maCT" Type="System.Guid" DbType="UniqueIdentifier" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertDauMay" Method="sp_InsertDauMay">
+    <Parameter Name="MaDM" Parameter="maDM" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="MaLoai" Parameter="maLoai" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TenDM" Parameter="tenDM" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertDoi" Method="sp_InsertDoi">
+    <Parameter Name="TenDoi" Parameter="tenDoi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MaTram" Parameter="maTram" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaDoi" Parameter="maDoi" Type="System.Guid" DbType="UniqueIdentifier" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertDonGiaLuongBoSung" Method="sp_InsertDonGiaLuongBoSung">
+    <Parameter Name="MoTa" Parameter="moTa" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DonViTinh" Parameter="donViTinh" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MaDonGia" Parameter="maDonGia" Type="System.Guid" DbType="UniqueIdentifier" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertDonGiaLuongXL" Method="sp_InsertDonGiaLuongXL">
+    <Parameter Name="MoTa" Parameter="moTa" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DonViTinh" Parameter="donViTinh" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MaLuongXL" Parameter="maLuongXL" Type="System.Guid" DbType="UniqueIdentifier" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertGa" Method="sp_InsertGa">
+    <Parameter Name="MaGa" Parameter="maGa" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TenGa" Parameter="tenGa" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Km" Parameter="km" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertHanhTrinh" Method="sp_InsertHanhTrinh">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MaGa" Parameter="maGa" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TrangThaiGa" Parameter="trangThaiGa" Type="System.String" DbType="NVarChar(5)" />
+    <Parameter Name="NgayGioDen" Parameter="ngayGioDen" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="NgayGioDi" Parameter="ngayGioDi" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertHopPhepOm" Method="sp_InsertHopPhepOm">
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TrangThai" Parameter="trangThai" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="NgayBatDau" Parameter="ngayBatDau" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="SoNgay" Parameter="soNgay" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="MaHPO" Parameter="maHPO" Type="System.Guid" DbType="UniqueIdentifier" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertKhamXet" Method="sp_InsertKhamXet">
+    <Parameter Name="MaDM" Parameter="maDM" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="NgayGioBatDau" Parameter="ngayGioBatDau" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="NgayGioKetThuc" Parameter="ngayGioKetThuc" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="MaKhamXet" Parameter="maKhamXet" Type="System.Guid" DbType="UniqueIdentifier" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertLoaiDauMay" Method="sp_InsertLoaiDauMay">
+    <Parameter Name="TenLoai" Parameter="tenLoai" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TanSoThap" Parameter="tanSoThap" Type="System.Double" DbType="Float" />
+    <Parameter Name="Trongluong" Parameter="trongluong" Type="System.Double" DbType="Float" />
+    <Parameter Name="MaLoai" Parameter="maLoai" Type="System.Guid" DbType="UniqueIdentifier" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertMacTau" Method="sp_InsertMacTau">
+    <Parameter Name="MaMacTau" Parameter="maMacTau" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="MaCT" Parameter="maCT" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaLuongXL" Parameter="maLuongXL" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TenMacTau" Parameter="tenMacTau" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertNhanVien" Method="sp_InsertNhanVien">
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TenNV" Parameter="tenNV" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DiaChi" Parameter="diaChi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Pass" Parameter="pass" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="DienThoai" Parameter="dienThoai" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="ChucDanh" Parameter="chucDanh" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertNhatKyThayDoiDonGiaBoSung" Method="sp_InsertNhatKyThayDoiDonGiaBoSung">
+    <Parameter Name="MaDonGia" Parameter="maDonGia" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="DonGiaCu" Parameter="donGiaCu" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="DonGiaMoi" Parameter="donGiaMoi" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="NgayThayDoi" Parameter="ngayThayDoi" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="MaNhayKyBS" Parameter="maNhayKyBS" Type="System.Guid" DbType="UniqueIdentifier" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertNhatKyThayDoiGiaXL" Method="sp_InsertNhatKyThayDoiGiaXL">
+    <Parameter Name="MaLuongXL" Parameter="maLuongXL" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="LoaiACu" Parameter="loaiACu" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="LoaiBCu" Parameter="loaiBCu" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="LoaiCCu" Parameter="loaiCCu" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="LoaiAMoi" Parameter="loaiAMoi" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="LoaiBMoi" Parameter="loaiBMoi" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="LoaiCMoi" Parameter="loaiCMoi" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="NgayThayDoi" Parameter="ngayThayDoi" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="MaNhatKyXL" Parameter="maNhatKyXL" Type="System.Guid" DbType="UniqueIdentifier" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertTaiXe" Method="sp_InsertTaiXe">
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TenTaiXe" Parameter="tenTaiXe" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DiaChi" Parameter="diaChi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DienThoai" Parameter="dienThoai" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="Tai" Parameter="tai" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="HeSoLuong" Parameter="heSoLuong" Type="System.Double" DbType="Float" />
+    <Parameter Name="MaTo" Parameter="maTo" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertTheoTau" Method="sp_InsertTheoTau">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Tai" Parameter="tai" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="GioTheoTau" Parameter="gioTheoTau" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="GioLuuTru" Parameter="gioLuuTru" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertTo" Method="sp_InsertTo">
+    <Parameter Name="TenTo" Parameter="tenTo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MaDoi" Parameter="maDoi" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaTo" Parameter="maTo" Type="System.Guid" DbType="UniqueIdentifier" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertTram" Method="sp_InsertTram">
+    <Parameter Name="TenTram" Parameter="tenTram" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MaTram" Parameter="maTram" Type="System.Guid" DbType="UniqueIdentifier" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateChiTietKhamXet" Method="sp_InsertUpdateChiTietKhamXet">
+    <Parameter Name="MaKhamXet" Parameter="maKhamXet" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Tai" Parameter="tai" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateChiTietThuongTruc" Method="sp_InsertUpdateChiTietThuongTruc">
+    <Parameter Name="MaThuongTruc" Parameter="maThuongTruc" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Tai" Parameter="tai" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateCoBao" Method="sp_InsertUpdateCoBao">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="MaDM" Parameter="maDM" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="MaMacTau" Parameter="maMacTau" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="NgayGioNhanMay" Parameter="ngayGioNhanMay" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="NgayGioGiaoMay" Parameter="ngayGioGiaoMay" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="XepLoai" Parameter="xepLoai" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="LyDoXL" Parameter="lyDoXL" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateCoBaoLaiTau" Method="sp_InsertUpdateCoBaoLaiTau">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Tai" Parameter="tai" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="GioLuuTru" Parameter="gioLuuTru" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateCongTy" Method="sp_InsertUpdateCongTy">
+    <Parameter Name="MaCT" Parameter="maCT" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TenCT" Parameter="tenCT" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateDauMay" Method="sp_InsertUpdateDauMay">
+    <Parameter Name="MaDM" Parameter="maDM" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="MaLoai" Parameter="maLoai" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TenDM" Parameter="tenDM" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateDoi" Method="sp_InsertUpdateDoi">
+    <Parameter Name="MaDoi" Parameter="maDoi" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TenDoi" Parameter="tenDoi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MaTram" Parameter="maTram" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateDonGiaLuongBoSung" Method="sp_InsertUpdateDonGiaLuongBoSung">
+    <Parameter Name="MaDonGia" Parameter="maDonGia" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MoTa" Parameter="moTa" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DonViTinh" Parameter="donViTinh" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateDonGiaLuongXL" Method="sp_InsertUpdateDonGiaLuongXL">
+    <Parameter Name="MaLuongXL" Parameter="maLuongXL" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MoTa" Parameter="moTa" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DonViTinh" Parameter="donViTinh" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateGa" Method="sp_InsertUpdateGa">
+    <Parameter Name="MaGa" Parameter="maGa" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TenGa" Parameter="tenGa" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Km" Parameter="km" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateHanhTrinh" Method="sp_InsertUpdateHanhTrinh">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MaGa" Parameter="maGa" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TrangThaiGa" Parameter="trangThaiGa" Type="System.String" DbType="NVarChar(5)" />
+    <Parameter Name="NgayGioDen" Parameter="ngayGioDen" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="NgayGioDi" Parameter="ngayGioDi" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateHopPhepOm" Method="sp_InsertUpdateHopPhepOm">
+    <Parameter Name="MaHPO" Parameter="maHPO" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TrangThai" Parameter="trangThai" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="NgayBatDau" Parameter="ngayBatDau" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="SoNgay" Parameter="soNgay" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateKhamXet" Method="sp_InsertUpdateKhamXet">
+    <Parameter Name="MaKhamXet" Parameter="maKhamXet" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaDM" Parameter="maDM" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="NgayGioBatDau" Parameter="ngayGioBatDau" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="NgayGioKetThuc" Parameter="ngayGioKetThuc" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateLoaiDauMay" Method="sp_InsertUpdateLoaiDauMay">
+    <Parameter Name="MaLoai" Parameter="maLoai" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TenLoai" Parameter="tenLoai" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TanSoThap" Parameter="tanSoThap" Type="System.Double" DbType="Float" />
+    <Parameter Name="Trongluong" Parameter="trongluong" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateMacTau" Method="sp_InsertUpdateMacTau">
+    <Parameter Name="MaMacTau" Parameter="maMacTau" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="MaCT" Parameter="maCT" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaLuongXL" Parameter="maLuongXL" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TenMacTau" Parameter="tenMacTau" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateNhanVien" Method="sp_InsertUpdateNhanVien">
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TenNV" Parameter="tenNV" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DiaChi" Parameter="diaChi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Pass" Parameter="pass" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="DienThoai" Parameter="dienThoai" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="ChucDanh" Parameter="chucDanh" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateNhatKyThayDoiDonGiaBoSung" Method="sp_InsertUpdateNhatKyThayDoiDonGiaBoSung">
+    <Parameter Name="MaNhayKyBS" Parameter="maNhayKyBS" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaDonGia" Parameter="maDonGia" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="DonGiaCu" Parameter="donGiaCu" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="DonGiaMoi" Parameter="donGiaMoi" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="NgayThayDoi" Parameter="ngayThayDoi" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateNhatKyThayDoiGiaXL" Method="sp_InsertUpdateNhatKyThayDoiGiaXL">
+    <Parameter Name="MaNhatKyXL" Parameter="maNhatKyXL" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaLuongXL" Parameter="maLuongXL" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="LoaiACu" Parameter="loaiACu" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="LoaiBCu" Parameter="loaiBCu" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="LoaiCCu" Parameter="loaiCCu" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="LoaiAMoi" Parameter="loaiAMoi" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="LoaiBMoi" Parameter="loaiBMoi" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="LoaiCMoi" Parameter="loaiCMoi" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="NgayThayDoi" Parameter="ngayThayDoi" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateTaiXe" Method="sp_InsertUpdateTaiXe">
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TenTaiXe" Parameter="tenTaiXe" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DiaChi" Parameter="diaChi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DienThoai" Parameter="dienThoai" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="Tai" Parameter="tai" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="HeSoLuong" Parameter="heSoLuong" Type="System.Double" DbType="Float" />
+    <Parameter Name="MaTo" Parameter="maTo" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateTheoTau" Method="sp_InsertUpdateTheoTau">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Tai" Parameter="tai" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="GioTheoTau" Parameter="gioTheoTau" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="GioLuuTru" Parameter="gioLuuTru" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateTo" Method="sp_InsertUpdateTo">
+    <Parameter Name="MaTo" Parameter="maTo" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TenTo" Parameter="tenTo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MaDoi" Parameter="maDoi" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SelectChiTietKhamXet" Method="sp_SelectChiTietKhamXet">
+    <Parameter Name="MaKhamXet" Parameter="maKhamXet" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.sp_SelectChiTietKhamXetsByAndMaTaiXe" Method="sp_SelectChiTietKhamXetsByAndMaTaiXe">
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.sp_SelectChiTietKhamXetsAll" Method="sp_SelectChiTietKhamXetsAll">
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.sp_SelectChiTietKhamXetsByAndMaKhamXet" Method="sp_SelectChiTietKhamXetsByAndMaKhamXet">
+    <Parameter Name="MaKhamXet" Parameter="maKhamXet" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.sp_SelectChiTietThuongTruc" Method="sp_SelectChiTietThuongTruc">
+    <Parameter Name="MaThuongTruc" Parameter="maThuongTruc" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="dbo.sp_SelectChiTietThuongTrucsByAndMaThuongTruc" Method="sp_SelectChiTietThuongTrucsByAndMaThuongTruc">
+    <Parameter Name="MaThuongTruc" Parameter="maThuongTruc" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="dbo.sp_SelectChiTietThuongTrucsAll" Method="sp_SelectChiTietThuongTrucsAll">
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="dbo.sp_SelectChiTietThuongTrucsByAndMaTaiXe" Method="sp_SelectChiTietThuongTrucsByAndMaTaiXe">
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="dbo.sp_SelectCoBao" Method="sp_SelectCoBao">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="dbo.sp_SelectCoBaosAll" Method="sp_SelectCoBaosAll">
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="dbo.sp_SelectCoBaosByAndMaDM" Method="sp_SelectCoBaosByAndMaDM">
+    <Parameter Name="MaDM" Parameter="maDM" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="dbo.sp_SelectCoBaosByAndMaMacTau" Method="sp_SelectCoBaosByAndMaMacTau">
+    <Parameter Name="MaMacTau" Parameter="maMacTau" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="dbo.sp_SelectCoBaosByAndMaNV" Method="sp_SelectCoBaosByAndMaNV">
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="dbo.sp_SelectCoBaoLaiTau" Method="sp_SelectCoBaoLaiTau">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID4" />
+  </Function>
+  <Function Name="dbo.sp_SelectCoBaoLaiTausByAndSoCoBao" Method="sp_SelectCoBaoLaiTausByAndSoCoBao">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <ElementType IdRef="ID4" />
+  </Function>
+  <Function Name="dbo.sp_SelectCoBaoLaiTausAll" Method="sp_SelectCoBaoLaiTausAll">
+    <ElementType IdRef="ID4" />
+  </Function>
+  <Function Name="dbo.sp_SelectCoBaoLaiTausByAndMaTaiXe" Method="sp_SelectCoBaoLaiTausByAndMaTaiXe">
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID4" />
+  </Function>
+  <Function Name="dbo.sp_SelectCongTiesAll" Method="sp_SelectCongTiesAll">
+    <ElementType IdRef="ID5" />
+  </Function>
+  <Function Name="dbo.sp_SelectCongTy" Method="sp_SelectCongTy">
+    <Parameter Name="MaCT" Parameter="maCT" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID5" />
+  </Function>
+  <Function Name="dbo.sp_SelectDauMay" Method="sp_SelectDauMay">
+    <Parameter Name="MaDM" Parameter="maDM" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID6" />
+  </Function>
+  <Function Name="dbo.sp_SelectDauMaysByAndMaLoai" Method="sp_SelectDauMaysByAndMaLoai">
+    <Parameter Name="MaLoai" Parameter="maLoai" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID6" />
+  </Function>
+  <Function Name="dbo.sp_SelectDauMaysAll" Method="sp_SelectDauMaysAll">
+    <ElementType IdRef="ID6" />
+  </Function>
+  <Function Name="dbo.sp_SelectDoi" Method="sp_SelectDoi">
+    <Parameter Name="MaDoi" Parameter="maDoi" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID7" />
+  </Function>
+  <Function Name="dbo.sp_SelectDoisByAndMaTram" Method="sp_SelectDoisByAndMaTram">
+    <Parameter Name="MaTram" Parameter="maTram" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID7" />
+  </Function>
+  <Function Name="dbo.sp_SelectDoisAll" Method="sp_SelectDoisAll">
+    <ElementType IdRef="ID7" />
+  </Function>
+  <Function Name="dbo.sp_SelectDonGiaLuongBoSung" Method="sp_SelectDonGiaLuongBoSung">
+    <Parameter Name="MaDonGia" Parameter="maDonGia" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID8" />
+  </Function>
+  <Function Name="dbo.sp_SelectDonGiaLuongBoSungsAll" Method="sp_SelectDonGiaLuongBoSungsAll">
+    <ElementType IdRef="ID8" />
+  </Function>
+  <Function Name="dbo.sp_SelectDonGiaLuongXL" Method="sp_SelectDonGiaLuongXL">
+    <Parameter Name="MaLuongXL" Parameter="maLuongXL" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID9" />
+  </Function>
+  <Function Name="dbo.sp_SelectDonGiaLuongXLsAll" Method="sp_SelectDonGiaLuongXLsAll">
+    <ElementType IdRef="ID9" />
+  </Function>
+  <Function Name="dbo.sp_SelectGasAll" Method="sp_SelectGasAll">
+    <ElementType IdRef="ID10" />
+  </Function>
+  <Function Name="dbo.sp_SelectGa" Method="sp_SelectGa">
+    <Parameter Name="MaGa" Parameter="maGa" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID10" />
+  </Function>
+  <Function Name="dbo.sp_SelectHanhTrinh" Method="sp_SelectHanhTrinh">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MaGa" Parameter="maGa" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID11" />
+  </Function>
+  <Function Name="dbo.sp_SelectHanhTrinhsByAndSoCoBao" Method="sp_SelectHanhTrinhsByAndSoCoBao">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <ElementType IdRef="ID11" />
+  </Function>
+  <Function Name="dbo.sp_SelectHanhTrinhsAll" Method="sp_SelectHanhTrinhsAll">
+    <ElementType IdRef="ID11" />
+  </Function>
+  <Function Name="dbo.sp_SelectHanhTrinhsByAndMaGa" Method="sp_SelectHanhTrinhsByAndMaGa">
+    <Parameter Name="MaGa" Parameter="maGa" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID11" />
+  </Function>
+  <Function Name="dbo.sp_SelectHopPhepOm" Method="sp_SelectHopPhepOm">
+    <Parameter Name="MaHPO" Parameter="maHPO" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID12" />
+  </Function>
+  <Function Name="dbo.sp_SelectHopPhepOmsByAndMaTaiXe" Method="sp_SelectHopPhepOmsByAndMaTaiXe">
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID12" />
+  </Function>
+  <Function Name="dbo.sp_SelectHopPhepOmsAll" Method="sp_SelectHopPhepOmsAll">
+    <ElementType IdRef="ID12" />
+  </Function>
+  <Function Name="dbo.sp_SelectKhamXet" Method="sp_SelectKhamXet">
+    <Parameter Name="MaKhamXet" Parameter="maKhamXet" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID13" />
+  </Function>
+  <Function Name="dbo.sp_SelectKhamXetsByAndMaNV" Method="sp_SelectKhamXetsByAndMaNV">
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID13" />
+  </Function>
+  <Function Name="dbo.sp_SelectKhamXetsAll" Method="sp_SelectKhamXetsAll">
+    <ElementType IdRef="ID13" />
+  </Function>
+  <Function Name="dbo.sp_SelectKhamXetsByAndMaDM" Method="sp_SelectKhamXetsByAndMaDM">
+    <Parameter Name="MaDM" Parameter="maDM" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID13" />
+  </Function>
+  <Function Name="dbo.sp_SelectLoaiDauMay" Method="sp_SelectLoaiDauMay">
+    <Parameter Name="MaLoai" Parameter="maLoai" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID14" />
+  </Function>
+  <Function Name="dbo.sp_SelectLoaiDauMaysAll" Method="sp_SelectLoaiDauMaysAll">
+    <ElementType IdRef="ID14" />
+  </Function>
+  <Function Name="dbo.sp_SelectMacTau" Method="sp_SelectMacTau">
+    <Parameter Name="MaMacTau" Parameter="maMacTau" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID15" />
+  </Function>
+  <Function Name="dbo.sp_SelectMacTausByAndMaLuongXL" Method="sp_SelectMacTausByAndMaLuongXL">
+    <Parameter Name="MaLuongXL" Parameter="maLuongXL" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID15" />
+  </Function>
+  <Function Name="dbo.sp_SelectMacTausAll" Method="sp_SelectMacTausAll">
+    <ElementType IdRef="ID15" />
+  </Function>
+  <Function Name="dbo.sp_SelectMacTausByAndMaCT" Method="sp_SelectMacTausByAndMaCT">
+    <Parameter Name="MaCT" Parameter="maCT" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID15" />
+  </Function>
+  <Function Name="dbo.sp_SelectNhanVien" Method="sp_SelectNhanVien">
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID16" />
+  </Function>
+  <Function Name="dbo.sp_SelectNhanViensByAndMaNV" Method="sp_SelectNhanViensByAndMaNV">
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID16" />
+  </Function>
+  <Function Name="dbo.sp_SelectNhanViensAll" Method="sp_SelectNhanViensAll">
+    <ElementType IdRef="ID16" />
+  </Function>
+  <Function Name="dbo.sp_SelectNhatKyThayDoiDonGiaBoSung" Method="sp_SelectNhatKyThayDoiDonGiaBoSung">
+    <Parameter Name="MaNhayKyBS" Parameter="maNhayKyBS" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID17" />
+  </Function>
+  <Function Name="dbo.sp_SelectNhatKyThayDoiDonGiaBoSungsByAndMaNV" Method="sp_SelectNhatKyThayDoiDonGiaBoSungsByAndMaNV">
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID17" />
+  </Function>
+  <Function Name="dbo.sp_SelectNhatKyThayDoiDonGiaBoSungsAll" Method="sp_SelectNhatKyThayDoiDonGiaBoSungsAll">
+    <ElementType IdRef="ID17" />
+  </Function>
+  <Function Name="dbo.sp_SelectNhatKyThayDoiDonGiaBoSungsByAndMaDonGia" Method="sp_SelectNhatKyThayDoiDonGiaBoSungsByAndMaDonGia">
+    <Parameter Name="MaDonGia" Parameter="maDonGia" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID17" />
+  </Function>
+  <Function Name="dbo.sp_SelectNhatKyThayDoiGiaXL" Method="sp_SelectNhatKyThayDoiGiaXL">
+    <Parameter Name="MaNhatKyXL" Parameter="maNhatKyXL" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID18" />
+  </Function>
+  <Function Name="dbo.sp_SelectNhatKyThayDoiGiaXLsByAndMaNV" Method="sp_SelectNhatKyThayDoiGiaXLsByAndMaNV">
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID18" />
+  </Function>
+  <Function Name="dbo.sp_SelectNhatKyThayDoiGiaXLsAll" Method="sp_SelectNhatKyThayDoiGiaXLsAll">
+    <ElementType IdRef="ID18" />
+  </Function>
+  <Function Name="dbo.sp_SelectNhatKyThayDoiGiaXLsByAndMaLuongXL" Method="sp_SelectNhatKyThayDoiGiaXLsByAndMaLuongXL">
+    <Parameter Name="MaLuongXL" Parameter="maLuongXL" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID18" />
+  </Function>
+  <Function Name="dbo.sp_SelectTaiXe" Method="sp_SelectTaiXe">
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID19" />
+  </Function>
+  <Function Name="dbo.sp_SelectTaiXesByAndMaTo" Method="sp_SelectTaiXesByAndMaTo">
+    <Parameter Name="MaTo" Parameter="maTo" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID19" />
+  </Function>
+  <Function Name="dbo.sp_SelectTaiXesAll" Method="sp_SelectTaiXesAll">
+    <ElementType IdRef="ID19" />
+  </Function>
+  <Function Name="dbo.sp_SelectTheoTau" Method="sp_SelectTheoTau">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID20" />
+  </Function>
+  <Function Name="dbo.sp_SelectTheoTausByAndSoCoBao" Method="sp_SelectTheoTausByAndSoCoBao">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <ElementType IdRef="ID20" />
+  </Function>
+  <Function Name="dbo.sp_SelectTheoTausAll" Method="sp_SelectTheoTausAll">
+    <ElementType IdRef="ID20" />
+  </Function>
+  <Function Name="dbo.sp_SelectTheoTausByAndMaTaiXe" Method="sp_SelectTheoTausByAndMaTaiXe">
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID20" />
+  </Function>
+  <Function Name="dbo.sp_SelectTo" Method="sp_SelectTo">
+    <Parameter Name="MaTo" Parameter="maTo" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID21" />
+  </Function>
+  <Function Name="dbo.sp_SelectTosByAndMaDoi" Method="sp_SelectTosByAndMaDoi">
+    <Parameter Name="MaDoi" Parameter="maDoi" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID21" />
+  </Function>
+  <Function Name="dbo.sp_SelectTosAll" Method="sp_SelectTosAll">
+    <ElementType IdRef="ID21" />
+  </Function>
+  <Function Name="dbo.sp_SelectTram" Method="sp_SelectTram">
+    <Parameter Name="MaTram" Parameter="maTram" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID22" />
+  </Function>
+  <Function Name="dbo.sp_SelectTramsAll" Method="sp_SelectTramsAll">
+    <ElementType IdRef="ID22" />
+  </Function>
+  <Function Name="dbo.sp_InsertThuongTruc" Method="sp_InsertThuongTruc">
+    <Parameter Name="MaTram" Parameter="maTram" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="NgayGioBatDau" Parameter="ngayGioBatDau" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="NgayGioKetThuc" Parameter="ngayGioKetThuc" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="MaThuongTruc" Parameter="maThuongTruc" Type="System.Guid" DbType="UniqueIdentifier" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteThuongTruc" Method="sp_DeleteThuongTruc">
+    <Parameter Name="MaThuongTruc" Parameter="maThuongTruc" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUpdateThuongTruc" Method="sp_InsertUpdateThuongTruc">
+    <Parameter Name="MaThuongTruc" Parameter="maThuongTruc" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaTram" Parameter="maTram" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="NgayGioBatDau" Parameter="ngayGioBatDau" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="NgayGioKetThuc" Parameter="ngayGioKetThuc" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateThuongTruc" Method="sp_UpdateThuongTruc">
+    <Parameter Name="MaThuongTruc" Parameter="maThuongTruc" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaTram" Parameter="maTram" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="NgayGioBatDau" Parameter="ngayGioBatDau" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="NgayGioKetThuc" Parameter="ngayGioKetThuc" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SelectThuongTruc" Method="sp_SelectThuongTruc">
+    <Parameter Name="MaThuongTruc" Parameter="maThuongTruc" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID23" />
+  </Function>
+  <Function Name="dbo.sp_SelectThuongTrucsByAndMaTram" Method="sp_SelectThuongTrucsByAndMaTram">
+    <Parameter Name="MaTram" Parameter="maTram" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID23" />
+  </Function>
+  <Function Name="dbo.sp_SelectThuongTrucsAll" Method="sp_SelectThuongTrucsAll">
+    <ElementType IdRef="ID23" />
+  </Function>
+  <Function Name="dbo.sp_SelectThuongTrucsByAndMaNV" Method="sp_SelectThuongTrucsByAndMaNV">
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID23" />
+  </Function>
+</Database>
