@@ -1,94 +1,89 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
 using COBAO.BLL;
-using COBAO.DAL;
-using DevExpress.XtraEditors.DXErrorProvider;
 using DevExpress.XtraBars.Alerter;
+using DevExpress.XtraEditors.DXErrorProvider;
+using COBAO.DAL;
+using DevExpress.XtraEditors;
+using System.Windows.Forms;
+
 
 namespace COBAO.PL.DanhMuc
 {
-    public partial class frmDoi : DevExpress.XtraEditors.XtraForm
+    public partial class frmTinhChat : DevExpress.XtraEditors.XtraForm
     {
-        #region khai bao
-        private TramProvider tp;
-        private DoiProvider dp;
-        private Guid madoi;
-        private string tendoi;
-        private Guid matram;
+        #region Khai báo
+        private TinhChatProvider tcp;
+        private string tentinhchat;
+        private string matinhchat;
         ConditionValidationRule ruleTrong;
         private AlertControl alert;
         #endregion
-        #region formload
-        public frmDoi()
+        #region Form load
+        public frmTinhChat()
         {
             InitializeComponent();
-            dp = new DoiProvider();
-            tp = new TramProvider();
+            tcp = new TinhChatProvider();
             ruleTrong = new ConditionValidationRule();
             alert = new AlertControl { AutoFormDelay = COBAOMessage.AlertDelayTime };
         }
 
-        private void frmDoi_Load(object sender, EventArgs e)
+        private void frmTinhChat_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'cOBAODataSet.Tram' table. You can move, or remove it, as needed.
-            this.tramTableAdapter.Fill(this.cOBAODataSet.Tram);           
             LoadDataSource();
         }
 
         private void LoadDataSource()
         {
-            tp = new TramProvider();
-            dp = new DoiProvider();
-            gcDoi.DataSource = dp.GetAll();
-            cbbMaTram.Properties.DataSource = tp.GetAll();
-            lTram.DataSource = tp.GetAll();
-            madoi = new Guid("00000000-0000-0000-0000-000000000000");
-            cbbMaTram.EditValue = txtTenDoi.Text = null;
+            tcp = new TinhChatProvider();
+            gcTinhChat.DataSource = tcp.GetAll();
+            txtMaTinhChat.Text = matinhchat = null;
+            txtTenTinhChat.Text = tentinhchat = null;
             dxValid.Dispose();
             btnSuaChua.Enabled = btnXoa.Enabled = false;
             btnThemMoi.Enabled = true;
         }
         #endregion
-        #region them
+        #region thêm
         private void btnThemMoi_Click(object sender, EventArgs e)
         {
             try
             {
                 dxValid.Dispose();
                 ruleTrong.ConditionOperator = ConditionOperator.IsNotBlank;
-                if (cbbMaTram.EditValue == null)
+                if (txtMaTinhChat.Text.Trim().Length == 0)
                 {
                     ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
-                    dxValid.SetValidationRule(cbbMaTram, ruleTrong);
+                    dxValid.SetValidationRule(txtMaTinhChat, ruleTrong);
                     dxValid.Validate();
                 }
-                else if (txtTenDoi.Text.Trim().Length == 0)
+                else if (txtTenTinhChat.Text.Trim().Length == 0)
                 {
                     ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
-                    dxValid.SetValidationRule(txtTenDoi, ruleTrong);
+                    dxValid.SetValidationRule(txtTenTinhChat, ruleTrong);
                     dxValid.Validate();
                 }
                 else
                 {
-                    Doi d = new Doi { MaTram = (Guid)cbbMaTram.EditValue, TenDoi = txtTenDoi.Text.Trim()};
-                    if (dp.IsExisted(d))
+                    TinhChat tc = new TinhChat { MaTinhChat = txtMaTinhChat.Text.Trim(), TenTinhChat = txtTenTinhChat.Text.Trim() };
+                    ruleTrong.ConditionOperator = ConditionOperator.IsBlank;
+                    if (tcp.IsExisted(tc))
                     {
-                        ruleTrong.ConditionOperator = ConditionOperator.IsBlank;
                         ruleTrong.ErrorText = COBAOMessage.DATONTAI;
-                        dxValid.SetValidationRule(txtTenDoi, ruleTrong);
+                        dxValid.SetValidationRule(txtMaTinhChat, ruleTrong);
+                        dxValid.Validate();
+                    }
+                    else if (tcp.IsExistedTenTinhChat(tc))
+                    {
+                        ruleTrong.ErrorText = COBAOMessage.DATONTAI;
+                        dxValid.SetValidationRule(txtTenTinhChat, ruleTrong);
                         dxValid.Validate();
                     }
                     else
                     {
-                        dp.Insert(d);
+                        tcp.Insert(tc);
                         LoadDataSource();
                         clsFuntion.ShowMess(Text, COBAOMessage.THEMTHANHCONG);
+                        btnXoaTrang_Click(null, null);
                     }
                     dxValid.Validate();
                 }
@@ -97,41 +92,45 @@ namespace COBAO.PL.DanhMuc
             {
                 XtraMessageBox.Show("Lỗi: " + ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
         #endregion
-        #region sua
+        #region Update
         private void btnSuaChua_Click(object sender, EventArgs e)
         {
             try
             {
                 dxValid.Dispose();
-                txtTenDoi.Text = txtTenDoi.Text.Trim();
                 ruleTrong.ConditionOperator = ConditionOperator.IsNotBlank;
-               if (txtTenDoi.Text.Length == 0)
+                if (txtMaTinhChat.Text.Trim().Length == 0)
                 {
                     ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
-                    dxValid.SetValidationRule(txtTenDoi, ruleTrong);
-                    dxValid.Validate();
+                    dxValid.SetValidationRule(txtMaTinhChat, ruleTrong);
                 }
-                else 
+                else if (txtTenTinhChat.Text.Trim().Length == 0)
                 {
-                    Doi d = new Doi {MaDoi = madoi, MaTram =(Guid)cbbMaTram.EditValue, TenDoi = txtTenDoi.Text.Trim()};
+                    ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
+                    dxValid.SetValidationRule(txtTenTinhChat, ruleTrong);
+                }
+                else
+                {
+                    TinhChat tc = new TinhChat { MaTinhChat = matinhchat, TenTinhChat = txtTenTinhChat.Text.Trim()};
                     ruleTrong.ConditionOperator = ConditionOperator.IsBlank;
-                    if (dp.IsExisted(d))
+                    if (!tentinhchat.Equals(txtTenTinhChat.Text) && tcp.IsExistedTenTinhChat(tc))
                     {
-                        ruleTrong.ConditionOperator = ConditionOperator.IsBlank;
                         ruleTrong.ErrorText = COBAOMessage.DATONTAI;
-                        dxValid.SetValidationRule(txtTenDoi, ruleTrong);
-                        dxValid.Validate();
+                        dxValid.SetValidationRule(txtTenTinhChat, ruleTrong);
                     }
                     else
-                    {                        
-                        dp.Update(d);                       
+                    {
+                        tcp.Update(tc);
+                        dxValid.Validate();
+                        txtMaTinhChat.Enabled = true;
                         LoadDataSource();
                         clsFuntion.ShowMess(Text, COBAOMessage.SUACHUATHANHCONG);
                     }
                 }
+                dxValid.Validate();
+
             }
             catch (Exception ex)
             {
@@ -139,28 +138,29 @@ namespace COBAO.PL.DanhMuc
             }
         }
         #endregion
-        #region xoa
+        #region xóa
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try
             {
-                Doi d = gvDoi.GetRow(gvDoi.GetSelectedRows()[0]) as Doi;
+                TinhChat tc = gvTinhChat.GetRow(gvTinhChat.GetSelectedRows()[0]) as TinhChat;
                 int tontai = 0;
-                var t = new ToProvider().GetAll();
-                foreach (var item in t)
+                var ht = new HanhTrinhProvider().GetAll();
+                foreach (var item in ht)
                 {
-                    if (item.MaDoi == d.MaDoi)
+                    if (item.MaTinhChat == tc.MaTinhChat)
                         tontai = 1;
                     break;
-                }                
-                if ((tontai == 1))
-                {
-                    XtraMessageBox.Show(String.Format("Bạn không xóa được đội '{0}'", d.TenDoi.Trim()), Text, MessageBoxButtons.OK, MessageBoxIcon.Question);
                 }
-                else    if (XtraMessageBox.Show(String.Format("Bạn chắc chắn xoá đội '{0}' không?", d.TenDoi.Trim()), Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                if (tontai == 1)
                 {
-                    dp.Delete(d);
+                    XtraMessageBox.Show(String.Format("Bạn không xóa được tính chát '{0}' vì tính chất này đã sử dụng", tc.TenTinhChat.Trim()), Text, MessageBoxButtons.OK, MessageBoxIcon.Question);
+                }
+                else  if (XtraMessageBox.Show(String.Format("Bạn chắc chắn xoá tính chất '{0}' không?", tc.TenTinhChat.Trim()), Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    tcp.Delete(tc);
                     LoadDataSource();
+                    txtMaTinhChat.Enabled = true;
                     clsFuntion.ShowMess(Text, COBAOMessage.XOATHANHCONG);
                 }
             }
@@ -170,17 +170,17 @@ namespace COBAO.PL.DanhMuc
             }
         }
         #endregion
-        #region do du lieu
-        private void gvDoi_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        #region đõ dữ liệu
+        private void gvTinhChat_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             try
             {
                 btnThemMoi.Enabled = false;
                 btnSuaChua.Enabled = btnXoa.Enabled = true;
-                var d = gvDoi.GetRow(gvDoi.GetSelectedRows()[0]) as Doi;
-                cbbMaTram.EditValue = matram = (Guid)d.MaTram;
-                madoi = d.MaDoi;
-                txtTenDoi.Text = d.TenDoi;
+                var tc = gvTinhChat.GetRow(gvTinhChat.GetSelectedRows()[0]) as TinhChat;
+                matinhchat = txtMaTinhChat.Text = tc.MaTinhChat;
+                tentinhchat = txtTenTinhChat.Text = tc.TenTinhChat;
+                txtMaTinhChat.Enabled = false;
                 btnSuaChua.Enabled = btnXoa.Enabled = true;
                 btnThemMoi.Enabled = false;
             }
@@ -193,11 +193,13 @@ namespace COBAO.PL.DanhMuc
         private void btnXoaTrang_Click(object sender, EventArgs e)
         {
             LoadDataSource();
+            txtMaTinhChat.Enabled = true;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Close();
         }
+
     }
 }

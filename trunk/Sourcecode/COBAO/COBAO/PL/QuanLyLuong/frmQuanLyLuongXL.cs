@@ -40,11 +40,8 @@ namespace COBAO.PL.QuanLyLuong
         }
 
         private void frmQuanLyLuongXL_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'cOBAODataSet.DonGiaLuongXL' table. You can move, or remove it, as needed.
-            this.donGiaLuongXLTableAdapter.Fill(this.cOBAODataSet.DonGiaLuongXL);
+        {           
             LoadDataSource();
-
         }
 
         private void LoadDataSource()
@@ -73,74 +70,74 @@ namespace COBAO.PL.QuanLyLuong
         #region Thêm
         private void btnThemMoi_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    dxValid.Dispose();
-            //    ruleTrong.ConditionOperator = ConditionOperator.IsNotBlank;
-            //    if (txtMoTa.Text.Trim().Length == 0)
-            //    {
-            //        ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
-            //        dxValid.SetValidationRule(txtMoTa, ruleTrong);
-            //        dxValid.Validate();
-            //    }
-            //    else if (txtLoaiA.Text.Trim().Length == 0)
-            //    {
-            //        ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
-            //        dxValid.SetValidationRule(txtLoaiA, ruleTrong);
-            //        dxValid.Validate();
-            //    }
-            //    else if (txtLoaiB.Text.Trim().Length == 0)
-            //    {
-            //        ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
-            //        dxValid.SetValidationRule(txtLoaiB, ruleTrong);
-            //        dxValid.Validate();
-            //    }
-            //    else if (txtLoaiC.Text.Trim().Length ==0)
-            //    {
-            //        ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
-            //        dxValid.SetValidationRule(txtLoaiC, ruleTrong);
-            //        dxValid.Validate();
-            //    }
-            //    if (txtDonViTinh.Text.Trim().Length == 0)
-            //    {
-            //        ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
-            //        dxValid.SetValidationRule(txtDonViTinh, ruleTrong);
-            //        dxValid.Validate();
-            //    }
-            //    else
-            //    {
-            var a = new Guid();
-            a = Guid.NewGuid();
-            DonGiaLuongXL dglxl = new DonGiaLuongXL { MaLuongXL = a, MoTa = txtMoTa.Text.Trim(), DonViTinh = txtDonViTinh.Text.Trim() };
-            //if (dglxlp.IsExisted(dglxl))
-            //{
-            //    ruleTrong.ConditionOperator = ConditionOperator.IsBlank;
-            //    ruleTrong.ErrorText = COBAOMessage.DATONTAI;
-            //    dxValid.SetValidationRule(txtMoTa, ruleTrong);
-            //    dxValid.Validate();
-            //}
-            //else
-            //{
-            dglxlp.Insert(dglxl);
-            nkdglxl = new NhatKyThayDoiGiaXL();
-            nkdglxl.MaLuongXL = dglxl.MaLuongXL;
-            nkdglxl.LoaiAMoi = Int32.Parse(txtLoaiA.Text.Trim());
-            nkdglxl.LoaiBMoi = Int32.Parse(txtLoaiB.Text.Trim());
-            nkdglxl.LoaiCMoi = Int32.Parse(txtLoaiC.Text.Trim());
-            nkdglxl.MaNV = COBAOMessage.nhanvien.MaNV;
-            try { nkdglxl.NgayThayDoi = DateTime.Parse(dtNgayNhap.EditValue.ToString()); }
-            catch { }
-            new NhatKyDonGiaLuongXLProvider().Insert(nkdglxl);
-            LoadDataSource();
-            clsFuntion.ShowMess(Text, COBAOMessage.THEMTHANHCONG);
-            //        }
-            //        dxValid.Validate();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    XtraMessageBox.Show("Lỗi: " + ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            try
+            {
+                dxValid.Dispose();
+                ruleTrong.ConditionOperator = ConditionOperator.IsNotBlank;
+                if (txtMoTa.Text.Trim().Length == 0)
+                {
+                    ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
+                    dxValid.SetValidationRule(txtMoTa, ruleTrong);
+                    dxValid.Validate();
+                }
+                else if (txtLoaiA.Text.Trim().Length == 0)
+                {
+                    ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
+                    dxValid.SetValidationRule(txtLoaiA, ruleTrong);
+                    dxValid.Validate();
+                }
+                else if (txtLoaiB.Text.Trim().Length == 0)
+                {
+                    ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
+                    dxValid.SetValidationRule(txtLoaiB, ruleTrong);
+                    dxValid.Validate();
+                }
+                else if (txtLoaiC.Text.Trim().Length ==0)
+                {
+                    ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
+                    dxValid.SetValidationRule(txtLoaiC, ruleTrong);
+                    dxValid.Validate();
+                }
+                if (txtDonViTinh.Text.Trim().Length == 0)
+                {
+                    ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
+                    dxValid.SetValidationRule(txtDonViTinh, ruleTrong);
+                    dxValid.Validate();
+                }
+                else
+                {
+                    var a = new Guid();
+                    a = Guid.NewGuid();
+                    DonGiaLuongXL dglxl = new DonGiaLuongXL { MaLuongXL = a, MoTa = txtMoTa.Text.Trim(), DonViTinh = txtDonViTinh.Text.Trim() };
+                    if (dglxlp.IsExisted(dglxl))
+                    {
+                        ruleTrong.ConditionOperator = ConditionOperator.IsBlank;
+                        ruleTrong.ErrorText = COBAOMessage.DATONTAI;
+                        dxValid.SetValidationRule(txtMoTa, ruleTrong);
+                    dxValid.Validate();
+                    }
+                    else
+                    {
+                        dglxlp.Insert(dglxl);
+                        nkdglxl = new NhatKyThayDoiGiaXL();
+                        nkdglxl.MaLuongXL = dglxl.MaLuongXL;
+                        nkdglxl.LoaiAMoi = Int32.Parse(txtLoaiA.Text.Trim());
+                        nkdglxl.LoaiBMoi = Int32.Parse(txtLoaiB.Text.Trim());
+                        nkdglxl.LoaiCMoi = Int32.Parse(txtLoaiC.Text.Trim());
+                        nkdglxl.MaNV = COBAOMessage.nhanvien.MaNV;
+                         try { nkdglxl.NgayThayDoi = DateTime.Parse(dtNgayNhap.EditValue.ToString()); }
+                        catch { }
+                        new NhatKyDonGiaLuongXLProvider().Insert(nkdglxl);
+                        LoadDataSource();
+                        clsFuntion.ShowMess(Text, COBAOMessage.THEMTHANHCONG);
+                    }
+                    dxValid.Validate();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Lỗi: " + ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         #endregion
         #region thay đổi giá

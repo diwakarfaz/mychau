@@ -36,12 +36,17 @@
   <ItemGroup>
     <Reference Include="DevExpress.Data.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -76,6 +81,7 @@
     <Compile Include="BLL\TaiXeProvider.cs" />
     <Compile Include="BLL\TheoTauProvider.cs" />
     <Compile Include="BLL\ThuongTrucProvider.cs" />
+    <Compile Include="BLL\TinhChatProvider.cs" />
     <Compile Include="BLL\ToProvider.cs" />
     <Compile Include="BLL\TramProvider.cs" />
     <Compile Include="DAL\COBAODataSet.Designer.cs">
@@ -88,6 +94,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>COBAOLINQ.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DAL\HienThiChiTietKhamXet.cs" />
     <Compile Include="PL\DanhMuc\frmCongTy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +136,12 @@
     </Compile>
     <Compile Include="PL\DanhMuc\frmTaiXe.Designer.cs">
       <DependentUpon>frmTaiXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\DanhMuc\frmTinhChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\DanhMuc\frmTinhChat.Designer.cs">
+      <DependentUpon>frmTinhChat.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\DanhMuc\frmTo.cs">
       <SubType>Form</SubType>
@@ -233,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\DanhMuc\frmTaiXe.resx">
       <DependentUpon>frmTaiXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\DanhMuc\frmTinhChat.resx">
+      <DependentUpon>frmTinhChat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\DanhMuc\frmTo.resx">
       <DependentUpon>frmTo.cs</DependentUpon>

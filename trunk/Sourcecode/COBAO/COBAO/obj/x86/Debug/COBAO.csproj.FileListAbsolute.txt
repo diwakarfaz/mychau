@@ -26,3 +26,4 @@ D:\DO AN\DATNCBMT\Sourcecode\COBAO\COBAO\obj\x86\Debug\COBAO.PL.HeThong.frmQuanL
 D:\DO AN\DATNCBMT\Sourcecode\COBAO\COBAO\obj\x86\Debug\COBAO.PL.QuanLyLuong.frmQuanLyLuongXL.resources
 D:\DO AN\DATNCBMT\Sourcecode\COBAO\COBAO\obj\x86\Debug\COBAO.PL.frmMain.resources
 D:\DO AN\DATNCBMT\Sourcecode\COBAO\COBAO\obj\x86\Debug\COBAO.PL.QuanLyLuong.frmQuanLyLuongBS.resources
+D:\DO AN\DATNCBMT\Sourcecode\COBAO\COBAO\obj\x86\Debug\COBAO.PL.DanhMuc.frmTinhChat.resources

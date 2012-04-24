@@ -11,17 +11,18 @@ namespace COBAO.BLL
 
         public override void Insert(HanhTrinh entity)
         {
-            Db.sp_InsertHanhTrinh(entity.SoCoBao, entity.MaGa, entity.TrangThaiGa, entity.NgayGioDen, entity.NgayGioDi);
+            Guid? mahanhtrinh = entity.MaHanhTrinh;
+            Db.sp_InsertHanhTrinh(entity.SoCoBao, entity.MaGa, entity.TrangThaiGa, entity.NgayGioDen, entity.NgayGioDi, entity.ThoiGianDung, entity.MaTinhChat, ref mahanhtrinh);
         }
 
         public override void Update(HanhTrinh entity)
         {
-            Db.sp_UpdateHanhTrinh(entity.SoCoBao, entity.MaGa, entity.TrangThaiGa, entity.NgayGioDen, entity.NgayGioDi);
+            Db.sp_UpdateHanhTrinh(entity.MaHanhTrinh, entity.SoCoBao, entity.MaGa, entity.TrangThaiGa, entity.NgayGioDen, entity.NgayGioDi, entity.ThoiGianDung, entity.MaTinhChat);
         }
 
         public override void Delete(HanhTrinh entity)
         {
-            Db.sp_DeleteHanhTrinh(entity.SoCoBao, entity.MaGa);
+            Db.sp_DeleteHanhTrinh(entity.MaHanhTrinh);
         }
 
         public override List<HanhTrinh> GetAll()

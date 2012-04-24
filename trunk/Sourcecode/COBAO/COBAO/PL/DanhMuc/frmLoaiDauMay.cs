@@ -124,7 +124,19 @@ namespace COBAO.PL.DanhMuc
             try
             {
                 LoaiDauMay ldm = gvLoaiDM.GetRow(gvLoaiDM.GetSelectedRows()[0]) as LoaiDauMay;
-                if (XtraMessageBox.Show(String.Format("Bạn chắc chắn xoá loại đầu máy có tên: '{0}' không?", ldm.TenLoai.Trim()), Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                int tontai = 0;
+                var dm = new DauMayProvider().GetAll();
+                foreach (var item in dm)
+                {
+                    if (item.MaLoai == ldm.MaLoai)
+                        tontai = 1;
+                    break;
+                }
+                if (tontai == 1)
+                {
+                    XtraMessageBox.Show(String.Format("Bạn không xóa được loại đầu máy '{0}' vì có loại đầu máy trong danh mục đầu máy", ldm.TenLoai.Trim()), Text, MessageBoxButtons.OK, MessageBoxIcon.Question);
+                }
+                else  if (XtraMessageBox.Show(String.Format("Bạn chắc chắn xoá loại đầu máy có tên: '{0}' không?", ldm.TenLoai.Trim()), Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     ldmp.Delete(ldm);
                     LoadDataSource();

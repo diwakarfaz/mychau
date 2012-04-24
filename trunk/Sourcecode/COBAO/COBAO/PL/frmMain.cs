@@ -117,5 +117,10 @@ namespace COBAO.PL
             clsFuntion.AddMdiChild(this, new frmTo());
         }
 
+        private void btnTinhChat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            clsFuntion.AddMdiChild(this,new frmTinhChat());
+        }
+
     }
 }

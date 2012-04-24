@@ -26,7 +26,14 @@ namespace COBAO.PL.NhapLieu
             this.macTauTableAdapter.Fill(this.cOBAODataSet.MacTau);
             // TODO: This line of code loads data into the 'cOBAODataSet.DauMay' table. You can move, or remove it, as needed.
             this.dauMayTableAdapter.Fill(this.cOBAODataSet.DauMay);
-
+            this.txtSoCoBao.Focus();
         }
+
+
+                
+
+
+
+        
     }
 }

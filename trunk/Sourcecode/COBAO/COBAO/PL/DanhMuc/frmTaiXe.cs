@@ -185,6 +185,27 @@ namespace COBAO.PL.DanhMuc
             try
             {
                 TaiXe tx = gvTaiXe.GetRow(gvTaiXe.GetSelectedRows()[0]) as TaiXe;
+                int tontai = 0;
+                var cblt = new CoBaoLaiTauProvider().GetAll();
+                foreach (var item in cblt)
+                {
+                    if (item.MaTaiXe == tx.MaTaiXe)
+                        tontai = 1;
+                    break;
+                }
+                int tontai2 = 0;
+                var cttt = new ChiTietThuongTrucProvider().GetAll();
+                foreach (var item in cttt)
+                {
+                    if (item.MaTaiXe == tx.MaTaiXe)
+                        tontai2 = 1;
+                    break;
+                }
+                if ((tontai == 1) || (tontai2 == 1))
+                {
+                    XtraMessageBox.Show(String.Format("Bạn không xóa được tài xế '{0}'", tx.TenTaiXe.Trim()), Text, MessageBoxButtons.OK, MessageBoxIcon.Question);
+                }
+                else
                 if (XtraMessageBox.Show(String.Format("Bạn chắc chắn xoá tài xế có mã '{0}' không?", tx.MaTaiXe.Trim()), Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     txp.Delete(tx);
