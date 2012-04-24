@@ -130,7 +130,27 @@ namespace COBAO.PL.DanhMuc
             try
             {
                 Tram t =gvTram.GetRow(gvTram.GetSelectedRows()[0]) as Tram;
-                if (XtraMessageBox.Show(String.Format("Bạn chắc chắn xoá trạm '{0}' không?", t.TenTram.Trim()), Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                int tontai = 0;
+                var tt = new ThuongTrucProvider().GetAll();
+                foreach (var item in tt)
+                {
+                    if (item.MaTram == t.MaTram)
+                        tontai = 1;
+                    break;
+                }
+                int tontai2 = 0;
+                var d = new DoiProvider().GetAll();
+                foreach (var item in d)
+                {
+                    if (item.MaTram == t.MaTram)
+                        tontai2 = 1;
+                    break;
+                }
+                if ((tontai == 1) || (tontai2 == 1))
+                {
+                    XtraMessageBox.Show(String.Format("Bạn không xóa được trạm trực đầu máy '{0}'", t.TenTram.Trim()), Text, MessageBoxButtons.OK, MessageBoxIcon.Question);
+                }
+                else  if (XtraMessageBox.Show(String.Format("Bạn chắc chắn xoá trạm '{0}' không?", t.TenTram.Trim()), Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     tp.Delete(t);
                     LoadDataSource();

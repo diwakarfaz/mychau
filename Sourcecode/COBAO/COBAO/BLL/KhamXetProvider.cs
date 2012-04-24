@@ -10,12 +10,12 @@ namespace COBAO.BLL
         public override void Insert(KhamXet entity)
         {
             Guid? maKhamXet = entity.MaKhamXet;
-            Db.sp_InsertKhamXet(entity.MaDM, entity.MaNV, entity.NgayGioBatDau, entity.NgayGioKetThuc, ref maKhamXet);
+            Db.sp_InsertKhamXet(entity.MaDM, entity.MaNV, entity.NgayGioBatDau, entity.NgayGioKetThuc,  entity.ThoiGianKhamXet, entity.GioCaBa, ref maKhamXet);            
         }
 
         public override void Update(KhamXet entity)
         {
-            Db.sp_UpdateKhamXet(entity.MaKhamXet, entity.MaDM, entity.MaNV, entity.NgayGioBatDau, entity.NgayGioKetThuc);
+            Db.sp_UpdateKhamXet(entity.MaKhamXet, entity.MaDM, entity.MaNV, entity.NgayGioBatDau, entity.NgayGioKetThuc, entity.ThoiGianKhamXet, entity.GioCaBa);
         }
 
         public override void Delete(KhamXet entity)

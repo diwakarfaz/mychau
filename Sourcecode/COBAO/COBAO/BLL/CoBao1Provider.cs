@@ -10,12 +10,12 @@ namespace COBAO.BLL
     {
         public override void Insert(CoBao entity)
         {
-            Db.sp_InsertCoBao(entity.SoCoBao, entity.MaNV, entity.MaDM, entity.MaMacTau, entity.NgayGioNhanMay, entity.NgayGioGiaoMay, entity.XepLoai, entity.LyDoXL);
+            Db.sp_InsertCoBao(entity.SoCoBao, entity.MaNV, entity.MaDM, entity.MaMacTau, entity.NgayGioNhanMay, entity.NgayGioGiaoMay, entity.XepLoai, entity.LyDoXL,entity.GioLamViec, entity.ThoiGianBBH, entity.ThoiGianTruc, entity.GioCaBa);
         }
 
         public override void Update(CoBao entity)
         {
-            Db.sp_UpdateCoBao(entity.SoCoBao, entity.MaNV, entity.MaDM, entity.MaMacTau, entity.NgayGioNhanMay, entity.NgayGioGiaoMay, entity.XepLoai, entity.LyDoXL);
+            Db.sp_UpdateCoBao(entity.SoCoBao, entity.MaNV, entity.MaDM, entity.MaMacTau, entity.NgayGioNhanMay, entity.NgayGioGiaoMay, entity.XepLoai, entity.LyDoXL, entity.GioLamViec, entity.ThoiGianBBH, entity.ThoiGianTruc, entity.GioCaBa);
         }
 
         public override void Delete(CoBao entity)

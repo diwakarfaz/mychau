@@ -165,7 +165,27 @@ namespace COBAO.PL.DanhMuc
             try
             {
                 DauMay dm = gvDauMay.GetRow(gvDauMay.GetSelectedRows()[0]) as DauMay;
-                if (XtraMessageBox.Show(String.Format("Bạn chắc chắn xoá đầu máy '{0}' không?", dm.MaDM.Trim()), Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                int tontai = 0;
+                var cb = new CoBao1Provider().GetAll();
+                foreach (var item in cb)
+                {
+                    if (item.MaDM == dm.MaDM)
+                        tontai = 1;
+                    break;
+                }
+                int tontai2 = 0;
+                var kx = new KhamXetProvider().GetAll();
+                foreach (var item in kx)
+                {
+                    if (item.MaDM == dm.MaDM)
+                        tontai2 = 1;
+                    break;
+                }
+                if ((tontai == 1) || (tontai2 == 1))
+                {
+                    XtraMessageBox.Show(String.Format("Bạn không xóa được đầu máy '{0}'", dm.MaDM.Trim()), Text, MessageBoxButtons.OK, MessageBoxIcon.Question);
+                }
+                else if (XtraMessageBox.Show(String.Format("Bạn chắc chắn xoá đầu máy '{0}' không?", dm.MaDM.Trim()), Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     dmp.Delete(dm);
                     LoadDataSource();

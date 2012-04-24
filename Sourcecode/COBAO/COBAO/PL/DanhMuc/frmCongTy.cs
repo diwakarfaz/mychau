@@ -132,7 +132,19 @@ namespace COBAO.PL.DanhMuc
             try
             {
                 CongTy ct = gvCongTy.GetRow(gvCongTy.GetSelectedRows()[0]) as CongTy;
-                if (XtraMessageBox.Show(String.Format("Bạn chắc chắn xoá Công ty có tên: '{0}' không?", ct.TenCT.Trim()), Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                int tontai = 0;
+                var mt = new MacTauProvider().GetAll();
+                foreach (var item in mt)
+                {
+                    if (item.MaCT == ct.MaCT)
+                        tontai = 1;
+                    break;
+                }
+                if (tontai == 1)
+                {
+                    XtraMessageBox.Show(String.Format("Bạn không xóa được côngty '{0}' vì công ty này có trong mác tàu", ct.TenCT.Trim()), Text, MessageBoxButtons.OK, MessageBoxIcon.Question);
+                }
+                else if (XtraMessageBox.Show(String.Format("Bạn chắc chắn xoá Công ty có tên: '{0}' không?", ct.TenCT.Trim()), Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     ctp.Delete(ct);
                     LoadDataSource();

@@ -115,12 +115,7 @@ namespace COBAO.PL.DanhMuc
                 {
                     Ga g = new Ga { MaGa = maga, TenGa = txtTenGa.Text.Trim(), Km = Int32.Parse(txtKm.Text.Trim()) };
                     ruleTrong.ConditionOperator = ConditionOperator.IsBlank;
-                    if (!maga.Equals(txtMaGa.Text) && gp.IsExistedMaGa(g))
-                    {
-                        ruleTrong.ErrorText = COBAOMessage.DATONTAI;
-                        dxValid.SetValidationRule(txtMaGa, ruleTrong);
-                    }
-                    else if (!tenga.Equals(txtTenGa.Text) && gp.IsExistedTenGa(g))
+                    if (!tenga.Equals(txtTenGa.Text) && gp.IsExistedTenGa(g))
                     {
                         ruleTrong.ErrorText = COBAOMessage.DATONTAI;
                         dxValid.SetValidationRule(txtTenGa, ruleTrong);
@@ -148,6 +143,18 @@ namespace COBAO.PL.DanhMuc
             try
             {
                 Ga g = gvGa.GetRow(gvGa.GetSelectedRows()[0]) as Ga;
+                int tontai = 0;
+                var ht = new HanhTrinhProvider().GetAll();
+                foreach (var item in ht)
+                {
+                    if (item.MaGa == g.MaGa)
+                        tontai = 1;
+                    break;
+                }
+                if (tontai == 1)
+                {
+                    XtraMessageBox.Show(String.Format("Bạn không xóa được ga '{0}' vì có ga này trong hành trình", g.TenGa.Trim()), Text, MessageBoxButtons.OK, MessageBoxIcon.Question);
+                }
                 if (XtraMessageBox.Show(String.Format("Bạn chắc chắn xoá ga '{0}' không?", g.TenGa.Trim()), Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     gp.Delete(g);

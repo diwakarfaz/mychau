@@ -39,6 +39,21 @@ namespace COBAO.BLL
             Guid? maTo = entity.MaTo;
             return Db.sp_SelectTaiXesByAndMaTo(maTo).ToList();
         }
+        public List<TaiXe> TaiPhu(string mataixe)
+        {
+            try
+            {
+                var taiphu1 = (from tp in Db.TaiXes
+                                  where !tp.MaTaiXe.Equals(mataixe)
+                                  select tp).ToList();
+                return taiphu1.ToList();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+        }
     }
 
 }

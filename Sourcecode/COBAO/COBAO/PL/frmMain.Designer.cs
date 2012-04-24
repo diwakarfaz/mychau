@@ -66,6 +66,7 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.btnTinhChat = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -100,9 +101,10 @@
             this.btnDangXuat,
             this.btnDoiPass,
             this.btnQLLuongXL,
-            this.btnQLLuongBS});
+            this.btnQLLuongBS,
+            this.btnTinhChat});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 23;
+            this.ribbon.MaxItemId = 24;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -111,8 +113,8 @@
             this.ribbonPage4,
             this.ribbonPage5,
             this.ribbonPage6});
-            this.ribbon.SelectedPage = this.ribbonPage1;
-            this.ribbon.Size = new System.Drawing.Size(1020, 149);
+            this.ribbon.SelectedPage = this.ribbonPage4;
+            this.ribbon.Size = new System.Drawing.Size(1016, 149);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // btnCoBao
@@ -295,6 +297,7 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.btnDauMay);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnCongTy);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnMacTau);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnTinhChat);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnGaTau);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Kỹ thuật";
@@ -350,7 +353,7 @@
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 426);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1020, 23);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1016, 23);
             // 
             // xtraTabbedMdiManager1
             // 
@@ -361,11 +364,18 @@
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Blue";
             this.defaultLookAndFeel1.LookAndFeel.UseWindowsXPTheme = true;
             // 
+            // btnTinhChat
+            // 
+            this.btnTinhChat.Caption = "Tính chất";
+            this.btnTinhChat.Id = 23;
+            this.btnTinhChat.Name = "btnTinhChat";
+            this.btnTinhChat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTinhChat_ItemClick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 449);
+            this.ClientSize = new System.Drawing.Size(1016, 449);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;
@@ -420,5 +430,6 @@
         private DevExpress.XtraBars.BarButtonItem btnQLLuongBS;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+        private DevExpress.XtraBars.BarButtonItem btnTinhChat;
     }
 }
