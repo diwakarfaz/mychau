@@ -326,6 +326,13 @@ namespace COBAO.DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_DeleteChiTietKhamXet")]
+		public int sp_DeleteChiTietKhamXet([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaKhamXet", DbType="UniqueIdentifier")] System.Nullable<System.Guid> maKhamXet, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTaiXe", DbType="VarChar(5)")] string maTaiXe)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maKhamXet, maTaiXe);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertUpdateTram")]
 		public int sp_InsertUpdateTram([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTram", DbType="UniqueIdentifier")] System.Nullable<System.Guid> maTram, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TenTram", DbType="NVarChar(50)")] string tenTram)
 		{
@@ -569,10 +576,10 @@ namespace COBAO.DAL
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertHanhTrinh")]
-		public int sp_InsertHanhTrinh([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoCoBao", DbType="VarChar(8)")] string soCoBao, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGa", DbType="VarChar(5)")] string maGa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TrangThaiGa", DbType="NVarChar(5)")] string trangThaiGa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayGioDen", DbType="DateTime")] System.Nullable<System.DateTime> ngayGioDen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayGioDi", DbType="DateTime")] System.Nullable<System.DateTime> ngayGioDi, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ThoiGianDung", DbType="Decimal(18,0)")] System.Nullable<decimal> thoiGianDung, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTinhChat", DbType="VarChar(5)")] string maTinhChat, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHanhTrinh", DbType="UniqueIdentifier")] ref System.Nullable<System.Guid> maHanhTrinh)
+		public int sp_InsertHanhTrinh([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoCoBao", DbType="VarChar(8)")] string soCoBao, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGa", DbType="VarChar(5)")] string maGa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TrangThaiGa", DbType="NVarChar(20)")] string trangThaiGa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDen", DbType="Date")] System.Nullable<System.DateTime> ngayDen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="GioDen", DbType="Time")] System.Nullable<System.TimeSpan> gioDen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDi", DbType="DateTime")] System.Nullable<System.DateTime> ngayDi, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="GioDi", DbType="Time")] System.Nullable<System.TimeSpan> gioDi, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ThoiGianDung", DbType="Decimal(18,0)")] System.Nullable<decimal> thoiGianDung, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTinhChat", DbType="VarChar(5)")] string maTinhChat, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHanhTrinh", DbType="UniqueIdentifier")] ref System.Nullable<System.Guid> maHanhTrinh)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), soCoBao, maGa, trangThaiGa, ngayGioDen, ngayGioDi, thoiGianDung, maTinhChat, maHanhTrinh);
-			maHanhTrinh = ((System.Nullable<System.Guid>)(result.GetParameterValue(7)));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), soCoBao, maGa, trangThaiGa, ngayDen, gioDen, ngayDi, gioDi, thoiGianDung, maTinhChat, maHanhTrinh);
+			maHanhTrinh = ((System.Nullable<System.Guid>)(result.GetParameterValue(9)));
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -746,9 +753,9 @@ namespace COBAO.DAL
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertUpdateHanhTrinh")]
-		public int sp_InsertUpdateHanhTrinh([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHanhTrinh", DbType="UniqueIdentifier")] System.Nullable<System.Guid> maHanhTrinh, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoCoBao", DbType="VarChar(8)")] string soCoBao, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGa", DbType="VarChar(5)")] string maGa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TrangThaiGa", DbType="NVarChar(5)")] string trangThaiGa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayGioDen", DbType="DateTime")] System.Nullable<System.DateTime> ngayGioDen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayGioDi", DbType="DateTime")] System.Nullable<System.DateTime> ngayGioDi, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ThoiGianDung", DbType="Decimal(18,0)")] System.Nullable<decimal> thoiGianDung, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTinhChat", DbType="VarChar(5)")] string maTinhChat)
+		public int sp_InsertUpdateHanhTrinh([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHanhTrinh", DbType="UniqueIdentifier")] System.Nullable<System.Guid> maHanhTrinh, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoCoBao", DbType="VarChar(8)")] string soCoBao, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGa", DbType="VarChar(5)")] string maGa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TrangThaiGa", DbType="NVarChar(20)")] string trangThaiGa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDen", DbType="Date")] System.Nullable<System.DateTime> ngayDen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="GioDen", DbType="Time")] System.Nullable<System.TimeSpan> gioDen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDi", DbType="DateTime")] System.Nullable<System.DateTime> ngayDi, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="GioDi", DbType="Time")] System.Nullable<System.TimeSpan> gioDi, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ThoiGianDung", DbType="Decimal(18,0)")] System.Nullable<decimal> thoiGianDung, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTinhChat", DbType="VarChar(5)")] string maTinhChat)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHanhTrinh, soCoBao, maGa, trangThaiGa, ngayGioDen, ngayGioDi, thoiGianDung, maTinhChat);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHanhTrinh, soCoBao, maGa, trangThaiGa, ngayDen, gioDen, ngayDi, gioDi, thoiGianDung, maTinhChat);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -836,6 +843,13 @@ namespace COBAO.DAL
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateChiTietKhamXet")]
+		public int sp_UpdateChiTietKhamXet([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaKhamXet", DbType="UniqueIdentifier")] System.Nullable<System.Guid> maKhamXet, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTaiXe", DbType="VarChar(5)")] string maTaiXe, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tai", DbType="Bit")] System.Nullable<bool> tai)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maKhamXet, maTaiXe, tai);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateTram")]
 		public int sp_UpdateTram([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTram", DbType="UniqueIdentifier")] System.Nullable<System.Guid> maTram, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TenTram", DbType="NVarChar(50)")] string tenTram)
 		{
@@ -907,9 +921,9 @@ namespace COBAO.DAL
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateHanhTrinh")]
-		public int sp_UpdateHanhTrinh([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHanhTrinh", DbType="UniqueIdentifier")] System.Nullable<System.Guid> maHanhTrinh, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoCoBao", DbType="VarChar(8)")] string soCoBao, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGa", DbType="VarChar(5)")] string maGa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TrangThaiGa", DbType="NVarChar(5)")] string trangThaiGa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayGioDen", DbType="DateTime")] System.Nullable<System.DateTime> ngayGioDen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayGioDi", DbType="DateTime")] System.Nullable<System.DateTime> ngayGioDi, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ThoiGianDung", DbType="Decimal(18,0)")] System.Nullable<decimal> thoiGianDung, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTinhChat", DbType="VarChar(5)")] string maTinhChat)
+		public int sp_UpdateHanhTrinh([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHanhTrinh", DbType="UniqueIdentifier")] System.Nullable<System.Guid> maHanhTrinh, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoCoBao", DbType="VarChar(8)")] string soCoBao, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGa", DbType="VarChar(5)")] string maGa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TrangThaiGa", DbType="NVarChar(20)")] string trangThaiGa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDen", DbType="Date")] System.Nullable<System.DateTime> ngayDen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="GioDen", DbType="Time")] System.Nullable<System.TimeSpan> gioDen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDi", DbType="DateTime")] System.Nullable<System.DateTime> ngayDi, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="GioDi", DbType="Time")] System.Nullable<System.TimeSpan> gioDi, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ThoiGianDung", DbType="Decimal(18,0)")] System.Nullable<decimal> thoiGianDung, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTinhChat", DbType="VarChar(5)")] string maTinhChat)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHanhTrinh, soCoBao, maGa, trangThaiGa, ngayGioDen, ngayGioDi, thoiGianDung, maTinhChat);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHanhTrinh, soCoBao, maGa, trangThaiGa, ngayDen, gioDen, ngayDi, gioDi, thoiGianDung, maTinhChat);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -997,6 +1011,27 @@ namespace COBAO.DAL
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectChiTietKhamXetsAll")]
+		public ISingleResult<ChiTietKhamXet> sp_SelectChiTietKhamXetsAll()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<ChiTietKhamXet>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectChiTietKhamXetsByAndMaTaiXe")]
+		public ISingleResult<ChiTietKhamXet> sp_SelectChiTietKhamXetsByAndMaTaiXe([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTaiXe", DbType="VarChar(5)")] string maTaiXe)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maTaiXe);
+			return ((ISingleResult<ChiTietKhamXet>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectChiTietKhamXetsByAndMaKhamXet")]
+		public ISingleResult<ChiTietKhamXet> sp_SelectChiTietKhamXetsByAndMaKhamXet([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaKhamXet", DbType="UniqueIdentifier")] System.Nullable<System.Guid> maKhamXet)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maKhamXet);
+			return ((ISingleResult<ChiTietKhamXet>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectChiTietThuongTruc")]
 		public ISingleResult<ChiTietThuongTruc> sp_SelectChiTietThuongTruc([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaThuongTruc", DbType="UniqueIdentifier")] System.Nullable<System.Guid> maThuongTruc, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTaiXe", DbType="VarChar(5)")] string maTaiXe)
 		{
@@ -1023,6 +1058,13 @@ namespace COBAO.DAL
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maTaiXe);
 			return ((ISingleResult<ChiTietThuongTruc>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectChiTietKhamXet")]
+		public ISingleResult<ChiTietKhamXet> sp_SelectChiTietKhamXet([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaKhamXet", DbType="UniqueIdentifier")] System.Nullable<System.Guid> maKhamXet, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTaiXe", DbType="VarChar(5)")] string maTaiXe)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maKhamXet, maTaiXe);
+			return ((ISingleResult<ChiTietKhamXet>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectCoBao")]
@@ -1249,13 +1291,6 @@ namespace COBAO.DAL
 			return ((ISingleResult<KhamXet>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectKhamXetsByAndMaNV")]
-		public ISingleResult<KhamXet> sp_SelectKhamXetsByAndMaNV([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaNV", DbType="VarChar(5)")] string maNV)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maNV);
-			return ((ISingleResult<KhamXet>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectKhamXetsAll")]
 		public ISingleResult<KhamXet> sp_SelectKhamXetsAll()
 		{
@@ -1267,6 +1302,13 @@ namespace COBAO.DAL
 		public ISingleResult<KhamXet> sp_SelectKhamXetsByAndMaDM([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDM", DbType="VarChar(5)")] string maDM)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maDM);
+			return ((ISingleResult<KhamXet>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectKhamXetsByAndMaNV")]
+		public ISingleResult<KhamXet> sp_SelectKhamXetsByAndMaNV([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaNV", DbType="VarChar(5)")] string maNV)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maNV);
 			return ((ISingleResult<KhamXet>)(result.ReturnValue));
 		}
 		
@@ -1438,20 +1480,6 @@ namespace COBAO.DAL
 			return ((ISingleResult<TheoTau>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectTinhChat")]
-		public ISingleResult<TinhChat> sp_SelectTinhChat([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTinhChat", DbType="VarChar(5)")] string maTinhChat)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maTinhChat);
-			return ((ISingleResult<TinhChat>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectTinhChatsAll")]
-		public ISingleResult<TinhChat> sp_SelectTinhChatsAll()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<TinhChat>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectThuongTruc")]
 		public ISingleResult<ThuongTruc> sp_SelectThuongTruc([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaThuongTruc", DbType="UniqueIdentifier")] System.Nullable<System.Guid> maThuongTruc)
 		{
@@ -1478,6 +1506,20 @@ namespace COBAO.DAL
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maNV);
 			return ((ISingleResult<ThuongTruc>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectTinhChat")]
+		public ISingleResult<TinhChat> sp_SelectTinhChat([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTinhChat", DbType="VarChar(5)")] string maTinhChat)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maTinhChat);
+			return ((ISingleResult<TinhChat>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectTinhChatsAll")]
+		public ISingleResult<TinhChat> sp_SelectTinhChatsAll()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<TinhChat>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectTo")]
@@ -1513,55 +1555,6 @@ namespace COBAO.DAL
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<Tram>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateDauMay")]
-		public int sp_UpdateDauMay1([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDM", DbType="VarChar(5)")] string maDM, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLoai", DbType="UniqueIdentifier")] System.Nullable<System.Guid> maLoai, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TenDM", DbType="NVarChar(50)")] string tenDM)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maDM, maLoai, tenDM);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateChiTietKhamXet")]
-		public int sp_UpdateChiTietKhamXet([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaKhamXet", DbType="UniqueIdentifier")] System.Nullable<System.Guid> maKhamXet, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTaiXe", DbType="VarChar(5)")] string maTaiXe, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tai", DbType="Bit")] System.Nullable<bool> tai)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maKhamXet, maTaiXe, tai);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectChiTietKhamXet")]
-		public ISingleResult<ChiTietKhamXet> sp_SelectChiTietKhamXet([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaKhamXet", DbType="UniqueIdentifier")] System.Nullable<System.Guid> maKhamXet, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTaiXe", DbType="VarChar(5)")] string maTaiXe)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maKhamXet, maTaiXe);
-			return ((ISingleResult<ChiTietKhamXet>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectChiTietKhamXetsByAndMaTaiXe")]
-		public ISingleResult<ChiTietKhamXet> sp_SelectChiTietKhamXetsByAndMaTaiXe([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTaiXe", DbType="VarChar(5)")] string maTaiXe)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maTaiXe);
-			return ((ISingleResult<ChiTietKhamXet>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectChiTietKhamXetsAll")]
-		public ISingleResult<ChiTietKhamXet> sp_SelectChiTietKhamXetsAll()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<ChiTietKhamXet>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectChiTietKhamXetsByAndMaKhamXet")]
-		public ISingleResult<ChiTietKhamXet> sp_SelectChiTietKhamXetsByAndMaKhamXet([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaKhamXet", DbType="UniqueIdentifier")] System.Nullable<System.Guid> maKhamXet)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maKhamXet);
-			return ((ISingleResult<ChiTietKhamXet>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_DeleteChiTietKhamXet")]
-		public int sp_DeleteChiTietKhamXet([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaKhamXet", DbType="UniqueIdentifier")] System.Nullable<System.Guid> maKhamXet, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTaiXe", DbType="VarChar(5)")] string maTaiXe)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maKhamXet, maTaiXe);
-			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -3796,9 +3789,13 @@ namespace COBAO.DAL
 		
 		private string _TrangThaiGa;
 		
-		private System.Nullable<System.DateTime> _NgayGioDen;
+		private System.Nullable<System.DateTime> _NgayDen;
 		
-		private System.Nullable<System.DateTime> _NgayGioDi;
+		private System.Nullable<System.TimeSpan> _GioDen;
+		
+		private System.Nullable<System.DateTime> _NgayDi;
+		
+		private System.Nullable<System.TimeSpan> _GioDi;
 		
 		private System.Nullable<decimal> _ThoiGianDung;
 		
@@ -3822,10 +3819,14 @@ namespace COBAO.DAL
     partial void OnMaGaChanged();
     partial void OnTrangThaiGaChanging(string value);
     partial void OnTrangThaiGaChanged();
-    partial void OnNgayGioDenChanging(System.Nullable<System.DateTime> value);
-    partial void OnNgayGioDenChanged();
-    partial void OnNgayGioDiChanging(System.Nullable<System.DateTime> value);
-    partial void OnNgayGioDiChanged();
+    partial void OnNgayDenChanging(System.Nullable<System.DateTime> value);
+    partial void OnNgayDenChanged();
+    partial void OnGioDenChanging(System.Nullable<System.TimeSpan> value);
+    partial void OnGioDenChanged();
+    partial void OnNgayDiChanging(System.Nullable<System.DateTime> value);
+    partial void OnNgayDiChanged();
+    partial void OnGioDiChanging(System.Nullable<System.TimeSpan> value);
+    partial void OnGioDiChanged();
     partial void OnThoiGianDungChanging(System.Nullable<decimal> value);
     partial void OnThoiGianDungChanged();
     partial void OnMaTinhChatChanging(string value);
@@ -3908,7 +3909,7 @@ namespace COBAO.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrangThaiGa", DbType="NVarChar(5) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrangThaiGa", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
 		public string TrangThaiGa
 		{
 			get
@@ -3928,42 +3929,82 @@ namespace COBAO.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayGioDen", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NgayGioDen
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayDen", DbType="Date")]
+		public System.Nullable<System.DateTime> NgayDen
 		{
 			get
 			{
-				return this._NgayGioDen;
+				return this._NgayDen;
 			}
 			set
 			{
-				if ((this._NgayGioDen != value))
+				if ((this._NgayDen != value))
 				{
-					this.OnNgayGioDenChanging(value);
+					this.OnNgayDenChanging(value);
 					this.SendPropertyChanging();
-					this._NgayGioDen = value;
-					this.SendPropertyChanged("NgayGioDen");
-					this.OnNgayGioDenChanged();
+					this._NgayDen = value;
+					this.SendPropertyChanged("NgayDen");
+					this.OnNgayDenChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayGioDi", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NgayGioDi
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GioDen", DbType="Time")]
+		public System.Nullable<System.TimeSpan> GioDen
 		{
 			get
 			{
-				return this._NgayGioDi;
+				return this._GioDen;
 			}
 			set
 			{
-				if ((this._NgayGioDi != value))
+				if ((this._GioDen != value))
 				{
-					this.OnNgayGioDiChanging(value);
+					this.OnGioDenChanging(value);
 					this.SendPropertyChanging();
-					this._NgayGioDi = value;
-					this.SendPropertyChanged("NgayGioDi");
-					this.OnNgayGioDiChanged();
+					this._GioDen = value;
+					this.SendPropertyChanged("GioDen");
+					this.OnGioDenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayDi", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NgayDi
+		{
+			get
+			{
+				return this._NgayDi;
+			}
+			set
+			{
+				if ((this._NgayDi != value))
+				{
+					this.OnNgayDiChanging(value);
+					this.SendPropertyChanging();
+					this._NgayDi = value;
+					this.SendPropertyChanged("NgayDi");
+					this.OnNgayDiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GioDi", DbType="Time")]
+		public System.Nullable<System.TimeSpan> GioDi
+		{
+			get
+			{
+				return this._GioDi;
+			}
+			set
+			{
+				if ((this._GioDi != value))
+				{
+					this.OnGioDiChanging(value);
+					this.SendPropertyChanging();
+					this._GioDi = value;
+					this.SendPropertyChanged("GioDi");
+					this.OnGioDiChanged();
 				}
 			}
 		}
