@@ -12,12 +12,12 @@ namespace COBAO.BLL
         public override void Insert(HanhTrinh entity)
         {
             Guid? mahanhtrinh = entity.MaHanhTrinh;
-            Db.sp_InsertHanhTrinh(entity.SoCoBao, entity.MaGa, entity.TrangThaiGa, entity.NgayGioDen, entity.NgayGioDi, entity.ThoiGianDung, entity.MaTinhChat, ref mahanhtrinh);
+            Db.sp_InsertHanhTrinh(entity.SoCoBao, entity.MaGa, entity.TrangThaiGa, entity.NgayDen,entity.GioDen, entity.NgayDi,entity.GioDi, entity.ThoiGianDung, entity.MaTinhChat, ref mahanhtrinh);
         }
 
         public override void Update(HanhTrinh entity)
         {
-            Db.sp_UpdateHanhTrinh(entity.MaHanhTrinh, entity.SoCoBao, entity.MaGa, entity.TrangThaiGa, entity.NgayGioDen, entity.NgayGioDi, entity.ThoiGianDung, entity.MaTinhChat);
+            Db.sp_UpdateHanhTrinh(entity.MaHanhTrinh, entity.SoCoBao, entity.MaGa, entity.TrangThaiGa, entity.NgayDen, entity.GioDen, entity.NgayDi, entity.GioDi, entity.ThoiGianDung, entity.MaTinhChat);
         }
 
         public override void Delete(HanhTrinh entity)

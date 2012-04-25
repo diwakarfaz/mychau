@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.btnThemMoi = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.thu = new DevExpress.XtraEditors.TimeEdit();
             this.txtGio = new DevExpress.XtraEditors.TextEdit();
             this.txtNgay = new DevExpress.XtraEditors.TextEdit();
             this.txtGop = new DevExpress.XtraEditors.TextEdit();
@@ -72,9 +73,9 @@
             this.dxValid = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.dauMayTableAdapter = new COBAO.DAL.COBAODataSetTableAdapters.DauMayTableAdapter();
             this.taiXeTableAdapter = new COBAO.DAL.COBAODataSetTableAdapters.TaiXeTableAdapter();
-            this.thu = new DevExpress.XtraEditors.TimeEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.thu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGop.Properties)).BeginInit();
@@ -94,7 +95,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcKhamXet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvKhamXet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.thu.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnThemMoi
@@ -134,6 +134,16 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(963, 137);
             this.panelControl1.TabIndex = 25;
+            // 
+            // thu
+            // 
+            this.thu.EditValue = new System.DateTime(2012, 4, 24, 0, 0, 0, 0);
+            this.thu.Location = new System.Drawing.Point(424, 14);
+            this.thu.Name = "thu";
+            this.thu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.thu.Size = new System.Drawing.Size(100, 20);
+            this.thu.TabIndex = 12;
             // 
             // txtGio
             // 
@@ -216,6 +226,7 @@
             this.cbbTaiPhu.Properties.ValueMember = "MaTaiXe";
             this.cbbTaiPhu.Size = new System.Drawing.Size(212, 20);
             this.cbbTaiPhu.TabIndex = 9;
+            this.cbbTaiPhu.EditValueChanged += new System.EventHandler(this.cbbTaiPhu_EditValueChanged);
             this.cbbTaiPhu.Click += new System.EventHandler(this.cbbTaiPhu_click);
             // 
             // taiXeBindingSource1
@@ -624,16 +635,6 @@
             // 
             this.taiXeTableAdapter.ClearBeforeFill = true;
             // 
-            // thu
-            // 
-            this.thu.EditValue = new System.DateTime(2012, 4, 24, 0, 0, 0, 0);
-            this.thu.Location = new System.Drawing.Point(424, 14);
-            this.thu.Name = "thu";
-            this.thu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.thu.Size = new System.Drawing.Size(100, 20);
-            this.thu.TabIndex = 12;
-            // 
             // frmKhamXet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -654,6 +655,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.thu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGop.Properties)).EndInit();
@@ -673,7 +675,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcKhamXet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvKhamXet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.thu.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

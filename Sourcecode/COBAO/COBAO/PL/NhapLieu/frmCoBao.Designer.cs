@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.cbbMaTaiPhu = new DevExpress.XtraEditors.LookUpEdit();
-            this.taiXeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cOBAODataSet = new COBAO.DAL.COBAODataSet();
             this.cbbMaTaiChinh = new DevExpress.XtraEditors.LookUpEdit();
             this.cbbMaMacTau = new DevExpress.XtraEditors.LookUpEdit();
@@ -64,28 +62,26 @@
             this.tab = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.gcHanhTrinh = new DevExpress.XtraGrid.GridControl();
+            this.hanhTrinhBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvHanhTrinh = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMaHanhTrinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaGa = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gGa = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.gaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.lGa = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.gaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colTrangThaiGa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cbbTrangThaiGa = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.colNgayDen = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DtNgayDen = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.colGioDen = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tGioDen = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             this.colNgayDi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DtNgayDi = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.colThoiGianDung = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMaTinhChat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lTinhChat = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.tinhChatBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colSoCoBao = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGioDen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tmGioDen = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             this.colGioDi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tGioDi = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
-            this.colXoa2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnXoa2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.repositoryItemImageComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
-            this.leTenThongSoViet = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.leTenThongSoAnh = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.leThuNguyen = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.tmGioDi = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
+            this.te = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.gcTheoTau = new DevExpress.XtraGrid.GridControl();
             this.gvTheoTau = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -94,17 +90,11 @@
             this.colTai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGioTheoTau = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGioLuuTru = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoaTrang = new DevExpress.XtraEditors.SimpleButton();
             this.btnSuaChua = new DevExpress.XtraEditors.SimpleButton();
             this.btnThemMoi = new DevExpress.XtraEditors.SimpleButton();
-            this.dauMayTableAdapter = new COBAO.DAL.COBAODataSetTableAdapters.DauMayTableAdapter();
-            this.macTauTableAdapter = new COBAO.DAL.COBAODataSetTableAdapters.MacTauTableAdapter();
-            this.taiXeTableAdapter = new COBAO.DAL.COBAODataSetTableAdapters.TaiXeTableAdapter();
-            this.gaTableAdapter = new COBAO.DAL.COBAODataSetTableAdapters.GaTableAdapter();
-            this.xtraGridBlending1 = new DevExpress.XtraGrid.Blending.XtraGridBlending();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.txtGioLamViec = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
@@ -115,10 +105,15 @@
             this.txtThoiGianTruc = new DevExpress.XtraEditors.TextEdit();
             this.txtGioCaBa = new DevExpress.XtraEditors.TextEdit();
             this.btnTinhCB = new DevExpress.XtraEditors.SimpleButton();
+            this.gaTableAdapter = new COBAO.DAL.COBAODataSetTableAdapters.GaTableAdapter();
+            this.hanhTrinhTableAdapter = new COBAO.DAL.COBAODataSetTableAdapters.HanhTrinhTableAdapter();
+            this.tinhChatTableAdapter = new COBAO.DAL.COBAODataSetTableAdapters.TinhChatTableAdapter();
+            this.dauMayTableAdapter = new COBAO.DAL.COBAODataSetTableAdapters.DauMayTableAdapter();
+            this.macTauTableAdapter = new COBAO.DAL.COBAODataSetTableAdapters.MacTauTableAdapter();
+            this.taiXeTableAdapter = new COBAO.DAL.COBAODataSetTableAdapters.TaiXeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbMaTaiPhu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.taiXeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOBAODataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbMaTaiChinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbMaMacTau.Properties)).BeginInit();
@@ -140,27 +135,19 @@
             this.tab.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcHanhTrinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hanhTrinhBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvHanhTrinh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gGa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gaBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lGa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbTrangThaiGa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DtNgayDen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DtNgayDen.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tGioDen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DtNgayDi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DtNgayDi.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tGioDi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnXoa2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leTenThongSoViet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leTenThongSoAnh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leThuNguyen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lTinhChat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tinhChatBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tmGioDen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tmGioDi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcTheoTau)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTheoTau)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGioLamViec.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -220,18 +207,12 @@
             this.cbbMaTaiPhu.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaTaiXe", "Mã tài xế"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenTaiXe", "Tên tài xế")});
-            this.cbbMaTaiPhu.Properties.DataSource = this.taiXeBindingSource;
             this.cbbMaTaiPhu.Properties.DisplayMember = "MaTaiXe";
             this.cbbMaTaiPhu.Properties.NullText = "";
             this.cbbMaTaiPhu.Properties.PopupSizeable = false;
             this.cbbMaTaiPhu.Properties.ValueMember = "MaTaiXe";
             this.cbbMaTaiPhu.Size = new System.Drawing.Size(163, 20);
             this.cbbMaTaiPhu.TabIndex = 6;
-            // 
-            // taiXeBindingSource
-            // 
-            this.taiXeBindingSource.DataMember = "TaiXe";
-            this.taiXeBindingSource.DataSource = this.cOBAODataSet;
             // 
             // cOBAODataSet
             // 
@@ -252,8 +233,8 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbbMaTaiChinh.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaTaiXe", "Mã tài xế"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenTaiXe", "Tên tài xế")});
-            this.cbbMaTaiChinh.Properties.DataSource = this.taiXeBindingSource;
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenTaiXe", "Tên tài xế"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Tai", "Là tài")});
             this.cbbMaTaiChinh.Properties.DisplayMember = "MaTaiXe";
             this.cbbMaTaiChinh.Properties.NullText = "";
             this.cbbMaTaiChinh.Properties.PopupSizeable = false;
@@ -306,7 +287,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaDM", "Đầu máy"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenDM", "Tên đầu máy")});
             this.cbbMaDM.Properties.DataSource = this.dauMayBindingSource;
-            this.cbbMaDM.Properties.DisplayMember = "MaDM";
+            this.cbbMaDM.Properties.DisplayMember = "TenDM";
             this.cbbMaDM.Properties.NullText = "";
             this.cbbMaDM.Properties.PopupSizeable = false;
             this.cbbMaDM.Properties.ValueMember = "MaDM";
@@ -596,86 +577,90 @@
             // 
             // gcHanhTrinh
             // 
+            this.gcHanhTrinh.DataSource = this.hanhTrinhBindingSource;
             this.gcHanhTrinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
-            this.gcHanhTrinh.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
             this.gcHanhTrinh.Location = new System.Drawing.Point(0, 0);
             this.gcHanhTrinh.MainView = this.gvHanhTrinh;
             this.gcHanhTrinh.Name = "gcHanhTrinh";
             this.gcHanhTrinh.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemImageComboBox1,
-            this.leTenThongSoViet,
-            this.leTenThongSoAnh,
-            this.leThuNguyen,
-            this.repositoryItemButtonEdit1,
-            this.btnXoa2,
-            this.gGa,
+            this.lGa,
             this.cbbTrangThaiGa,
-            this.DtNgayDen,
-            this.tGioDen,
-            this.DtNgayDi,
-            this.tGioDi});
+            this.tmGioDen,
+            this.tmGioDi,
+            this.te,
+            this.lTinhChat});
             this.gcHanhTrinh.Size = new System.Drawing.Size(658, 328);
-            this.gcHanhTrinh.TabIndex = 21;
-            this.gcHanhTrinh.UseEmbeddedNavigator = true;
+            this.gcHanhTrinh.TabIndex = 0;
             this.gcHanhTrinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvHanhTrinh});
+            // 
+            // hanhTrinhBindingSource
+            // 
+            this.hanhTrinhBindingSource.DataMember = "HanhTrinh";
+            this.hanhTrinhBindingSource.DataSource = this.cOBAODataSet;
             // 
             // gvHanhTrinh
             // 
             this.gvHanhTrinh.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMaHanhTrinh,
             this.colMaGa,
             this.colTrangThaiGa,
             this.colNgayDen,
-            this.colGioDen,
             this.colNgayDi,
-            this.colGioDi,
-            this.colXoa2});
+            this.colThoiGianDung,
+            this.colMaTinhChat,
+            this.colSoCoBao,
+            this.colGioDen,
+            this.colGioDi});
             this.gvHanhTrinh.GridControl = this.gcHanhTrinh;
-            this.gvHanhTrinh.GroupPanelText = " ";
             this.gvHanhTrinh.Name = "gvHanhTrinh";
-            this.gvHanhTrinh.NewItemRowText = "Ga";
-            this.gvHanhTrinh.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
-            this.gvHanhTrinh.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
-            this.gvHanhTrinh.OptionsFilter.UseNewCustomFilterDialog = true;
-            this.gvHanhTrinh.OptionsNavigation.AutoFocusNewRow = true;
-            this.gvHanhTrinh.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gvHanhTrinh.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
+            this.gvHanhTrinh.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gvHanhTrinh_InitNewRow);
+            // 
+            // colMaHanhTrinh
+            // 
+            this.colMaHanhTrinh.Caption = "Mã hành trình";
+            this.colMaHanhTrinh.FieldName = "MaHanhTrinh";
+            this.colMaHanhTrinh.Name = "colMaHanhTrinh";
             // 
             // colMaGa
             // 
+            this.colMaGa.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colMaGa.AppearanceCell.Options.UseFont = true;
+            this.colMaGa.AppearanceCell.Options.UseTextOptions = true;
+            this.colMaGa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMaGa.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colMaGa.AppearanceHeader.Options.UseFont = true;
+            this.colMaGa.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMaGa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMaGa.Caption = "Mã ga";
-            this.colMaGa.ColumnEdit = this.gGa;
+            this.colMaGa.ColumnEdit = this.lGa;
             this.colMaGa.FieldName = "MaGa";
             this.colMaGa.Name = "colMaGa";
             this.colMaGa.Visible = true;
             this.colMaGa.VisibleIndex = 0;
             // 
-            // gGa
+            // lGa
             // 
-            this.gGa.AutoHeight = false;
-            this.gGa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lGa.AutoHeight = false;
+            this.lGa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gGa.DataSource = this.gaBindingSource1;
-            this.gGa.DisplayMember = "TenGa";
-            this.gGa.Name = "gGa";
-            this.gGa.ValueMember = "MaGa";
-            this.gGa.View = this.repositoryItemGridLookUpEdit1View;
+            this.lGa.DataSource = this.gaBindingSource;
+            this.lGa.DisplayMember = "TenGa";
+            this.lGa.Name = "lGa";
+            this.lGa.ValueMember = "MaGa";
             // 
-            // gaBindingSource1
+            // gaBindingSource
             // 
-            this.gaBindingSource1.DataMember = "Ga";
-            this.gaBindingSource1.DataSource = this.cOBAODataSet;
-            // 
-            // repositoryItemGridLookUpEdit1View
-            // 
-            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
-            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.gaBindingSource.DataMember = "Ga";
+            this.gaBindingSource.DataSource = this.cOBAODataSet;
             // 
             // colTrangThaiGa
             // 
+            this.colTrangThaiGa.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colTrangThaiGa.AppearanceHeader.Options.UseFont = true;
+            this.colTrangThaiGa.AppearanceHeader.Options.UseTextOptions = true;
+            this.colTrangThaiGa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colTrangThaiGa.Caption = "Trạng thái ga";
             this.colTrangThaiGa.ColumnEdit = this.cbbTrangThaiGa;
             this.colTrangThaiGa.FieldName = "TrangThaiGa";
@@ -696,137 +681,128 @@
             // 
             // colNgayDen
             // 
+            this.colNgayDen.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colNgayDen.AppearanceHeader.Options.UseFont = true;
+            this.colNgayDen.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNgayDen.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colNgayDen.Caption = "Ngày đến";
-            this.colNgayDen.ColumnEdit = this.DtNgayDen;
             this.colNgayDen.FieldName = "NgayDen";
             this.colNgayDen.Name = "colNgayDen";
             this.colNgayDen.Visible = true;
             this.colNgayDen.VisibleIndex = 2;
             // 
-            // DtNgayDen
-            // 
-            this.DtNgayDen.AutoHeight = false;
-            this.DtNgayDen.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DtNgayDen.Name = "DtNgayDen";
-            this.DtNgayDen.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            // 
-            // colGioDen
-            // 
-            this.colGioDen.Caption = "Giờ đến";
-            this.colGioDen.ColumnEdit = this.tGioDen;
-            this.colGioDen.FieldName = "GioDen";
-            this.colGioDen.Name = "colGioDen";
-            this.colGioDen.Visible = true;
-            this.colGioDen.VisibleIndex = 3;
-            // 
-            // tGioDen
-            // 
-            this.tGioDen.AutoHeight = false;
-            this.tGioDen.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.tGioDen.Mask.EditMask = "t";
-            this.tGioDen.Name = "tGioDen";
-            // 
             // colNgayDi
             // 
+            this.colNgayDi.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colNgayDi.AppearanceHeader.Options.UseFont = true;
+            this.colNgayDi.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNgayDi.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colNgayDi.Caption = "Ngày đi";
-            this.colNgayDi.ColumnEdit = this.DtNgayDi;
             this.colNgayDi.FieldName = "NgayDi";
             this.colNgayDi.Name = "colNgayDi";
             this.colNgayDi.Visible = true;
             this.colNgayDi.VisibleIndex = 4;
             // 
-            // DtNgayDi
+            // colThoiGianDung
             // 
-            this.DtNgayDi.AutoHeight = false;
-            this.DtNgayDi.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.colThoiGianDung.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colThoiGianDung.AppearanceHeader.Options.UseFont = true;
+            this.colThoiGianDung.AppearanceHeader.Options.UseTextOptions = true;
+            this.colThoiGianDung.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colThoiGianDung.Caption = "Thời gian dừng";
+            this.colThoiGianDung.FieldName = "ThoiGianDung";
+            this.colThoiGianDung.Name = "colThoiGianDung";
+            this.colThoiGianDung.Visible = true;
+            this.colThoiGianDung.VisibleIndex = 6;
+            // 
+            // colMaTinhChat
+            // 
+            this.colMaTinhChat.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colMaTinhChat.AppearanceHeader.Options.UseFont = true;
+            this.colMaTinhChat.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMaTinhChat.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMaTinhChat.Caption = "Tính chất";
+            this.colMaTinhChat.ColumnEdit = this.lTinhChat;
+            this.colMaTinhChat.FieldName = "MaTinhChat";
+            this.colMaTinhChat.Name = "colMaTinhChat";
+            this.colMaTinhChat.Visible = true;
+            this.colMaTinhChat.VisibleIndex = 7;
+            // 
+            // lTinhChat
+            // 
+            this.lTinhChat.AutoHeight = false;
+            this.lTinhChat.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DtNgayDi.Name = "DtNgayDi";
-            this.DtNgayDi.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lTinhChat.DataSource = this.tinhChatBindingSource;
+            this.lTinhChat.DisplayMember = "TenTinhChat";
+            this.lTinhChat.Name = "lTinhChat";
+            this.lTinhChat.ValueMember = "MaTinhChat";
+            // 
+            // tinhChatBindingSource
+            // 
+            this.tinhChatBindingSource.DataMember = "TinhChat";
+            this.tinhChatBindingSource.DataSource = this.cOBAODataSet;
+            // 
+            // colSoCoBao
+            // 
+            this.colSoCoBao.Caption = "Số cơ báo";
+            this.colSoCoBao.FieldName = "SoCoBao";
+            this.colSoCoBao.Name = "colSoCoBao";
+            // 
+            // colGioDen
+            // 
+            this.colGioDen.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colGioDen.AppearanceHeader.Options.UseFont = true;
+            this.colGioDen.AppearanceHeader.Options.UseTextOptions = true;
+            this.colGioDen.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colGioDen.Caption = "Giờ đến";
+            this.colGioDen.ColumnEdit = this.tmGioDen;
+            this.colGioDen.FieldName = "GioDen";
+            this.colGioDen.Name = "colGioDen";
+            this.colGioDen.Visible = true;
+            this.colGioDen.VisibleIndex = 3;
+            // 
+            // tmGioDen
+            // 
+            this.tmGioDen.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.tmGioDen.AutoHeight = false;
+            this.tmGioDen.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.tmGioDen.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Strong;
+            this.tmGioDen.Mask.EditMask = "(0?\\d|1\\d|2[0-3])\\:[0-5]\\d";
+            this.tmGioDen.Mask.IgnoreMaskBlank = false;
+            this.tmGioDen.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.tmGioDen.Name = "tmGioDen";
+            this.tmGioDen.NullValuePromptShowForEmptyValue = true;
             // 
             // colGioDi
             // 
+            this.colGioDi.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colGioDi.AppearanceHeader.Options.UseFont = true;
+            this.colGioDi.AppearanceHeader.Options.UseTextOptions = true;
+            this.colGioDi.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colGioDi.Caption = "Giờ đi";
-            this.colGioDi.ColumnEdit = this.tGioDi;
+            this.colGioDi.ColumnEdit = this.tmGioDi;
             this.colGioDi.FieldName = "GioDi";
             this.colGioDi.Name = "colGioDi";
             this.colGioDi.Visible = true;
             this.colGioDi.VisibleIndex = 5;
             // 
-            // tGioDi
+            // tmGioDi
             // 
-            this.tGioDi.AutoHeight = false;
-            this.tGioDi.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.tmGioDi.AutoHeight = false;
+            this.tmGioDi.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.tGioDi.Mask.EditMask = "t";
-            this.tGioDi.Name = "tGioDi";
+            this.tmGioDi.Mask.EditMask = "(0?\\d|1\\d|2[0-3])\\:[0-5]\\d";
+            this.tmGioDi.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.tmGioDi.Name = "tmGioDi";
             // 
-            // colXoa2
+            // te
             // 
-            this.colXoa2.Caption = "xoaa";
-            this.colXoa2.ColumnEdit = this.btnXoa2;
-            this.colXoa2.FieldName = "ButtonColumn";
-            this.colXoa2.Name = "colXoa2";
-            this.colXoa2.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.colXoa2.Visible = true;
-            this.colXoa2.VisibleIndex = 6;
-            // 
-            // btnXoa2
-            // 
-            this.btnXoa2.AutoHeight = false;
-            this.btnXoa2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
-            this.btnXoa2.Name = "btnXoa2";
-            this.btnXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // repositoryItemImageComboBox1
-            // 
-            this.repositoryItemImageComboBox1.AutoHeight = false;
-            this.repositoryItemImageComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemImageComboBox1.Name = "repositoryItemImageComboBox1";
-            // 
-            // leTenThongSoViet
-            // 
-            this.leTenThongSoViet.AutoHeight = false;
-            this.leTenThongSoViet.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.leTenThongSoViet.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenThongSoKTV", "Tên thông số - Việt", 97, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.leTenThongSoViet.DisplayMember = "TenThongSoKTV";
-            this.leTenThongSoViet.LookAndFeel.SkinName = "Blue";
-            this.leTenThongSoViet.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.leTenThongSoViet.Name = "leTenThongSoViet";
-            this.leTenThongSoViet.ValueMember = "GIDThongSoKT";
-            // 
-            // leTenThongSoAnh
-            // 
-            this.leTenThongSoAnh.AutoHeight = false;
-            this.leTenThongSoAnh.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.leTenThongSoAnh.DisplayMember = "TenThongSoKTA";
-            this.leTenThongSoAnh.Name = "leTenThongSoAnh";
-            this.leTenThongSoAnh.ValueMember = "GIDThongSoKT";
-            // 
-            // leThuNguyen
-            // 
-            this.leThuNguyen.AutoHeight = false;
-            this.leThuNguyen.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.leThuNguyen.DisplayMember = "DonViDo";
-            this.leThuNguyen.Name = "leThuNguyen";
-            this.leThuNguyen.ValueMember = "GIDThongSoKT";
-            // 
-            // repositoryItemButtonEdit1
-            // 
-            this.repositoryItemButtonEdit1.AutoHeight = false;
-            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
-            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
-            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.te.AutoHeight = false;
+            this.te.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.te.Name = "te";
             // 
             // xtraTabPage2
             // 
@@ -922,11 +898,6 @@
             this.colGioLuuTru.Visible = true;
             this.colGioLuuTru.VisibleIndex = 4;
             // 
-            // gaBindingSource
-            // 
-            this.gaBindingSource.DataMember = "Ga";
-            this.gaBindingSource.DataSource = this.cOBAODataSet;
-            // 
             // btnThoat
             // 
             this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -982,22 +953,6 @@
             this.btnThemMoi.Size = new System.Drawing.Size(102, 35);
             this.btnThemMoi.TabIndex = 13;
             this.btnThemMoi.Text = "&Ghi nhận";
-            // 
-            // dauMayTableAdapter
-            // 
-            this.dauMayTableAdapter.ClearBeforeFill = true;
-            // 
-            // macTauTableAdapter
-            // 
-            this.macTauTableAdapter.ClearBeforeFill = true;
-            // 
-            // taiXeTableAdapter
-            // 
-            this.taiXeTableAdapter.ClearBeforeFill = true;
-            // 
-            // gaTableAdapter
-            // 
-            this.gaTableAdapter.ClearBeforeFill = true;
             // 
             // labelControl19
             // 
@@ -1116,6 +1071,30 @@
             this.btnTinhCB.TabIndex = 13;
             this.btnTinhCB.Text = "&Tính cơ báo";
             // 
+            // gaTableAdapter
+            // 
+            this.gaTableAdapter.ClearBeforeFill = true;
+            // 
+            // hanhTrinhTableAdapter
+            // 
+            this.hanhTrinhTableAdapter.ClearBeforeFill = true;
+            // 
+            // tinhChatTableAdapter
+            // 
+            this.tinhChatTableAdapter.ClearBeforeFill = true;
+            // 
+            // dauMayTableAdapter
+            // 
+            this.dauMayTableAdapter.ClearBeforeFill = true;
+            // 
+            // macTauTableAdapter
+            // 
+            this.macTauTableAdapter.ClearBeforeFill = true;
+            // 
+            // taiXeTableAdapter
+            // 
+            this.taiXeTableAdapter.ClearBeforeFill = true;
+            // 
             // frmCoBao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1140,7 +1119,6 @@
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbMaTaiPhu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.taiXeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOBAODataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbMaTaiChinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbMaMacTau.Properties)).EndInit();
@@ -1162,27 +1140,19 @@
             this.tab.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcHanhTrinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hanhTrinhBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvHanhTrinh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gGa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gaBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lGa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbTrangThaiGa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DtNgayDen.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DtNgayDen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tGioDen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DtNgayDi.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DtNgayDi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tGioDi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnXoa2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leTenThongSoViet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leTenThongSoAnh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leThuNguyen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lTinhChat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tinhChatBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tmGioDen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tmGioDi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcTheoTau)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTheoTau)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGioLamViec.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -1236,41 +1206,8 @@
         private DevExpress.XtraEditors.SimpleButton btnThemMoi;
         private DevExpress.XtraEditors.LookUpEdit cbbMaMacTau;
         private DevExpress.XtraEditors.LookUpEdit cbbMaDM;
-        private DAL.COBAODataSet cOBAODataSet;
-        private System.Windows.Forms.BindingSource dauMayBindingSource;
-        private DAL.COBAODataSetTableAdapters.DauMayTableAdapter dauMayTableAdapter;
-        private System.Windows.Forms.BindingSource macTauBindingSource;
-        private DAL.COBAODataSetTableAdapters.MacTauTableAdapter macTauTableAdapter;
         private DevExpress.XtraEditors.LookUpEdit cbbMaTaiPhu;
         private DevExpress.XtraEditors.LookUpEdit cbbMaTaiChinh;
-        private System.Windows.Forms.BindingSource taiXeBindingSource;
-        private DAL.COBAODataSetTableAdapters.TaiXeTableAdapter taiXeTableAdapter;
-        private System.Windows.Forms.BindingSource gaBindingSource;
-        private DAL.COBAODataSetTableAdapters.GaTableAdapter gaTableAdapter;
-        private DevExpress.XtraGrid.Blending.XtraGridBlending xtraGridBlending1;
-        private DevExpress.XtraGrid.GridControl gcHanhTrinh;
-        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit gGa;
-        private System.Windows.Forms.BindingSource gaBindingSource1;
-        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
-        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cbbTrangThaiGa;
-        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit DtNgayDen;
-        private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit tGioDen;
-        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit DtNgayDi;
-        private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit tGioDi;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnXoa2;
-        private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox repositoryItemImageComboBox1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit leTenThongSoViet;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit leTenThongSoAnh;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit leThuNguyen;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvHanhTrinh;
-        private DevExpress.XtraGrid.Columns.GridColumn colMaGa;
-        private DevExpress.XtraGrid.Columns.GridColumn colTrangThaiGa;
-        private DevExpress.XtraGrid.Columns.GridColumn colNgayDen;
-        private DevExpress.XtraGrid.Columns.GridColumn colGioDen;
-        private DevExpress.XtraGrid.Columns.GridColumn colNgayDi;
-        private DevExpress.XtraGrid.Columns.GridColumn colGioDi;
-        private DevExpress.XtraGrid.Columns.GridColumn colXoa2;
         private DevExpress.XtraEditors.LabelControl labelControl19;
         private DevExpress.XtraEditors.TextEdit txtGioLamViec;
         private DevExpress.XtraEditors.LabelControl labelControl12;
@@ -1281,5 +1218,35 @@
         private DevExpress.XtraEditors.TextEdit txtThoiGianTruc;
         private DevExpress.XtraEditors.TextEdit txtGioCaBa;
         private DevExpress.XtraEditors.SimpleButton btnTinhCB;
+        private DevExpress.XtraGrid.GridControl gcHanhTrinh;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvHanhTrinh;
+        private DAL.COBAODataSet cOBAODataSet;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaGa;
+        private DevExpress.XtraGrid.Columns.GridColumn colTrangThaiGa;
+        private DevExpress.XtraGrid.Columns.GridColumn colNgayDen;
+        private DevExpress.XtraGrid.Columns.GridColumn colNgayDi;
+        private DevExpress.XtraGrid.Columns.GridColumn colThoiGianDung;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaTinhChat;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lGa;
+        private System.Windows.Forms.BindingSource gaBindingSource;
+        private DAL.COBAODataSetTableAdapters.GaTableAdapter gaTableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaHanhTrinh;
+        private DevExpress.XtraGrid.Columns.GridColumn colSoCoBao;
+        private DevExpress.XtraGrid.Columns.GridColumn colGioDen;
+        private DevExpress.XtraGrid.Columns.GridColumn colGioDi;
+        private System.Windows.Forms.BindingSource hanhTrinhBindingSource;
+        private DAL.COBAODataSetTableAdapters.HanhTrinhTableAdapter hanhTrinhTableAdapter;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cbbTrangThaiGa;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit tmGioDen;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit tmGioDi;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit te;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lTinhChat;
+        private System.Windows.Forms.BindingSource tinhChatBindingSource;
+        private DAL.COBAODataSetTableAdapters.TinhChatTableAdapter tinhChatTableAdapter;
+        private System.Windows.Forms.BindingSource dauMayBindingSource;
+        private DAL.COBAODataSetTableAdapters.DauMayTableAdapter dauMayTableAdapter;
+        private System.Windows.Forms.BindingSource macTauBindingSource;
+        private DAL.COBAODataSetTableAdapters.MacTauTableAdapter macTauTableAdapter;
+        private DAL.COBAODataSetTableAdapters.TaiXeTableAdapter taiXeTableAdapter;
     }
 }

@@ -119,7 +119,7 @@ namespace COBAO.PL
 
         private void btnTinhChat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            clsFuntion.AddMdiChild(this,new frmTinhChat());
+            clsFuntion.AddMdiChild(this, new frmTinhChat());           
         }
 
     }

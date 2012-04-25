@@ -176,7 +176,34 @@ namespace COBAO.PL.NhapLieu
             giokhamxet = (int)tinh.TotalMinutes;
             #endregion
             #region tính giờ caba
-           
+            int songay =(int)tinh.TotalDays;
+            txtGop.Text = songay.ToString();
+            if (songay == 0)
+            {
+                if (giodau.Hour < 6)
+                    giocaba += (6 - giodau.Hour) * 60 - giodau.Minute;
+                //if (giodau.Hour > 21)
+                //        giocaba += (giodau.Hour - 22) * 60 + giodau.Minute;
+                if (giocuoi.Hour > 21)
+                    giocaba += (giocuoi.Hour - 22) * 60 + giocuoi.Minute;
+                if (giodau.Hour >= 22 && giocuoi.Hour < 6)
+                    giocaba = (giodau.Hour - 22) * 60 + giodau.Minute + (6 - giocuoi.Hour) * 60 + giocuoi.Minute;
+            }
+            else
+            {
+                if (giodau.Hour < 6)
+                    giocaba += (6 - giodau.Hour) * 60 - giodau.Minute;
+                //if (giodau.Hour > 21)
+                //        giocaba += (giodau.Hour - 22) * 60 + giodau.Minute;
+                if (giocuoi.Hour > 21)
+                    giocaba += (giocuoi.Hour - 22) * 60 + giocuoi.Minute;
+                if (giodau.Hour >= 22 && giocuoi.Hour < 6)
+                    giocaba = (giodau.Hour - 22) * 60 + giodau.Minute + (6 - giocuoi.Hour) * 60 + giocuoi.Minute;
+                for (int i = 1; i <= songay; i++)
+                    giocaba += 480;
+            }
+            
+            txtGio.Text = giocaba.ToString();
             #endregion
 
             ////KhamXet kx = new KhamXet { MaKhamXet = a, MaDM = cbbMaDauMay.EditValue.ToString(), MaNV = COBAOMessage.nhanvien.MaNV, NgayGioBatDau = DateTime.Parse(ngaydau), NgayGioKetThuc = DateTime.Parse(ngaycuoi), ThoiGianKhamXet = giokhamxet, GioCaBa = 12 };
@@ -206,5 +233,9 @@ namespace COBAO.PL.NhapLieu
             //}
         }
 
+        private void cbbTaiPhu_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
