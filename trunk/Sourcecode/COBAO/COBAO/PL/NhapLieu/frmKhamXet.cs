@@ -27,8 +27,6 @@ namespace COBAO.PL.NhapLieu
         private string mataichinh;
         private string mataiphu;
         private string mota;
-        private ChiTietKhamXet ctkx;
-        private ChiTietKhamXet ctkx1;
         ConditionValidationRule ruleTrong;
         private AlertControl alert;
         #endregion

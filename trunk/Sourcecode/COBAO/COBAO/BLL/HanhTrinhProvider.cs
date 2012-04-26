@@ -38,5 +38,21 @@ namespace COBAO.BLL
         {
             return Db.sp_SelectHanhTrinhsByAndSoCoBao(entity.SoCoBao).ToList();
         }
+        public List<HanhTrinh> nhomHanhTrinh(string socobao)
+        {
+            try
+            {
+                var listHanhTrinh = (from lht in Db.HanhTrinhs
+                                     where lht.SoCoBao.Equals(socobao)
+                                     orderby lht.NgayDi ascending
+                                     select lht).ToList();
+                return listHanhTrinh;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+        }
     }
 }
