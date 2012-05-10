@@ -316,7 +316,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.gcMacTau.Location = new System.Drawing.Point(12, 128);
-            this.gcMacTau.LookAndFeel.SkinName = "Money Twins";
+            this.gcMacTau.LookAndFeel.SkinName = "Blue";
             this.gcMacTau.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gcMacTau.MainView = this.gvMacTau;
             this.gcMacTau.Name = "gcMacTau";

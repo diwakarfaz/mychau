@@ -103,7 +103,7 @@
             this.gcTram.MainView = this.gvTram;
             this.gcTram.Name = "gcTram";
             this.gcTram.Size = new System.Drawing.Size(963, 221);
-            this.gcTram.TabIndex = 49;
+            this.gcTram.TabIndex = 7;
             this.gcTram.UseEmbeddedNavigator = true;
             this.gcTram.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTram});

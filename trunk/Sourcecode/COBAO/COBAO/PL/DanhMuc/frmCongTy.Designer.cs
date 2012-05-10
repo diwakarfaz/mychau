@@ -195,7 +195,7 @@
             this.LookAndFeel.SkinName = "Blue";
             this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "frmCongTy";
-            this.Text = "frmCongTy";
+            this.Text = "Công ty";
             this.Load += new System.EventHandler(this.frmCongTy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvCongTy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCongTy)).EndInit();

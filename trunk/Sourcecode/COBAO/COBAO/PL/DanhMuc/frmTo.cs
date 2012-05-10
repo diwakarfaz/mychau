@@ -42,6 +42,7 @@ namespace COBAO.PL.DanhMuc
 
         private void LoadDataSource()
         {
+            cbbMaDoi.Select();
             tp = new ToProvider();
             dp = new DoiProvider();
             gcTo.DataSource = tp.GetAll();
@@ -167,6 +168,7 @@ namespace COBAO.PL.DanhMuc
                 cbbMaDoi.EditValue = madoi = (Guid)t.MaDoi;
                 mato = t.MaTo;
                 txtTenTo.Text = t.TenTo;
+                cbbMaDoi.Focus();
                 btnSuaChua.Enabled = btnXoa.Enabled = true;
                 btnThemMoi.Enabled = false;
             }

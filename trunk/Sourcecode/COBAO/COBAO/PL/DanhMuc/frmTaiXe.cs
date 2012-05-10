@@ -46,6 +46,7 @@ namespace COBAO.PL.DanhMuc
 
         private void LoadDataSource()
         {
+            cbbMaTo.Select();
             tp = new ToProvider();
             txp = new TaiXeProvider();
             gcTaiXe.DataSource = txp.GetAll();
@@ -239,6 +240,7 @@ namespace COBAO.PL.DanhMuc
                     cbbTai.EditValue = "Tài";
                 else cbbTai.EditValue = "Phụ tài";
                 txtMaTaiXe.Enabled = false;
+                cbbMaTo.Focus();
                 btnSuaChua.Enabled = btnXoa.Enabled = true;
                 btnThemMoi.Enabled = false;
             }

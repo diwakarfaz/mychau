@@ -45,6 +45,7 @@ namespace COBAO.PL.DanhMuc
 
         private void LoadDataSource()
         {
+            cbbLoaiDM.Select();
             ldmp = new LoaiDMProvider();
             dmp = new DauMayProvider();
             gcDauMay.DataSource = dmp.GetAll();
@@ -224,6 +225,7 @@ namespace COBAO.PL.DanhMuc
                 madm = txtMaDM.Text = dm.MaDM;
                 tendm = txtTenDauMay.Text = dm.TenDM;
                 txtMaDM.Enabled = false;
+                cbbLoaiDM.Focus();
                 btnSuaChua.Enabled = btnXoa.Enabled = true;
                 btnThemMoi.Enabled = false;
             }

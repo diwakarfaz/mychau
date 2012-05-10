@@ -5,7 +5,7 @@ using System.Text;
 using COBAO.DAL;
 namespace COBAO.BLL
 {
-    public class ChiTietThuongTrucProvider:COBAOProvider<ChiTietThuongTruc>
+    public class ChiTietThuongTrucProvider : COBAOProvider<ChiTietThuongTruc>
     {
         public override void Insert(ChiTietThuongTruc entity)
         {
@@ -56,5 +56,11 @@ namespace COBAO.BLL
         {
             return Db.sp_SelectChiTietThuongTrucsByAndMaTaiXe(entity.MaTaiXe).ToList();
         }
+
+        
+        public List<ChiTietThuongTruc> listThuongTrucTheoMaThuongTruc(Guid matt)
+        {
+            return Db.sp_SelectChiTietThuongTrucsByAndMaThuongTruc(matt).ToList();
+        }       
     }
 }

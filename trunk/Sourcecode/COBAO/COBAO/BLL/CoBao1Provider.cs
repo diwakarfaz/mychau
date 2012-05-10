@@ -44,9 +44,42 @@ namespace COBAO.BLL
         {
             return Db.sp_SelectCoBaosByAndMaMacTau(entity.MaMacTau).ToList();
         }
-          public List<ChiTietThuongTruc> GetChiTietThuongTrucByTheoTaiXe(TaiXe entity)
+        public List<ChiTietThuongTruc> GetChiTietThuongTrucByTheoTaiXe(TaiXe entity)
         {
             return Db.sp_SelectChiTietThuongTrucsByAndMaTaiXe(entity.MaTaiXe).ToList();
+        }
+
+        public int giolv(string mataixe, int thang, int nam)
+        {
+            try
+            {
+                long GioDiTau = (from cobao in Db.CoBaos
+                                join cobaolai in Db.CoBaoLaiTaus on cobao.SoCoBao equals cobaolai.SoCoBao
+                                where (cobao.NgayGioGiaoMay.Month == thang && cobao.NgayGioGiaoMay.Year == nam
+                                     && cobaolai.MaTaiXe == mataixe)
+                                select (long)cobao.GioLamViec).Sum();
+                return (int)GioDiTau/60;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
+        public int giotheotau(string mataixe, int thang, int nam)
+        {
+            try
+            {
+                long giotheotau = (from cobao in Db.CoBaos
+                                 join theotau in Db.TheoTaus on cobao.SoCoBao equals theotau.SoCoBao
+                                 where (cobao.NgayGioGiaoMay.Month == thang && cobao.NgayGioGiaoMay.Year == nam
+                                      && theotau.MaTaiXe == mataixe)
+                                 select (long)theotau.GioTheoTau).Sum();
+                return (int)giotheotau / 60;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
     }
 }

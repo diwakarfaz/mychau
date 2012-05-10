@@ -34,6 +34,7 @@ namespace COBAO.PL.DanhMuc
 
         private void LoadDataSource()
         {
+            txtTenLoaiDM.Select();
             ldmp = new LoaiDMProvider();
             gcLoaiDM.DataSource = ldmp.GetAll();
             maloai = new Guid("00000000-0000-0000-0000-000000000000");
@@ -160,6 +161,7 @@ namespace COBAO.PL.DanhMuc
                 tenloai = txtTenLoaiDM.Text = ldm.TenLoai;
                 txtTanSoThap.Text = ldm.TanSoThap.ToString();
                 txtTrongLuong.Text = ldm.Trongluong.ToString();
+                txtTenLoaiDM.Focus();
             }
             catch (Exception ex)
             {

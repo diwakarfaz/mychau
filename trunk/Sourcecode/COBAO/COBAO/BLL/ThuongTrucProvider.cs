@@ -41,5 +41,35 @@ namespace COBAO.BLL
         {
             return Db.sp_SelectThuongTrucsByAndMaNV(entity.MaNV).ToList();
         }
+        public ThuongTruc GetThuongTrucTheoMaThuongTruc(Guid matt)
+        {
+            try
+            {
+                var thuongtruc = (from c in Db.ThuongTrucs
+                                where c.MaThuongTruc == @matt
+                                select c).ToList();
+                return thuongtruc.Single();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+        public int giothuongtruc(string mataixe, int thang, int nam)
+        {
+            try
+            {
+                long giothuongtruc = (from thuongtruc in Db.ThuongTrucs
+                                 join chitiet in Db.ChiTietThuongTrucs on thuongtruc.MaThuongTruc equals chitiet.MaThuongTruc                              
+                                 where (thuongtruc.NgayKetThuc.Month == thang && thuongtruc.NgayKetThuc.Year == nam
+                                      && chitiet.MaTaiXe == mataixe)
+                                 select (long)thuongtruc.ThoiGianTruc).Sum();
+                return (int)giothuongtruc / 60;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
     }
 }

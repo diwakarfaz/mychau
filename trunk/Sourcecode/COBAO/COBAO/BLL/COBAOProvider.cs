@@ -31,5 +31,6 @@ namespace COBAO.BLL
         public abstract void Delete(T entity);
         public abstract List<T> GetAll();
         public abstract bool IsExisted(T entity);
+      
     }
 }

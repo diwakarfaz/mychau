@@ -35,6 +35,7 @@ namespace COBAO.PL.DanhMuc
 
         private void LoadDataSource()
         {
+            txtMaGa.Select();
             gp = new GaProvider();
             gcGa.DataSource = gp.GetAll();
             txtMaGa.Text = maga = null;
@@ -155,7 +156,7 @@ namespace COBAO.PL.DanhMuc
                 {
                     XtraMessageBox.Show(String.Format("Bạn không xóa được ga '{0}' vì có ga này trong hành trình", g.TenGa.Trim()), Text, MessageBoxButtons.OK, MessageBoxIcon.Question);
                 }
-                if (XtraMessageBox.Show(String.Format("Bạn chắc chắn xoá ga '{0}' không?", g.TenGa.Trim()), Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                else if (XtraMessageBox.Show(String.Format("Bạn chắc chắn xoá ga '{0}' không?", g.TenGa.Trim()), Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     gp.Delete(g);
                     LoadDataSource();
@@ -180,6 +181,7 @@ namespace COBAO.PL.DanhMuc
                 tenga = txtTenGa.Text = g.TenGa;
                 txtKm.Text = g.Km.ToString();
                 txtMaGa.Enabled = false;
+                txtTenGa.Focus();
                 btnSuaChua.Enabled = btnXoa.Enabled = true;
                 btnThemMoi.Enabled = false;
             }

@@ -51,10 +51,13 @@
             this.btnDoiPass = new DevExpress.XtraBars.BarButtonItem();
             this.btnQLLuongXL = new DevExpress.XtraBars.BarButtonItem();
             this.btnQLLuongBS = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTinhChat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTongHopGioLaoDong = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -66,7 +69,7 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btnTinhChat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCoBaoLoaiC = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -102,9 +105,11 @@
             this.btnDoiPass,
             this.btnQLLuongXL,
             this.btnQLLuongBS,
-            this.btnTinhChat});
+            this.btnTinhChat,
+            this.btnTongHopGioLaoDong,
+            this.btnCoBaoLoaiC});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 24;
+            this.ribbon.MaxItemId = 26;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -113,7 +118,7 @@
             this.ribbonPage4,
             this.ribbonPage5,
             this.ribbonPage6});
-            this.ribbon.SelectedPage = this.ribbonPage4;
+            this.ribbon.SelectedPage = this.ribbonPage3;
             this.ribbon.Size = new System.Drawing.Size(1016, 149);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
@@ -257,6 +262,21 @@
             this.btnQLLuongBS.Caption = "Quản lý lương bổ sung";
             this.btnQLLuongBS.Id = 21;
             this.btnQLLuongBS.Name = "btnQLLuongBS";
+            this.btnQLLuongBS.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQLLuongBS_ItemClick);
+            // 
+            // btnTinhChat
+            // 
+            this.btnTinhChat.Caption = "Tính chất";
+            this.btnTinhChat.Id = 23;
+            this.btnTinhChat.Name = "btnTinhChat";
+            this.btnTinhChat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTinhChat_ItemClick);
+            // 
+            // btnTongHopGioLaoDong
+            // 
+            this.btnTongHopGioLaoDong.Caption = "Biểu tổng hợp giờ lao động";
+            this.btnTongHopGioLaoDong.Id = 24;
+            this.btnTongHopGioLaoDong.Name = "btnTongHopGioLaoDong";
+            this.btnTongHopGioLaoDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTongHopGioLaoDong_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -280,8 +300,17 @@
             // 
             // ribbonPage3
             // 
+            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup7});
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "BÁO CÁO";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnTongHopGioLaoDong);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnCoBaoLoaiC);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.Text = "ribbonPageGroup7";
             // 
             // ribbonPage4
             // 
@@ -362,14 +391,13 @@
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Blue";
-            this.defaultLookAndFeel1.LookAndFeel.UseWindowsXPTheme = true;
             // 
-            // btnTinhChat
+            // btnCoBaoLoaiC
             // 
-            this.btnTinhChat.Caption = "Tính chất";
-            this.btnTinhChat.Id = 23;
-            this.btnTinhChat.Name = "btnTinhChat";
-            this.btnTinhChat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTinhChat_ItemClick);
+            this.btnCoBaoLoaiC.Caption = "Bảng tổng hợp cơ báo loại C";
+            this.btnCoBaoLoaiC.Id = 25;
+            this.btnCoBaoLoaiC.Name = "btnCoBaoLoaiC";
+            this.btnCoBaoLoaiC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCoBaoLoaiC_ItemClick);
             // 
             // frmMain
             // 
@@ -384,6 +412,7 @@
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Chương trình nhập cơ báo và thính lương khoán chuyến cho CNLT";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
@@ -431,5 +460,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.XtraBars.BarButtonItem btnTinhChat;
+        private DevExpress.XtraBars.BarButtonItem btnTongHopGioLaoDong;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private DevExpress.XtraBars.BarButtonItem btnCoBaoLoaiC;
     }
 }

@@ -38,6 +38,7 @@ namespace COBAO.PL.DanhMuc
 
         private void LoadDataSource()
         {
+            txtTenTram.Select();
             tp = new TramProvider();
             gcTram.DataSource = tp.GetAll();
             matram = new Guid("00000000-0000-0000-0000-000000000000");
@@ -173,6 +174,7 @@ namespace COBAO.PL.DanhMuc
                 var t = gvTram.GetRow(gvTram.GetSelectedRows()[0]) as Tram;
                 matram = t.MaTram;
                 tentram = txtTenTram.Text = t.TenTram.Trim();
+                txtTenTram.Focus();
             }
             catch (Exception ex)
             {

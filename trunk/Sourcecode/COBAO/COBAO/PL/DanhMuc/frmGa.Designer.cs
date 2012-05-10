@@ -64,7 +64,7 @@
             this.btnThoat.Location = new System.Drawing.Point(612, 64);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(85, 23);
-            this.btnThoat.TabIndex = 20;
+            this.btnThoat.TabIndex = 8;
             this.btnThoat.Text = "&Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
@@ -104,7 +104,7 @@
             this.btnXoa.Location = new System.Drawing.Point(513, 64);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(85, 23);
-            this.btnXoa.TabIndex = 19;
+            this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "&Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -132,7 +132,7 @@
             this.gcGa.MainView = this.gvGa;
             this.gcGa.Name = "gcGa";
             this.gcGa.Size = new System.Drawing.Size(963, 200);
-            this.gcGa.TabIndex = 21;
+            this.gcGa.TabIndex = 9;
             this.gcGa.UseEmbeddedNavigator = true;
             this.gcGa.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvGa});
@@ -227,7 +227,7 @@
             this.btnXoaTrang.Location = new System.Drawing.Point(414, 64);
             this.btnXoaTrang.Name = "btnXoaTrang";
             this.btnXoaTrang.Size = new System.Drawing.Size(85, 23);
-            this.btnXoaTrang.TabIndex = 18;
+            this.btnXoaTrang.TabIndex = 6;
             this.btnXoaTrang.Text = "Xóa &trắng";
             this.btnXoaTrang.Click += new System.EventHandler(this.btnXoaTrang_Click);
             // 
@@ -238,7 +238,7 @@
             this.btnSuaChua.Location = new System.Drawing.Point(315, 64);
             this.btnSuaChua.Name = "btnSuaChua";
             this.btnSuaChua.Size = new System.Drawing.Size(85, 23);
-            this.btnSuaChua.TabIndex = 17;
+            this.btnSuaChua.TabIndex = 5;
             this.btnSuaChua.Text = "&Sửa chữa";
             this.btnSuaChua.Click += new System.EventHandler(this.btnSuaChua_Click);
             // 
@@ -249,7 +249,7 @@
             this.btnThemMoi.Location = new System.Drawing.Point(214, 64);
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.Size = new System.Drawing.Size(85, 23);
-            this.btnThemMoi.TabIndex = 16;
+            this.btnThemMoi.TabIndex = 4;
             this.btnThemMoi.Text = "&Ghi nhận";
             this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
             // 

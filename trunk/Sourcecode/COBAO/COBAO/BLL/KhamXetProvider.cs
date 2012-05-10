@@ -40,5 +40,21 @@ namespace COBAO.BLL
         {
             return Db.sp_SelectKhamXetsByAndMaNV(entity.MaNV).ToList();
         }
+        public int giokhamxet(string mataixe, int thang, int nam)
+        {
+            try
+            {
+                long giokhamxet = (from khamxet in Db.KhamXets
+                                   join chitiet in Db.ChiTietKhamXets on khamxet.MaKhamXet equals chitiet.MaKhamXet
+                                      where (khamxet.NgayGioKetThuc.Month == thang && khamxet.NgayGioKetThuc.Year == nam
+                                           && chitiet.MaTaiXe == mataixe)
+                                      select (long)khamxet.ThoiGianKhamXet).Sum();
+                return (int)giokhamxet / 60;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
     }
 }

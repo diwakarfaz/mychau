@@ -193,7 +193,13 @@
         uN1uTFj+B1aY2GjOb7+5dP8NRMwZt62xuhkAAAAASUVORK5CYIIL
 </value>
   </data>
+  <metadata name="donGiaLuongBoSungBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 94</value>
+  </metadata>
   <metadata name="dxValid.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>806, 55</value>
+  </metadata>
+  <metadata name="donGiaLuongBoSungTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>263, 94</value>
   </metadata>
 </root>

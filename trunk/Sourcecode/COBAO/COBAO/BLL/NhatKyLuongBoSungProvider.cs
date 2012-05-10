@@ -37,5 +37,22 @@ namespace COBAO.BLL
             Guid? maDonGiaLuongBS = entity.MaDonGia;
             return Db.sp_SelectNhatKyThayDoiDonGiaBoSungsByAndMaDonGia(maDonGiaLuongBS).ToList();
         }
+
+        public NhatKyThayDoiDonGiaBoSung nhomNhatKy(Guid maluong)
+        {
+            try
+            {
+                var lastNhatKy = (from lnk in Db.NhatKyThayDoiDonGiaBoSungs
+                                  where lnk.MaDonGia.Equals(maluong)
+                                  orderby lnk.NgayThayDoi ascending
+                                  select lnk).ToList().Last();
+                return lastNhatKy;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+        }
     }
 }

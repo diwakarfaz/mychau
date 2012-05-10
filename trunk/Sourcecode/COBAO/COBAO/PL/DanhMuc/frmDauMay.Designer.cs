@@ -37,6 +37,8 @@
             this.colMaDauMay = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaLoaiDM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lLoaiDauMay = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.loaiDauMayBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cOBAODataSet = new COBAO.DAL.COBAODataSet();
             this.btnSuaChua = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoaTrang = new DevExpress.XtraEditors.SimpleButton();
             this.dxValid = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
@@ -48,20 +50,18 @@
             this.lblMaLoaiDM = new DevExpress.XtraEditors.LabelControl();
             this.lblTenDauMay = new DevExpress.XtraEditors.LabelControl();
             this.lblMaDM = new DevExpress.XtraEditors.LabelControl();
-            this.cOBAODataSet = new COBAO.DAL.COBAODataSet();
-            this.loaiDauMayBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.loaiDauMayTableAdapter = new COBAO.DAL.COBAODataSetTableAdapters.LoaiDauMayTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gcDauMay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDauMay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lLoaiDauMay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaiDauMayBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOBAODataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbLoaiDM.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDauMay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaDM.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cOBAODataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loaiDauMayBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // colTenDauMay
@@ -169,6 +169,16 @@
             this.lLoaiDauMay.DisplayMember = "TenLoai";
             this.lLoaiDauMay.Name = "lLoaiDauMay";
             this.lLoaiDauMay.ValueMember = "MaLoai";
+            // 
+            // loaiDauMayBindingSource
+            // 
+            this.loaiDauMayBindingSource.DataMember = "LoaiDauMay";
+            this.loaiDauMayBindingSource.DataSource = this.cOBAODataSet;
+            // 
+            // cOBAODataSet
+            // 
+            this.cOBAODataSet.DataSetName = "COBAODataSet";
+            this.cOBAODataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnSuaChua
             // 
@@ -294,16 +304,6 @@
             this.lblMaDM.TabIndex = 6;
             this.lblMaDM.Text = "Mã đầu máy";
             // 
-            // cOBAODataSet
-            // 
-            this.cOBAODataSet.DataSetName = "COBAODataSet";
-            this.cOBAODataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // loaiDauMayBindingSource
-            // 
-            this.loaiDauMayBindingSource.DataMember = "LoaiDauMay";
-            this.loaiDauMayBindingSource.DataSource = this.cOBAODataSet;
-            // 
             // loaiDauMayTableAdapter
             // 
             this.loaiDauMayTableAdapter.ClearBeforeFill = true;
@@ -323,11 +323,13 @@
             this.LookAndFeel.SkinName = "Blue";
             this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "frmDauMay";
-            this.Text = "frmDauMay";
+            this.Text = "Đầu máy";
             this.Load += new System.EventHandler(this.frmDauMay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gcDauMay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDauMay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lLoaiDauMay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaiDauMayBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOBAODataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbLoaiDM.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -335,8 +337,6 @@
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDauMay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaDM.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cOBAODataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loaiDauMayBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
