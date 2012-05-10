@@ -46,8 +46,9 @@ namespace COBAO.PL.QuanLyLuong
 
         private void LoadDataSource()
         {
+            txtMoTa.Select();
             dtNgayNhap.EditValue = dtNgayThayDoi.EditValue = DateTime.Now;
-            txtMoTa.Text = txtLoaiA.Text = txtLoaiB.Text = txtLoaiC.Text = txtDonViTinh.Text = txtLoaiAMoi.Text = txtLoaiBMoi.Text = txtLoaiCMoi.Text = null;
+            txtMoTa.Text = txtLoaiA.Text = txtLoaiB.Text = txtLoaiC.Text =  txtLoaiAMoi.Text = txtLoaiBMoi.Text = txtLoaiCMoi.Text = null;
             txtLoaiAMoi.Enabled = txtLoaiBMoi.Enabled = txtLoaiCMoi.Enabled = dtNgayThayDoi.Enabled = false;
 
             dglxlp = new DonGiaLuongXLProvider();
@@ -98,7 +99,7 @@ namespace COBAO.PL.QuanLyLuong
                     dxValid.SetValidationRule(txtLoaiC, ruleTrong);
                     dxValid.Validate();
                 }
-                if (txtDonViTinh.Text.Trim().Length == 0)
+                else if (txtDonViTinh.Text.Trim().Length == 0)
                 {
                     ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
                     dxValid.SetValidationRule(txtDonViTinh, ruleTrong);
@@ -143,48 +144,56 @@ namespace COBAO.PL.QuanLyLuong
         #region thay đổi giá
         private void btnSuaChua_Click(object sender, EventArgs e)
         {
-            //dxValid.Dispose();
-            //if (txtLoaiAMoi.Text.Trim().Length == 0)
-            //{
-            //    ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
-            //    dxValid.SetValidationRule(txtLoaiAMoi, ruleTrong);
-            //    dxValid.Validate();
-            //}
-            //else if (txtLoaiBMoi.Text.Trim().Length == 0)
-            //{
-            //    ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
-            //    dxValid.SetValidationRule(txtLoaiBMoi, ruleTrong);
-            //    dxValid.Validate();
-            //}
-            //else if (txtLoaiCMoi.Text.Trim().Length ==0)
-            //{
-            //    ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
-            //    dxValid.SetValidationRule(txtLoaiCMoi, ruleTrong);
-            //    dxValid.Validate();
-            //}
-            //else
-            //{
-            NhatKyThayDoiGiaXL nkdglxl = new NhatKyThayDoiGiaXL();
-            string mota = txtMoTa.Text.Trim();
-            dglxl = new DonGiaLuongXLProvider().GetDonGiaByMoTa(mota);
-            nkdglxl.MaLuongXL = dglxl.MaLuongXL;
-            nkdglxl.LoaiACu = Int32.Parse(txtLoaiA.Text.Trim());
-            nkdglxl.LoaiBCu = Int32.Parse(txtLoaiB.Text.Trim());
-            nkdglxl.LoaiCCu = Int32.Parse(txtLoaiC.Text.Trim());
-            nkdglxl.LoaiAMoi = Int32.Parse(txtLoaiAMoi.Text.Trim());
-            nkdglxl.LoaiBMoi = Int32.Parse(txtLoaiBMoi.Text.Trim());
-            nkdglxl.LoaiCMoi = Int32.Parse(txtLoaiCMoi.Text.Trim());
-            try { nkdglxl.NgayThayDoi = DateTime.Parse(dtNgayThayDoi.EditValue.ToString()); }
-            catch { };
-            nkdglxl.MaNV = COBAOMessage.nhanvien.MaNV;
-            ruleTrong.ConditionOperator = ConditionOperator.IsBlank;
-            nkdglxlp.Insert(nkdglxl);
-            txtMoTa.Enabled = txtLoaiA.Enabled = txtLoaiB.Enabled = txtLoaiC.Enabled = txtDonViTinh.Enabled = dtNgayNhap.Enabled = true;
-            txtLoaiAMoi.Enabled = txtLoaiBMoi.Enabled = txtLoaiCMoi.Enabled = dtNgayThayDoi.Enabled = false;
-            LoadDataSource();
-            clsFuntion.ShowMess(Text, COBAOMessage.THAYDOITHANHCONG);
-
-            //}
+            try
+            {
+                dxValid.Dispose();
+                ruleTrong.ConditionOperator = ConditionOperator.IsNotBlank;                
+                if (txtLoaiAMoi.Text.Trim().Length == 0)
+                {
+                    ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
+                    dxValid.SetValidationRule(txtLoaiAMoi, ruleTrong);
+                    dxValid.Validate();
+                }
+                else if (txtLoaiBMoi.Text.Trim().Length == 0)
+                {
+                    ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
+                    dxValid.SetValidationRule(txtLoaiBMoi, ruleTrong);
+                    dxValid.Validate();
+                }
+                else if (txtLoaiCMoi.Text.Trim().Length == 0)
+                {
+                    ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
+                    dxValid.SetValidationRule(txtLoaiCMoi, ruleTrong);
+                    dxValid.Validate();
+                }
+                else
+                {
+                    NhatKyThayDoiGiaXL nkdglxl = new NhatKyThayDoiGiaXL();
+                    string mota = txtMoTa.Text.Trim();
+                    dglxl = new DonGiaLuongXLProvider().GetDonGiaByMoTa(mota);
+                    nkdglxl.MaLuongXL = dglxl.MaLuongXL;
+                    nkdglxl.LoaiACu = Int32.Parse(txtLoaiA.Text.Trim());
+                    nkdglxl.LoaiBCu = Int32.Parse(txtLoaiB.Text.Trim());
+                    nkdglxl.LoaiCCu = Int32.Parse(txtLoaiC.Text.Trim());
+                    nkdglxl.LoaiAMoi = Int32.Parse(txtLoaiAMoi.Text.Trim());
+                    nkdglxl.LoaiBMoi = Int32.Parse(txtLoaiBMoi.Text.Trim());
+                    nkdglxl.LoaiCMoi = Int32.Parse(txtLoaiCMoi.Text.Trim());
+                    try { nkdglxl.NgayThayDoi = DateTime.Parse(dtNgayThayDoi.EditValue.ToString()); }
+                    catch { };
+                    nkdglxl.MaNV = COBAOMessage.nhanvien.MaNV;
+                    ruleTrong.ConditionOperator = ConditionOperator.IsBlank;
+                    nkdglxlp.Insert(nkdglxl);
+                    txtMoTa.Enabled = txtLoaiA.Enabled = txtLoaiB.Enabled = txtLoaiC.Enabled = txtDonViTinh.Enabled = dtNgayNhap.Enabled = true;
+                    txtLoaiAMoi.Enabled = txtLoaiBMoi.Enabled = txtLoaiCMoi.Enabled = dtNgayThayDoi.Enabled = false;
+                    LoadDataSource();
+                    clsFuntion.ShowMess(Text, COBAOMessage.THAYDOITHANHCONG);
+                    dxValid.Validate();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Lỗi: " + ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         #endregion
        
@@ -203,10 +212,19 @@ namespace COBAO.PL.QuanLyLuong
                 txtLoaiB.Text = nkdglxl.LoaiBMoi.ToString();
                 txtLoaiC.Text = nkdglxl.LoaiCMoi.ToString();
                 dtNgayNhap.EditValue = nkdglxl.NgayThayDoi;
-                txtMoTa.Enabled = txtLoaiA.Enabled = txtLoaiB.Enabled = txtLoaiC.Enabled = txtDonViTinh.Enabled = dtNgayNhap.Enabled = false;
-                txtLoaiAMoi.Enabled = txtLoaiBMoi.Enabled = txtLoaiCMoi.Enabled = dtNgayThayDoi.Enabled = true;
+                txtMoTa.Enabled = txtLoaiA.Enabled = txtLoaiB.Enabled = txtLoaiC.Enabled = txtDonViTinh.Enabled = dtNgayNhap.Enabled = false;                
                 btnSuaChua.Enabled = btnXoa.Enabled = true;
                 btnThemMoi.Enabled = false;
+                if (txtMoTa.Text == "Thoi, Bất bình hành")
+                {
+                    txtLoaiAMoi.Enabled = txtLoaiCMoi.Enabled = false;
+                    txtLoaiBMoi.Focus();
+                }
+                else
+                {
+                    txtLoaiAMoi.Enabled = txtLoaiBMoi.Enabled = txtLoaiCMoi.Enabled = dtNgayThayDoi.Enabled = true;
+                    txtLoaiAMoi.Focus();
+                }
             }
             catch (Exception ex)
             {

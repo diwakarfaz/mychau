@@ -33,5 +33,35 @@ namespace COBAO.BLL
         {
             return Db.DonGiaLuongBoSungs.Any(t => t.MoTa.Equals(entity.MoTa));
         }
+
+        public DonGiaLuongBoSung GetDonGiaByMoTa(string mota)
+        {
+            try
+            {
+                var dongiaxl = (from c in Db.DonGiaLuongBoSungs
+                                where c.MoTa == mota
+                                select c).ToList();
+                return dongiaxl.Single();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public DonGiaLuongBoSung GetDonGiaByMaDG(Guid madg)
+        {
+            try
+            {
+                var dongiaxl = (from c in Db.DonGiaLuongBoSungs
+                                where c.MaDonGia == @madg
+                                select c).ToList();
+                return dongiaxl.Single();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }

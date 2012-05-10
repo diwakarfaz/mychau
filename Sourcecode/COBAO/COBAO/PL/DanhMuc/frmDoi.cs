@@ -43,6 +43,7 @@ namespace COBAO.PL.DanhMuc
 
         private void LoadDataSource()
         {
+            cbbMaTram.Select();
             tp = new TramProvider();
             dp = new DoiProvider();
             gcDoi.DataSource = dp.GetAll();
@@ -181,6 +182,7 @@ namespace COBAO.PL.DanhMuc
                 cbbMaTram.EditValue = matram = (Guid)d.MaTram;
                 madoi = d.MaDoi;
                 txtTenDoi.Text = d.TenDoi;
+                cbbMaTram.Focus();
                 btnSuaChua.Enabled = btnXoa.Enabled = true;
                 btnThemMoi.Enabled = false;
             }

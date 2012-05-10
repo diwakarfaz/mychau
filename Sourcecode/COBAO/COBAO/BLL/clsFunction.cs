@@ -50,5 +50,65 @@ namespace COBAO.BLL
                 alert.Show(null, Title, Mess);
             }
         }
+        public static string PhutRaGio(int n)
+        {
+            int h, p;
+            h = n / 60;
+            p = n - (60 * h);
+            return h + "h" + p;
+        }
+        public static int GioRaPhut(string g)
+        {
+            int h, p;
+            string strCut;
+            strCut = g.Trim();
+            while (strCut.IndexOf(" ") >= 0)    //tim trong chuoi vi tri co      
+                strCut = strCut.Replace(" ", "");
+
+            int n;
+            n = strCut.IndexOf("h");
+            h = int.Parse(strCut.Substring(0, n));
+            p = int.Parse(strCut.Substring(n + 1));
+            return h*60 + p;
+        }
+        public static int GioCaBa(DateTime ngaydau, DateTime ngaycuoi)
+        {
+            int giocaba = 0;
+            TimeSpan tinh = ngaycuoi.Subtract(ngaydau);
+            int songay = (int)tinh.TotalDays;
+            if (ngaydau.ToString() == ngaycuoi.ToString())
+                giocaba = 0;
+            else if (ngaydau.Hour < ngaycuoi.Hour)
+            {
+                if (ngaydau.Hour < 6 && ngaycuoi.Hour > 21)
+                    giocaba += (6 - ngaydau.Hour) * 60 - ngaydau.Minute + (ngaycuoi.Hour - 22) * 60 + ngaycuoi.Minute;
+                else if (ngaydau.Hour < 6 && ngaycuoi.Hour >= 6)
+                    giocaba += (6 - ngaydau.Hour) * 60 - ngaydau.Minute;
+                else if (ngaydau.Hour <= 21 && ngaycuoi.Hour > 21)
+                    giocaba += (ngaycuoi.Hour - 22) * 60 + ngaycuoi.Minute;
+                else if ((ngaydau.Hour < 6 && ngaycuoi.Hour < 6) || (ngaydau.Hour > 21 && ngaycuoi.Hour > 21))
+                    giocaba += (int)tinh.Hours * 60 + (int)tinh.Minutes;
+                giocaba = giocaba + songay * 8 * 60;
+            }
+            else if (ngaycuoi.Hour == ngaydau.Hour && ngaycuoi.Minute >= ngaydau.Minute)
+            {
+                giocaba = songay * 8 * 60 + (ngaycuoi.Minute - ngaydau.Minute);
+            }
+            else if ((ngaycuoi.Hour == ngaydau.Hour && ngaycuoi.Minute < ngaydau.Minute) || (ngaycuoi.Hour < ngaydau.Hour))
+            {
+                if (ngaydau.Hour < 6 && ngaycuoi.Hour <= ngaydau.Hour)
+                    giocaba += (6 - ngaydau.Hour) * 60 - ngaydau.Minute + (8 - (6 - ngaycuoi.Hour)) * 60 + ngaycuoi.Minute;
+                else if (ngaydau.Hour < 22 && ngaycuoi.Hour < 6)
+                    giocaba += (8 - (6 - ngaycuoi.Hour)) * 60 + ngaycuoi.Minute;
+                else if (ngaydau.Hour > 21 && ngaycuoi.Hour < 6)
+                    giocaba += (8 - (6 - ngaycuoi.Hour) - (ngaydau.Hour - 22)) * 60 - ngaydau.Minute + ngaycuoi.Minute;
+                else if (ngaydau.Hour > 21 && ngaycuoi.Hour > 21)
+                    giocaba += (8 - (ngaydau.Hour - 22)) * 60 - ngaydau.Minute + (ngaycuoi.Hour - 22) * 60 + ngaycuoi.Minute;
+                else if (ngaydau.Hour < 22 && ngaycuoi.Hour >= 6)
+                    giocaba += 8 * 60;
+                giocaba = giocaba + (songay) * 8 * 60;
+            }
+            return giocaba;
+        }
     }
 }

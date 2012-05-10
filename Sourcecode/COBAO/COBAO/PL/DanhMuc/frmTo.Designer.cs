@@ -36,6 +36,8 @@
             this.colTenTo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaDoi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lThuocDoi = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.doiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cOBAODataSet = new COBAO.DAL.COBAODataSet();
             this.lDoi = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             this.btnSuaChua = new DevExpress.XtraEditors.SimpleButton();
             this.btnThemMoi = new DevExpress.XtraEditors.SimpleButton();
@@ -46,20 +48,18 @@
             this.txtTenTo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lblTenTram = new DevExpress.XtraEditors.LabelControl();
-            this.cOBAODataSet = new COBAO.DAL.COBAODataSet();
-            this.doiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.doiTableAdapter = new COBAO.DAL.COBAODataSetTableAdapters.DoiTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gcTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lThuocDoi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOBAODataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lDoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbMaDoi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenTo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cOBAODataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnThoat
@@ -158,6 +158,16 @@
             this.lThuocDoi.Name = "lThuocDoi";
             this.lThuocDoi.ValueMember = "MaDoi";
             // 
+            // doiBindingSource
+            // 
+            this.doiBindingSource.DataMember = "Doi";
+            this.doiBindingSource.DataSource = this.cOBAODataSet;
+            // 
+            // cOBAODataSet
+            // 
+            this.cOBAODataSet.DataSetName = "COBAODataSet";
+            this.cOBAODataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // lDoi
             // 
             this.lDoi.AutoHeight = false;
@@ -228,6 +238,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenDoi", "Chọn đội")});
             this.cbbMaDoi.Properties.DisplayMember = "TenDoi";
             this.cbbMaDoi.Properties.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.DisplayText;
+            this.cbbMaDoi.Properties.NullText = "";
             this.cbbMaDoi.Properties.PopupSizeable = false;
             this.cbbMaDoi.Properties.ValueMember = "MaDoi";
             this.cbbMaDoi.Size = new System.Drawing.Size(249, 20);
@@ -264,16 +275,6 @@
             this.lblTenTram.TabIndex = 8;
             this.lblTenTram.Text = "Tên tổ";
             // 
-            // cOBAODataSet
-            // 
-            this.cOBAODataSet.DataSetName = "COBAODataSet";
-            this.cOBAODataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // doiBindingSource
-            // 
-            this.doiBindingSource.DataMember = "Doi";
-            this.doiBindingSource.DataSource = this.cOBAODataSet;
-            // 
             // doiTableAdapter
             // 
             this.doiTableAdapter.ClearBeforeFill = true;
@@ -298,6 +299,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcTo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lThuocDoi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOBAODataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lDoi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -305,8 +308,6 @@
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbMaDoi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenTo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cOBAODataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doiBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

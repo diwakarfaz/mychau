@@ -11,6 +11,7 @@ using COBAO.PL.DanhMuc;
 using COBAO.PL.NhapLieu;
 using COBAO.PL.HeThong;
 using COBAO.PL.QuanLyLuong;
+using COBAO.PL.BaoCao;
 
 namespace COBAO.PL
 {
@@ -94,7 +95,7 @@ namespace COBAO.PL
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            
+          //  ribbon.SelectedPage = ribbonPage1;
         }
 
         private void btnQLLuongXL_ItemClick(object sender, ItemClickEventArgs e)
@@ -120,6 +121,28 @@ namespace COBAO.PL
         private void btnTinhChat_ItemClick(object sender, ItemClickEventArgs e)
         {
             clsFuntion.AddMdiChild(this, new frmTinhChat());           
+        }
+
+        private void btnQLLuongBS_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            clsFuntion.AddMdiChild(this, new frmQuanLyLuongBS());
+        }
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnTongHopGioLaoDong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            rptTongHopThoiGianLaoDong rpthgld = new rptTongHopThoiGianLaoDong();
+            rpthgld.ShowPreviewDialog();
+        }
+
+        private void btnCoBaoLoaiC_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            rpTongHopCoBaoLoaiC rpthcblc = new rpTongHopCoBaoLoaiC();
+            rpthcblc.ShowPreviewDialog();
         }
 
     }

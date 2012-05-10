@@ -1,352 +1,352 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14, 14.625" name="COBAOLINQ">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 16.375, 15" name="COBAOLINQ">
   <DataContextMoniker Name="/COBAOLINQDataContext" />
   <nestedChildShapes>
-    <classShape Id="e036dc53-66cb-4ab7-92eb-ed34059b133e" absoluteBounds="11.375, 8.875, 2, 1.3862939453125005">
+    <classShape Id="2ef65e46-3d9b-4965-bd14-46ec2735a256" absoluteBounds="9.25, 11.875, 2, 1.3862939453125005">
       <DataClassMoniker Name="/COBAOLINQDataContext/ChiTietKhamXet" />
       <nestedChildShapes>
-        <elementListCompartment Id="a9cfb924-3baa-44d5-bd65-dce0f766c14d" absoluteBounds="11.39, 9.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="cb629013-e8b6-4623-ba8e-6d1a123b818a" absoluteBounds="9.265, 12.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ce320d12-1258-43f7-a789-30a018a18db7" absoluteBounds="3.375, 8.625, 2, 1.1939925130208344">
+    <classShape Id="2c9e07bc-018d-458f-b963-7138f7d1b0c7" absoluteBounds="0.625, 9.125, 2, 1.1939925130208344">
       <DataClassMoniker Name="/COBAOLINQDataContext/Tram" />
       <nestedChildShapes>
-        <elementListCompartment Id="0348a1df-5275-4727-8fc3-8c73ff212667" absoluteBounds="3.39, 9.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fc889ca7-2ab6-47b3-9cfc-1920a684f3ae" absoluteBounds="0.64, 9.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1bafab53-59eb-4e2b-8422-e85d2b5b4786" absoluteBounds="8.5, 6.375, 2, 1.3862939453125005">
+    <classShape Id="e27095be-b83d-4143-9d2e-c88bd349300f" absoluteBounds="11.75, 8.5, 2, 1.3862939453125005">
       <DataClassMoniker Name="/COBAOLINQDataContext/ChiTietThuongTruc" />
       <nestedChildShapes>
-        <elementListCompartment Id="2238e3d3-84cc-4774-9c89-bd71abab4e89" absoluteBounds="8.515, 6.8350000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c9bded00-22cc-4e48-9473-a037e4fd5985" absoluteBounds="11.765, 8.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="21a076dd-a2b4-4e64-910f-2421249d4d0a" absoluteBounds="7.125, 1, 2, 3.1170068359375">
+    <classShape Id="fb3e776b-97db-4608-a825-d60429ed64fa" absoluteBounds="11.75, 5, 2, 3.1170068359375">
       <DataClassMoniker Name="/COBAOLINQDataContext/CoBao" />
       <nestedChildShapes>
-        <elementListCompartment Id="3ea50699-5240-43ea-8f68-f4649663018c" absoluteBounds="7.1400000000000006, 1.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4daf3fb3-9ccd-4e6e-9b21-9a911e1b3ae1" absoluteBounds="11.765, 5.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="50e77858-37b8-4c56-95f7-8e33c1efe10c" absoluteBounds="11.625, 10.75, 2, 1.5785953776041666">
+    <classShape Id="3107499d-d386-46bd-a298-74ebdecce82f" absoluteBounds="11.75, 10.25, 2, 1.5785953776041666">
       <DataClassMoniker Name="/COBAOLINQDataContext/CoBaoLaiTau" />
       <nestedChildShapes>
-        <elementListCompartment Id="e01ba90a-6428-453c-9309-f27fb395484f" absoluteBounds="11.64, 11.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="53e4b53a-ae23-401d-91f3-b686ecedf4cb" absoluteBounds="11.765, 10.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="021abba3-4fc2-4de6-99ce-27c5823cdccd" absoluteBounds="5.875, 6.375, 2, 1.1939925130208344">
+    <classShape Id="a97da560-ba40-48f9-b4dd-e3dfc655a0fd" absoluteBounds="5.125, 7, 2, 1.1939925130208344">
       <DataClassMoniker Name="/COBAOLINQDataContext/CongTy" />
       <nestedChildShapes>
-        <elementListCompartment Id="8960a482-f076-47c6-ba1f-7a5e28e2af3d" absoluteBounds="5.89, 6.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c0818a3c-6f2b-4250-a643-9d1426d138ae" absoluteBounds="5.14, 7.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="33f499c5-6911-4119-a487-54edcb17fd64" absoluteBounds="4.75, 10.375, 2, 1.3862939453124987">
+    <classShape Id="3d24f3a5-dfe7-42a2-8c54-79fd62954ee9" absoluteBounds="5, 11.375, 2, 1.3862939453124987">
       <DataClassMoniker Name="/COBAOLINQDataContext/DauMay" />
       <nestedChildShapes>
-        <elementListCompartment Id="88cd54f2-8309-4a8b-98a1-0aab717380f5" absoluteBounds="4.7650000000000006, 10.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a995f7be-bdfb-4f99-85dc-d7028ff6d321" absoluteBounds="5.015, 11.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="26b26510-26a6-443c-9feb-5a7a854c46a4" absoluteBounds="6, 8.375, 2, 1.3862939453125005">
+    <classShape Id="716750b9-7bfc-4520-b794-13d1d67183c0" absoluteBounds="2.875, 9.75, 2, 1.3862939453125005">
       <DataClassMoniker Name="/COBAOLINQDataContext/Doi" />
       <nestedChildShapes>
-        <elementListCompartment Id="fe6c940a-f5a5-4103-8272-1b2794a2c7db" absoluteBounds="6.0150000000000006, 8.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c62df620-5211-4679-9ce4-05a7a6983006" absoluteBounds="2.89, 10.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="cf2c9332-19bd-419c-9404-71693792cc3d" absoluteBounds="0.875, 3.875, 2, 1.3862939453124996">
+    <classShape Id="07a6c5f4-48df-4057-80c2-051cb3518e1e" absoluteBounds="0.75, 5.5, 2, 1.3862939453124996">
       <DataClassMoniker Name="/COBAOLINQDataContext/DonGiaLuongBoSung" />
       <nestedChildShapes>
-        <elementListCompartment Id="f51639ce-b74a-4428-8e11-b3e5630f6ae5" absoluteBounds="0.89, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d45cbf80-2670-4fe7-b94f-14ee2c59144f" absoluteBounds="0.765, 5.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="06009165-3968-40c8-980f-c2ed77a8aa82" absoluteBounds="5.5, 4.125, 2, 1.3862939453124996">
+    <classShape Id="7a9c777e-09f2-4bd7-bc28-e8d9961206fc" absoluteBounds="5, 5.5, 2, 1.3862939453124996">
       <DataClassMoniker Name="/COBAOLINQDataContext/DonGiaLuongXL" />
       <nestedChildShapes>
-        <elementListCompartment Id="5d99d071-4d73-49eb-96f6-c231da19b023" absoluteBounds="5.515, 4.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b6111fe6-0c35-4d52-badc-9a4fd5588a54" absoluteBounds="5.015, 5.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1f2a6517-0b7b-473d-8b2f-0a73ec07c7af" absoluteBounds="9.25, 12.5, 2, 1.3862939453125023">
+    <classShape Id="94bc7469-29c9-4428-bc84-e19a5903e441" absoluteBounds="5.875, 13.375, 2, 1.3862939453125023">
       <DataClassMoniker Name="/COBAOLINQDataContext/Ga" />
       <nestedChildShapes>
-        <elementListCompartment Id="36dd824c-06ad-4d91-8414-0128e3e22f22" absoluteBounds="9.265, 12.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="beddc1bd-2d24-45e4-ad69-7423af7f2556" absoluteBounds="5.8900000000000006, 13.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="88ae46d3-91bd-44e5-ab07-3a89cb9f409d" absoluteBounds="9.5, 1.375, 2, 2.732403971354167">
+    <classShape Id="56d8a344-fc34-420b-a104-ada0dbb03169" absoluteBounds="14.125, 5.25, 2, 2.732403971354167">
       <DataClassMoniker Name="/COBAOLINQDataContext/HanhTrinh" />
       <nestedChildShapes>
-        <elementListCompartment Id="1f1c24c5-186c-48a6-a38c-9d6e6f0da13f" absoluteBounds="9.515, 1.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d3716d6f-5bb0-487a-8a5d-2f0650678869" absoluteBounds="14.14, 5.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="446887cc-4a1a-4c00-a069-4cfc24b5de44" absoluteBounds="11.5, 12.625, 2, 1.7708968098958344">
+    <classShape Id="2e8e9cf7-aef4-4d55-9b99-b8f98e59eff4" absoluteBounds="7.125, 11.625, 2, 1.7708968098958344">
       <DataClassMoniker Name="/COBAOLINQDataContext/HopPhepOm" />
       <nestedChildShapes>
-        <elementListCompartment Id="964876a4-f163-4a60-a7cb-015f753f39ae" absoluteBounds="11.515, 13.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7fc872af-002d-44d5-8324-ff0d8ac47078" absoluteBounds="7.1400000000000006, 12.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="dd3d5eaa-b56d-4363-bd87-9a385d06e030" absoluteBounds="6.25, 10.25, 2, 2.1554996744791648">
+    <classShape Id="eee7b3ba-24bd-4e6a-b713-69f712bbf454" absoluteBounds="9.375, 9.5, 2, 2.1554996744791648">
       <DataClassMoniker Name="/COBAOLINQDataContext/KhamXet" />
       <nestedChildShapes>
-        <elementListCompartment Id="593128e7-1fa8-4ab5-bdf2-ffa4d435c2e7" absoluteBounds="6.2650000000000006, 10.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="77a2b1b1-23bb-4938-ab64-0393e8ddd67b" absoluteBounds="9.39, 9.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="36cb8957-8255-44e9-87d5-d807056691c8" absoluteBounds="2.625, 10.375, 2, 1.5785953776041666">
+    <classShape Id="5bbd9886-0669-4438-bb65-3bc9afd08d1a" absoluteBounds="2.875, 11.375, 2, 1.5785953776041666">
       <DataClassMoniker Name="/COBAOLINQDataContext/LoaiDauMay" />
       <nestedChildShapes>
-        <elementListCompartment Id="9f5b9c86-a232-4600-8b75-721b1fa504a6" absoluteBounds="2.64, 10.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b2d2e75e-1da8-40be-bd54-fd21fde965cf" absoluteBounds="2.89, 11.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e0a14e5d-bbdb-4e75-be5d-004d3f6e361e" absoluteBounds="4.5, 1.375, 2, 1.5785953776041666">
+    <classShape Id="7a81eded-c0ee-4b4c-9ef2-5ca77963ec9c" absoluteBounds="7.375, 7, 2, 1.5785953776041666">
       <DataClassMoniker Name="/COBAOLINQDataContext/MacTau" />
       <nestedChildShapes>
-        <elementListCompartment Id="36f5ab41-1307-463c-bb82-54a33c1c38c3" absoluteBounds="4.5150000000000006, 1.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="072f4cd3-97f8-4edf-aa8f-89f09218cba9" absoluteBounds="7.3900000000000006, 7.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="48113072-0655-4194-99b7-e0283f317367" absoluteBounds="0.875, 5.75, 2, 1.9631982421875005">
+    <classShape Id="704b2673-a991-4a4f-82f0-baf2d191b86f" absoluteBounds="0.75, 7, 2, 1.9631982421875005">
       <DataClassMoniker Name="/COBAOLINQDataContext/NhanVien" />
       <nestedChildShapes>
-        <elementListCompartment Id="73a29f6b-35a3-491d-b11c-c9475c603a5b" absoluteBounds="0.89, 6.2100000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8c0706ab-22f4-4781-96d8-ec087c9cf50b" absoluteBounds="0.765, 7.4600000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1d2b694e-c4cb-4406-bbd4-b137c98b29d6" absoluteBounds="3.25, 4, 2, 1.9631982421874996">
+    <classShape Id="19e57500-4b85-4591-95a2-f9b6241fb868" absoluteBounds="3, 5.5, 2, 1.9631982421874996">
       <DataClassMoniker Name="/COBAOLINQDataContext/NhatKyThayDoiDonGiaBoSung" />
       <nestedChildShapes>
-        <elementListCompartment Id="68303f24-02b2-4edd-9aff-93ddd619475f" absoluteBounds="3.265, 4.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9394657e-ee11-4420-b014-ea7b0bc238ab" absoluteBounds="3.015, 5.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="87cace9f-da79-4f11-8a78-1f33a094d780" absoluteBounds="2.125, 0.875, 2, 2.7324039713541666">
+    <classShape Id="ef241c22-ea7f-415d-8fdb-c21183b5c890" absoluteBounds="9.125, 4.5, 2, 2.7324039713541666">
       <DataClassMoniker Name="/COBAOLINQDataContext/NhatKyThayDoiGiaXL" />
       <nestedChildShapes>
-        <elementListCompartment Id="f16d5345-1086-44d2-9c39-33cdf2f785e6" absoluteBounds="2.1400000000000006, 1.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f35d275a-7e99-44e7-9bd7-87db632df783" absoluteBounds="9.14, 4.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5478587f-06c7-43b2-91bc-bfae508ce863" absoluteBounds="8.875, 4.25, 2, 2.1554996744791666">
+    <classShape Id="0497ac50-8fae-46c0-9d83-ad027c4a07a4" absoluteBounds="7.125, 9.375, 2, 2.1554996744791666">
       <DataClassMoniker Name="/COBAOLINQDataContext/TaiXe" />
       <nestedChildShapes>
-        <elementListCompartment Id="7947239c-5088-4a92-b32b-c5e25a205c23" absoluteBounds="8.89, 4.7100000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a3e83166-fc45-4b9c-95c0-f9628893b0f3" absoluteBounds="7.1400000000000006, 9.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="670db152-2ecb-4262-b727-04e2f73eb7f1" absoluteBounds="9.125, 10.25, 2, 1.7708968098958344">
+    <classShape Id="87e2d698-402f-444c-8c3b-ceace0d01afa" absoluteBounds="11.625, 12, 2, 1.7708968098958344">
       <DataClassMoniker Name="/COBAOLINQDataContext/TheoTau" />
       <nestedChildShapes>
-        <elementListCompartment Id="f4ca8862-36f0-453a-86f1-e5d68210ade5" absoluteBounds="9.14, 10.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8a9075fd-6c3f-481f-8b65-e2354e6553ed" absoluteBounds="11.64, 12.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="912a3b94-53e8-4f87-8fd7-45bc9d5df359" absoluteBounds="3.375, 6.25, 2, 2.1554996744791666">
+    <classShape Id="433fa035-9cb9-4d8e-886a-68b412752f0c" absoluteBounds="3, 7.5, 2, 2.1554996744791666">
       <DataClassMoniker Name="/COBAOLINQDataContext/ThuongTruc" />
       <nestedChildShapes>
-        <elementListCompartment Id="43bb7f36-7ad0-4c61-a8bb-8e948e8eb95d" absoluteBounds="3.39, 6.7100000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="748ae0a9-2490-4190-aeb5-b96a1438fc7f" absoluteBounds="3.015, 7.9600000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="729cf6fd-5931-47ef-af75-855d197b500c" absoluteBounds="7.125, 12.875, 2, 1.1939925130208309">
+    <classShape Id="2dfe6d1c-3e47-4ff5-b050-07e3db70d66a" absoluteBounds="3.5, 13, 2, 1.1939925130208309">
       <DataClassMoniker Name="/COBAOLINQDataContext/TinhChat" />
       <nestedChildShapes>
-        <elementListCompartment Id="4361d001-9200-4ad8-bb35-56da02a4d475" absoluteBounds="7.1400000000000006, 13.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e5e83aa8-b806-45a8-80d8-55c55252f5e0" absoluteBounds="3.5150000000000006, 13.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d18a7def-19c7-44ef-a080-97f46f4a8d0a" absoluteBounds="8.625, 8.25, 2, 1.3862939453125005">
+    <classShape Id="ae68b0ab-ba13-4e79-94c7-7ed7d8a9d07c" absoluteBounds="5, 9.75, 2, 1.3862939453125005">
       <DataClassMoniker Name="/COBAOLINQDataContext/To" />
       <nestedChildShapes>
-        <elementListCompartment Id="990934f8-3a2c-4ac9-bcd2-a70ccb7a1b59" absoluteBounds="8.64, 8.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ed2d03e9-f532-469f-b7c2-ce298f7d9255" absoluteBounds="5.015, 10.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(9.125 : 1.15625); (13.53125 : 1.15625); (13.53125 : 10.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(13.75 : 8.1170068359375); (14.125 : 8.4920068359375); (14.125 : 9.875); (14.0589255650989 : 9.94107443490112 : JumpStart); (13.9410744349011 : 10.0589255650989 : JumpEnd); (13.75 : 10.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/CoBao/CoBao_CoBaoLaiTau" />
       <nodes>
-        <classShapeMoniker Id="21a076dd-a2b4-4e64-910f-2421249d4d0a" />
-        <classShapeMoniker Id="50e77858-37b8-4c56-95f7-8e33c1efe10c" />
+        <classShapeMoniker Id="fb3e776b-97db-4608-a825-d60429ed64fa" />
+        <classShapeMoniker Id="3107499d-d386-46bd-a298-74ebdecce82f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.6875025 : 10.375); (5.6875025 : 7.89399251302083); (7.91666291666667 : 7.89399251302083 : JumpStart); (8.08332958333333 : 7.89399251302083 : JumpEnd); (8.250000625 : 7.89399251302083); (8.250000625 : 4.1170068359375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7 : 12.4459724589844); (7.09375 : 12.4459724589844); (7.09375 : 11.609375); (9.21875 : 11.609375); (9.21875 : 11.8442203776042); (11.734375 : 11.8442203776042); (11.734375 : 8.1404443359375); (12.75 : 8.1404443359375); (12.75 : 8.1170068359375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/DauMay/DauMay_CoBao" />
       <nodes>
-        <classShapeMoniker Id="33f499c5-6911-4119-a487-54edcb17fd64" />
-        <classShapeMoniker Id="21a076dd-a2b4-4e64-910f-2421249d4d0a" />
+        <classShapeMoniker Id="3d24f3a5-dfe7-42a2-8c54-79fd62954ee9" />
+        <classShapeMoniker Id="fb3e776b-97db-4608-a825-d60429ed64fa" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.375 : 9.19314697265625); (5.60416916666667 : 9.19314697265625 : JumpStart); (5.77083583333333 : 9.19314697265625 : JumpEnd); (6 : 9.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.625 : 10.0344962565104); (2.875 : 10.0344962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/Tram/Tram_Doi" />
       <nodes>
-        <classShapeMoniker Id="ce320d12-1258-43f7-a789-30a018a18db7" />
-        <classShapeMoniker Id="26b26510-26a6-443c-9feb-5a7a854c46a4" />
+        <classShapeMoniker Id="2c9e07bc-018d-458f-b963-7138f7d1b0c7" />
+        <classShapeMoniker Id="716750b9-7bfc-4520-b794-13d1d67183c0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(9.125 : 2.69782734104567); (9.5 : 2.69782734104567)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(13.75 : 6.61620198567708); (14.125 : 6.61620198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/CoBao/CoBao_HanhTrinh" />
       <nodes>
-        <classShapeMoniker Id="21a076dd-a2b4-4e64-910f-2421249d4d0a" />
-        <classShapeMoniker Id="88ae46d3-91bd-44e5-ab07-3a89cb9f409d" />
+        <classShapeMoniker Id="fb3e776b-97db-4608-a825-d60429ed64fa" />
+        <classShapeMoniker Id="56d8a344-fc34-420b-a104-ada0dbb03169" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.21875 : 12.5); (11.21875 : 4.10740397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.875 : 14.2973453776042); (15.125 : 14.2973453776042); (15.125 : 7.98240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/Ga/Ga_HanhTrinh" />
       <nodes>
-        <classShapeMoniker Id="1f2a6517-0b7b-473d-8b2f-0a73ec07c7af" />
-        <classShapeMoniker Id="88ae46d3-91bd-44e5-ab07-3a89cb9f409d" />
+        <classShapeMoniker Id="94bc7469-29c9-4428-bc84-e19a5903e441" />
+        <classShapeMoniker Id="56d8a344-fc34-420b-a104-ada0dbb03169" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.15625 : 10.25); (8.15625 : 9.9175439453125); (8.22916666666667 : 9.9175439453125 : JumpStart); (8.39583333333333 : 9.9175439453125 : JumpEnd); (8.41666666666667 : 9.9175439453125 : JumpStart); (8.58333333333333 : 9.9175439453125 : JumpEnd); (10.8541666666667 : 9.9175439453125 : JumpStart); (11.0208333333333 : 9.9175439453125 : JumpEnd); (11.1354166666667 : 9.9175439453125 : JumpStart); (11.3020833333333 : 9.9175439453125 : JumpEnd); (11.375 : 9.9175439453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(10.3125 : 11.6554996744792); (10.3125 : 11.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/KhamXet/KhamXet_ChiTietKhamXet" />
       <nodes>
-        <classShapeMoniker Id="dd3d5eaa-b56d-4363-bd87-9a385d06e030" />
-        <classShapeMoniker Id="e036dc53-66cb-4ab7-92eb-ed34059b133e" />
+        <classShapeMoniker Id="eee7b3ba-24bd-4e6a-b713-69f712bbf454" />
+        <classShapeMoniker Id="2ef65e46-3d9b-4965-bd14-46ec2735a256" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.75 : 11.0681469726562); (4.5 : 11.0681469726562); (4.5 : 11.3277498372396); (6.25 : 11.3277498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(7 : 12.0681469726562); (7.109375 : 12.0681469726562); (7.109375 : 11.609375); (9.234375 : 11.609375); (9.234375 : 11.859375); (10.875002 : 11.859375); (10.875002 : 11.6554996744792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/DauMay/DauMay_KhamXet" />
       <nodes>
-        <classShapeMoniker Id="33f499c5-6911-4119-a487-54edcb17fd64" />
-        <classShapeMoniker Id="dd3d5eaa-b56d-4363-bd87-9a385d06e030" />
+        <classShapeMoniker Id="3d24f3a5-dfe7-42a2-8c54-79fd62954ee9" />
+        <classShapeMoniker Id="eee7b3ba-24bd-4e6a-b713-69f712bbf454" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.625 : 10.6590734863281); (4.75 : 10.6590734863281)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.875 : 12.0681469726562); (5 : 12.0681469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/LoaiDauMay/LoaiDauMay_DauMay" />
       <nodes>
-        <classShapeMoniker Id="36cb8957-8255-44e9-87d5-d807056691c8" />
-        <classShapeMoniker Id="33f499c5-6911-4119-a487-54edcb17fd64" />
+        <classShapeMoniker Id="5bbd9886-0669-4438-bb65-3bc9afd08d1a" />
+        <classShapeMoniker Id="3d24f3a5-dfe7-42a2-8c54-79fd62954ee9" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(6.5 : 2.16429768880208); (6.72916666666667 : 2.16429768880208 : JumpStart); (6.89583333333333 : 2.16429768880208 : JumpEnd); (7.125 : 2.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(9.375 : 7.70595540364583); (11.75 : 7.70595540364583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/MacTau/MacTau_CoBao" />
       <nodes>
-        <classShapeMoniker Id="e0a14e5d-bbdb-4e75-be5d-004d3f6e361e" />
-        <classShapeMoniker Id="21a076dd-a2b4-4e64-910f-2421249d4d0a" />
+        <classShapeMoniker Id="7a81eded-c0ee-4b4c-9ef2-5ca77963ec9c" />
+        <classShapeMoniker Id="fb3e776b-97db-4608-a825-d60429ed64fa" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(6.875 : 6.375); (6.875 : 5.5737939453125); (5.4375 : 5.5737939453125); (5.4375 : 3.01609537760417); (4.4375 : 3.01609537760417); (4.4375 : 2.16429768880208); (4.5 : 2.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.125 : 7.59699625651042); (7.375 : 7.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/CongTy/CongTy_MacTau" />
       <nodes>
-        <classShapeMoniker Id="021abba3-4fc2-4de6-99ce-27c5823cdccd" />
-        <classShapeMoniker Id="e0a14e5d-bbdb-4e75-be5d-004d3f6e361e" />
+        <classShapeMoniker Id="a97da560-ba40-48f9-b4dd-e3dfc655a0fd" />
+        <classShapeMoniker Id="7a81eded-c0ee-4b4c-9ef2-5ca77963ec9c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(6 : 4.125); (6 : 2.95359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7 : 6.8862939453125); (7.375 : 7)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/DonGiaLuongXL/DonGiaLuongXL_MacTau" />
       <nodes>
-        <classShapeMoniker Id="06009165-3968-40c8-980f-c2ed77a8aa82" />
-        <classShapeMoniker Id="e0a14e5d-bbdb-4e75-be5d-004d3f6e361e" />
+        <classShapeMoniker Id="7a9c777e-09f2-4bd7-bc28-e8d9961206fc" />
+        <classShapeMoniker Id="7a81eded-c0ee-4b4c-9ef2-5ca77963ec9c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.875 : 6.73159912109375); (2.98366666666667 : 6.73159912109375 : JumpStart); (3.15033333333333 : 6.73159912109375 : JumpEnd); (3.3125 : 6.73159912109375); (3.3125 : 6.1875); (6.79166666666667 : 6.1875 : JumpStart); (6.95833333333333 : 6.1875 : JumpEnd); (7.91666291666667 : 6.1875 : JumpStart); (8.08332958333333 : 6.1875 : JumpEnd); (8.16666729166667 : 6.1875 : JumpStart); (8.39583333333333 : 6.1875 : JumpEnd); (8.5625015 : 6.1875); (8.5625015 : 4.1170068359375)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 8.62865068164063); (2.984375 : 8.62865068164063); (2.984375 : 7.484375); (5.109375 : 7.484375); (5.109375 : 6.984375); (9.109375 : 6.984375); (9.109375 : 4.484375); (12.75 : 4.484375); (12.75 : 5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/NhanVien/NhanVien_CoBao" />
       <nodes>
-        <classShapeMoniker Id="48113072-0655-4194-99b7-e0283f317367" />
-        <classShapeMoniker Id="21a076dd-a2b4-4e64-910f-2421249d4d0a" />
+        <classShapeMoniker Id="704b2673-a991-4a4f-82f0-baf2d191b86f" />
+        <classShapeMoniker Id="fb3e776b-97db-4608-a825-d60429ed64fa" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.71875 : 7.7131982421875); (1.71875 : 12.2107975260417); (6.25 : 12.2107975260417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 7.73159912109375); (2.9375 : 7.73159912109375); (2.9375 : 9.71799967447917); (7.09375 : 9.71799967447917); (7.09375 : 9.3125); (10.375 : 9.3125); (10.375 : 9.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/NhanVien/NhanVien_KhamXet" />
       <nodes>
-        <classShapeMoniker Id="48113072-0655-4194-99b7-e0283f317367" />
-        <classShapeMoniker Id="dd3d5eaa-b56d-4363-bd87-9a385d06e030" />
+        <classShapeMoniker Id="704b2673-a991-4a4f-82f0-baf2d191b86f" />
+        <classShapeMoniker Id="eee7b3ba-24bd-4e6a-b713-69f712bbf454" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.875 : 4.63064697265625); (3.04391666666667 : 4.63064697265625 : JumpStart); (3.21058333333333 : 4.63064697265625 : JumpEnd); (3.25 : 4.63064697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 6.19314697265625); (3 : 6.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/DonGiaLuongBoSung/DonGiaLuongBoSung_NhatKyThayDoiDonGiaBoSung" />
       <nodes>
-        <classShapeMoniker Id="cf2c9332-19bd-419c-9404-71693792cc3d" />
-        <classShapeMoniker Id="1d2b694e-c4cb-4406-bbd4-b137c98b29d6" />
+        <classShapeMoniker Id="07a6c5f4-48df-4057-80c2-051cb3518e1e" />
+        <classShapeMoniker Id="19e57500-4b85-4591-95a2-f9b6241fb868" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.875 : 6.94115068164063); (3.067 : 6.94115068164063); (3.067 : 5.32817460742187); (3.25 : 5.32817460742187)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 7.23159912109375); (3 : 7.23159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/NhanVien/NhanVien_NhatKyThayDoiDonGiaBoSung" />
       <nodes>
-        <classShapeMoniker Id="48113072-0655-4194-99b7-e0283f317367" />
-        <classShapeMoniker Id="1d2b694e-c4cb-4406-bbd4-b137c98b29d6" />
+        <classShapeMoniker Id="704b2673-a991-4a4f-82f0-baf2d191b86f" />
+        <classShapeMoniker Id="19e57500-4b85-4591-95a2-f9b6241fb868" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(6.8125 : 4.125); (6.8125 : 0.90625); (4.125 : 0.90625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7 : 6.16189447265625); (9.125 : 6.16189447265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/DonGiaLuongXL/DonGiaLuongXL_NhatKyThayDoiGiaXL" />
       <nodes>
-        <classShapeMoniker Id="06009165-3968-40c8-980f-c2ed77a8aa82" />
-        <classShapeMoniker Id="87cace9f-da79-4f11-8a78-1f33a094d780" />
+        <classShapeMoniker Id="7a9c777e-09f2-4bd7-bc28-e8d9961206fc" />
+        <classShapeMoniker Id="ef241c22-ea7f-415d-8fdb-c21183b5c890" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.875 : 6.07534662109375); (3.12725 : 6.07534662109375); (3.12725 : 3.60740397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.281252 : 7); (2.281252 : 6.9375); (2.9375 : 6.9375); (2.9375 : 5.4375); (9.03125 : 5.4375); (9.03125 : 5.86620198567708); (9.125 : 5.86620198567708)]" fixedFrom="Algorithm" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/NhanVien/NhanVien_NhatKyThayDoiGiaXL" />
       <nodes>
-        <classShapeMoniker Id="48113072-0655-4194-99b7-e0283f317367" />
-        <classShapeMoniker Id="87cace9f-da79-4f11-8a78-1f33a094d780" />
+        <classShapeMoniker Id="704b2673-a991-4a4f-82f0-baf2d191b86f" />
+        <classShapeMoniker Id="ef241c22-ea7f-415d-8fdb-c21183b5c890" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(10.875 : 4.75762241861979); (11.1354166666667 : 4.75762241861979 : JumpStart); (11.3020833333333 : 4.75762241861979 : JumpEnd); (12.375 : 4.75762241861979); (12.375 : 8.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(9.125 : 11.5304996744792); (9.25 : 11.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/TaiXe/TaiXe_ChiTietKhamXet" />
       <nodes>
-        <classShapeMoniker Id="5478587f-06c7-43b2-91bc-bfae508ce863" />
-        <classShapeMoniker Id="e036dc53-66cb-4ab7-92eb-ed34059b133e" />
+        <classShapeMoniker Id="0497ac50-8fae-46c0-9d83-ad027c4a07a4" />
+        <classShapeMoniker Id="2ef65e46-3d9b-4965-bd14-46ec2735a256" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(10.8125025 : 6.40549967447917); (10.8125025 : 7.11464930989583); (10.6770833333333 : 7.11464930989583 : JumpStart); (10.5104166666667 : 7.11464930989583 : JumpEnd); (10.5 : 7.11464930989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(9.125 : 9.40625); (11.75 : 9.40625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/TaiXe/TaiXe_ChiTietThuongTruc" />
       <nodes>
-        <classShapeMoniker Id="5478587f-06c7-43b2-91bc-bfae508ce863" />
-        <classShapeMoniker Id="1bafab53-59eb-4e2b-8422-e85d2b5b4786" />
+        <classShapeMoniker Id="0497ac50-8fae-46c0-9d83-ad027c4a07a4" />
+        <classShapeMoniker Id="e27095be-b83d-4143-9d2e-c88bd349300f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(10.875 : 5.61281354654948); (11.1354166666667 : 5.61281354654948 : JumpStart); (11.3020833333333 : 5.61281354654948 : JumpEnd); (12.2916666666667 : 5.61281354654948 : JumpStart); (12.4583333333333 : 5.61281354654948 : JumpEnd); (13.4999975 : 5.61281354654948); (13.4999975 : 10.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(9.125 : 10.4683748372396); (9.3125 : 10.4683748372396); (9.3125 : 11.7179996744792); (11.6875 : 11.7179996744792); (11.6875 : 11.8910953776042); (12.75 : 11.8910953776042); (12.75 : 11.8285953776042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/TaiXe/TaiXe_CoBaoLaiTau" />
       <nodes>
-        <classShapeMoniker Id="5478587f-06c7-43b2-91bc-bfae508ce863" />
-        <classShapeMoniker Id="50e77858-37b8-4c56-95f7-8e33c1efe10c" />
+        <classShapeMoniker Id="0497ac50-8fae-46c0-9d83-ad027c4a07a4" />
+        <classShapeMoniker Id="3107499d-d386-46bd-a298-74ebdecce82f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(10.875 : 6.04040861051432); (11.1354166666667 : 6.04040861051432 : JumpStart); (11.3020833333333 : 6.04040861051432 : JumpEnd); (12.2916666666667 : 6.04040861051432 : JumpStart); (12.4583333333333 : 6.04040861051432 : JumpEnd); (13.4375 : 6.04040861051432); (13.4375 : 10.6875); (11.5625 : 10.6875); (11.5625 : 12.53125); (12.5 : 12.53125); (12.5 : 12.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.07759365384615 : 11.5304996744792); (8.07759365384615 : 11.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/TaiXe/TaiXe_HopPhepOm" />
       <nodes>
-        <classShapeMoniker Id="5478587f-06c7-43b2-91bc-bfae508ce863" />
-        <classShapeMoniker Id="446887cc-4a1a-4c00-a069-4cfc24b5de44" />
+        <classShapeMoniker Id="0497ac50-8fae-46c0-9d83-ad027c4a07a4" />
+        <classShapeMoniker Id="2e8e9cf7-aef4-4d55-9b99-b8f98e59eff4" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.99999625 : 4.1170068359375); (7.99999625 : 8.25); (8.22916666666667 : 8.25 : JumpStart); (8.39583333333333 : 8.25 : JumpEnd); (8.5 : 8.25); (8.5 : 11.1354484049479); (9.125 : 11.1354484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(12.218748 : 8.1170068359375); (12.218748 : 8.3670068359375); (14 : 8.3670068359375); (14 : 12.8854484049479); (13.625 : 12.8854484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/CoBao/CoBao_TheoTau" />
       <nodes>
-        <classShapeMoniker Id="21a076dd-a2b4-4e64-910f-2421249d4d0a" />
-        <classShapeMoniker Id="670db152-2ecb-4262-b727-04e2f73eb7f1" />
+        <classShapeMoniker Id="fb3e776b-97db-4608-a825-d60429ed64fa" />
+        <classShapeMoniker Id="87e2d698-402f-444c-8c3b-ceace0d01afa" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(10.875 : 5.18521798258464); (10.9375 : 5.18521798258464); (10.9375 : 10.15625); (10.125 : 10.15625); (10.125 : 10.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.60129682692308 : 11.5304996744792); (8.60129682692308 : 11.5929996744792); (9.1875 : 11.5929996744792); (9.1875 : 11.8125); (11.3125 : 11.8125); (11.3125 : 12.8854484049479); (11.625 : 12.8854484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/TaiXe/TaiXe_TheoTau" />
       <nodes>
-        <classShapeMoniker Id="5478587f-06c7-43b2-91bc-bfae508ce863" />
-        <classShapeMoniker Id="670db152-2ecb-4262-b727-04e2f73eb7f1" />
+        <classShapeMoniker Id="0497ac50-8fae-46c0-9d83-ad027c4a07a4" />
+        <classShapeMoniker Id="87e2d698-402f-444c-8c3b-ceace0d01afa" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.375 : 7.69639322916667); (7.91666291666667 : 7.69639322916667 : JumpStart); (8.08332958333333 : 7.69639322916667 : JumpEnd); (8.16666729166667 : 7.69639322916667 : JumpStart); (8.39583333333333 : 7.69639322916667 : JumpEnd); (8.5 : 7.69639322916667)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5 : 8.91429768880208); (11.75 : 8.91429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/ThuongTruc/ThuongTruc_ChiTietThuongTruc" />
       <nodes>
-        <classShapeMoniker Id="912a3b94-53e8-4f87-8fd7-45bc9d5df359" />
-        <classShapeMoniker Id="1bafab53-59eb-4e2b-8422-e85d2b5b4786" />
+        <classShapeMoniker Id="433fa035-9cb9-4d8e-886a-68b412752f0c" />
+        <classShapeMoniker Id="e27095be-b83d-4143-9d2e-c88bd349300f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.875 : 7.38967446191406); (3.375 : 7.38967446191406)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 8.23159912109375); (3 : 8.23159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/NhanVien/NhanVien_ThuongTruc" />
       <nodes>
-        <classShapeMoniker Id="48113072-0655-4194-99b7-e0283f317367" />
-        <classShapeMoniker Id="912a3b94-53e8-4f87-8fd7-45bc9d5df359" />
+        <classShapeMoniker Id="704b2673-a991-4a4f-82f0-baf2d191b86f" />
+        <classShapeMoniker Id="433fa035-9cb9-4d8e-886a-68b412752f0c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.375 : 8.625); (4.375 : 8.40549967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.625 : 9.39024983723958); (3 : 9.39024983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/Tram/Tram_ThuongTruc" />
       <nodes>
-        <classShapeMoniker Id="ce320d12-1258-43f7-a789-30a018a18db7" />
-        <classShapeMoniker Id="912a3b94-53e8-4f87-8fd7-45bc9d5df359" />
+        <classShapeMoniker Id="2c9e07bc-018d-458f-b963-7138f7d1b0c7" />
+        <classShapeMoniker Id="433fa035-9cb9-4d8e-886a-68b412752f0c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.125 : 12.875); (8.125 : 12.4679996744792); (8.3125 : 12.4679996744792); (8.3125 : 4.1795068359375); (9.1875 : 4.1795068359375); (9.1875 : 3.43386765619992); (9.5 : 3.43386765619992)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 13.5969962565104); (5.8125 : 13.5969962565104); (5.8125 : 13.3125); (7.0625 : 13.3125); (7.0625 : 11.5929996744792); (9.15625 : 11.5929996744792); (9.15625 : 11.8125); (11.5625 : 11.8125); (11.5625 : 11.9375); (13.9166666666667 : 11.9375 : JumpStart); (14.0833333333333 : 11.9375 : JumpEnd); (14.593748 : 11.9375); (14.593748 : 7.98240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/TinhChat/TinhChat_HanhTrinh" />
       <nodes>
-        <classShapeMoniker Id="729cf6fd-5931-47ef-af75-855d197b500c" />
-        <classShapeMoniker Id="88ae46d3-91bd-44e5-ab07-3a89cb9f409d" />
+        <classShapeMoniker Id="2dfe6d1c-3e47-4ff5-b050-07e3db70d66a" />
+        <classShapeMoniker Id="56d8a344-fc34-420b-a104-ada0dbb03169" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(10.59375 : 8.25); (10.59375 : 6.40549967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7 : 10.4431469726563); (7.125 : 10.4431469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/To/To_TaiXe" />
       <nodes>
-        <classShapeMoniker Id="d18a7def-19c7-44ef-a080-97f46f4a8d0a" />
-        <classShapeMoniker Id="5478587f-06c7-43b2-91bc-bfae508ce863" />
+        <classShapeMoniker Id="ae68b0ab-ba13-4e79-94c7-7ed7d8a9d07c" />
+        <classShapeMoniker Id="0497ac50-8fae-46c0-9d83-ad027c4a07a4" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8 : 9.00564697265625); (8.22916666666667 : 9.00564697265625 : JumpStart); (8.39583333333333 : 9.00564697265625 : JumpEnd); (8.41666666666667 : 9.00564697265625 : JumpStart); (8.58333333333333 : 9.00564697265625 : JumpEnd); (8.625 : 9.00564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.875 : 10.4431469726563); (5 : 10.4431469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/COBAOLINQDataContext/Doi/Doi_To" />
       <nodes>
-        <classShapeMoniker Id="26b26510-26a6-443c-9feb-5a7a854c46a4" />
-        <classShapeMoniker Id="d18a7def-19c7-44ef-a080-97f46f4a8d0a" />
+        <classShapeMoniker Id="716750b9-7bfc-4520-b794-13d1d67183c0" />
+        <classShapeMoniker Id="ae68b0ab-ba13-4e79-94c7-7ed7d8a9d07c" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

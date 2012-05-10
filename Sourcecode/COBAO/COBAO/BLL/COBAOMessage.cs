@@ -27,6 +27,7 @@ namespace COBAO.BLL
         public static string XOATHATBAI = Environment.NewLine + "Xoá thông tin thất bại";
         public static string KHONGDUOCTRONG = Environment.NewLine + "Thông tin này không được để trống";
         public static string DATONTAI = Environment.NewLine + "thông tin này đã tồn tại";
+        public static string TRUNGTAICHINH = Environment.NewLine + "Đã là tài chính trong chuyến đi";
 
         public static string THAYDOITHANHCONG = Environment.NewLine + "Thay đổi đơn giá lương thành công";
 

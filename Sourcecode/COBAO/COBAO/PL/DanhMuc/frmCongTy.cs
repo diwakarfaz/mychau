@@ -37,6 +37,7 @@ namespace COBAO.PL.DanhMuc
 
         private void LoadDataSource()
         {
+            txtTenCT.Select();
             ctp = new CongTyProvider();
             gcCongTy.DataSource = ctp.GetAll();
             mact = new Guid("00000000-0000-0000-0000-000000000000");
@@ -166,7 +167,8 @@ namespace COBAO.PL.DanhMuc
                 btnSuaChua.Enabled = btnXoa.Enabled = true;
                 var ct = gvCongTy.GetRow(gvCongTy.GetSelectedRows()[0]) as CongTy;
                 mact = ct.MaCT;
-                tencongty = txtTenCT.Text =ct.TenCT.Trim();                
+                tencongty = txtTenCT.Text =ct.TenCT.Trim();
+                txtTenCT.Focus();
             }
             catch (Exception ex)
             {

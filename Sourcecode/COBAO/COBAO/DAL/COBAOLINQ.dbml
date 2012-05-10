@@ -117,7 +117,7 @@
       <Column Name="TrangThaiGa" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="NgayDen" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="GioDen" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
-      <Column Name="NgayDi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayDi" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="GioDi" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
       <Column Name="ThoiGianDung" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="MaTinhChat" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
@@ -938,11 +938,16 @@
     <Parameter Name="MaDoi" Parameter="maDoi" Type="System.Guid" DbType="UniqueIdentifier" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_SelectChiTietKhamXetsAll" Method="sp_SelectChiTietKhamXetsAll">
+  <Function Name="dbo.sp_SelectChiTietKhamXet" Method="sp_SelectChiTietKhamXet">
+    <Parameter Name="MaKhamXet" Parameter="maKhamXet" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
     <ElementType IdRef="ID1" />
   </Function>
   <Function Name="dbo.sp_SelectChiTietKhamXetsByAndMaTaiXe" Method="sp_SelectChiTietKhamXetsByAndMaTaiXe">
     <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.sp_SelectChiTietKhamXetsAll" Method="sp_SelectChiTietKhamXetsAll">
     <ElementType IdRef="ID1" />
   </Function>
   <Function Name="dbo.sp_SelectChiTietKhamXetsByAndMaKhamXet" Method="sp_SelectChiTietKhamXetsByAndMaKhamXet">
@@ -954,8 +959,9 @@
     <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
     <ElementType IdRef="ID2" />
   </Function>
-  <Function Name="dbo.sp_SelectChiTietThuongTrucsByAndMaThuongTruc" Method="sp_SelectChiTietThuongTrucsByAndMaThuongTruc">
+  <Function Name="dbo.sp_SelectChiTietThuongTrucsByAndMaThuongTrucMaTaiXe" Method="sp_SelectChiTietThuongTrucsByAndMaThuongTrucMaTaiXe">
     <Parameter Name="MaThuongTruc" Parameter="maThuongTruc" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
     <ElementType IdRef="ID2" />
   </Function>
   <Function Name="dbo.sp_SelectChiTietThuongTrucsAll" Method="sp_SelectChiTietThuongTrucsAll">
@@ -965,10 +971,9 @@
     <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
     <ElementType IdRef="ID2" />
   </Function>
-  <Function Name="dbo.sp_SelectChiTietKhamXet" Method="sp_SelectChiTietKhamXet">
-    <Parameter Name="MaKhamXet" Parameter="maKhamXet" Type="System.Guid" DbType="UniqueIdentifier" />
-    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
-    <ElementType IdRef="ID1" />
+  <Function Name="dbo.sp_SelectChiTietThuongTrucsByAndMaThuongTruc" Method="sp_SelectChiTietThuongTrucsByAndMaThuongTruc">
+    <Parameter Name="MaThuongTruc" Parameter="maThuongTruc" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID2" />
   </Function>
   <Function Name="dbo.sp_SelectCoBao" Method="sp_SelectCoBao">
     <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
@@ -1089,15 +1094,15 @@
     <Parameter Name="MaKhamXet" Parameter="maKhamXet" Type="System.Guid" DbType="UniqueIdentifier" />
     <ElementType IdRef="ID13" />
   </Function>
+  <Function Name="dbo.sp_SelectKhamXetsByAndMaNV" Method="sp_SelectKhamXetsByAndMaNV">
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
+    <ElementType IdRef="ID13" />
+  </Function>
   <Function Name="dbo.sp_SelectKhamXetsAll" Method="sp_SelectKhamXetsAll">
     <ElementType IdRef="ID13" />
   </Function>
   <Function Name="dbo.sp_SelectKhamXetsByAndMaDM" Method="sp_SelectKhamXetsByAndMaDM">
     <Parameter Name="MaDM" Parameter="maDM" Type="System.String" DbType="VarChar(5)" />
-    <ElementType IdRef="ID13" />
-  </Function>
-  <Function Name="dbo.sp_SelectKhamXetsByAndMaNV" Method="sp_SelectKhamXetsByAndMaNV">
-    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
     <ElementType IdRef="ID13" />
   </Function>
   <Function Name="dbo.sp_SelectLoaiDauMay" Method="sp_SelectLoaiDauMay">
@@ -1122,15 +1127,15 @@
     <Parameter Name="MaCT" Parameter="maCT" Type="System.Guid" DbType="UniqueIdentifier" />
     <ElementType IdRef="ID15" />
   </Function>
-  <Function Name="dbo.sp_SelectNhanVien" Method="sp_SelectNhanVien">
-    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
-    <ElementType IdRef="ID16" />
-  </Function>
   <Function Name="dbo.sp_SelectNhanViensByAndMaNV" Method="sp_SelectNhanViensByAndMaNV">
     <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
     <ElementType IdRef="ID16" />
   </Function>
   <Function Name="dbo.sp_SelectNhanViensAll" Method="sp_SelectNhanViensAll">
+    <ElementType IdRef="ID16" />
+  </Function>
+  <Function Name="dbo.sp_SelectNhanVien" Method="sp_SelectNhanVien">
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(5)" />
     <ElementType IdRef="ID16" />
   </Function>
   <Function Name="dbo.sp_SelectNhatKyThayDoiDonGiaBoSung" Method="sp_SelectNhatKyThayDoiDonGiaBoSung">
@@ -1172,6 +1177,10 @@
     <ElementType IdRef="ID19" />
   </Function>
   <Function Name="dbo.sp_SelectTaiXesAll" Method="sp_SelectTaiXesAll">
+    <ElementType IdRef="ID19" />
+  </Function>
+  <Function Name="dbo.sp_SelectTaiXesByAndMaTaiXe" Method="sp_SelectTaiXesByAndMaTaiXe">
+    <Parameter Name="MaTaiXe" Parameter="maTaiXe" Type="System.String" DbType="VarChar(5)" />
     <ElementType IdRef="ID19" />
   </Function>
   <Function Name="dbo.sp_SelectTheoTau" Method="sp_SelectTheoTau">

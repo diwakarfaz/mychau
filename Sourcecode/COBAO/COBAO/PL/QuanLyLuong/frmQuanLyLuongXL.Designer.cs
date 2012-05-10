@@ -122,6 +122,12 @@
             // 
             this.txtMoTa.Location = new System.Drawing.Point(85, 25);
             this.txtMoTa.Name = "txtMoTa";
+            this.txtMoTa.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtMoTa.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtMoTa.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtMoTa.Properties.AppearanceFocused.Options.UseFont = true;
+            this.txtMoTa.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.txtMoTa.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtMoTa.Size = new System.Drawing.Size(216, 20);
             this.txtMoTa.TabIndex = 1;
             // 
@@ -139,6 +145,12 @@
             this.dtNgayNhap.EditValue = null;
             this.dtNgayNhap.Location = new System.Drawing.Point(85, 165);
             this.dtNgayNhap.Name = "dtNgayNhap";
+            this.dtNgayNhap.Properties.Appearance.Options.UseTextOptions = true;
+            this.dtNgayNhap.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.dtNgayNhap.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.dtNgayNhap.Properties.AppearanceFocused.Options.UseFont = true;
+            this.dtNgayNhap.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.dtNgayNhap.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.dtNgayNhap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtNgayNhap.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -171,6 +183,12 @@
             this.txtDonViTinh.EditValue = "VNĐ/Loại";
             this.txtDonViTinh.Location = new System.Drawing.Point(85, 137);
             this.txtDonViTinh.Name = "txtDonViTinh";
+            this.txtDonViTinh.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtDonViTinh.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtDonViTinh.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtDonViTinh.Properties.AppearanceFocused.Options.UseFont = true;
+            this.txtDonViTinh.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.txtDonViTinh.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtDonViTinh.Size = new System.Drawing.Size(216, 20);
             this.txtDonViTinh.TabIndex = 5;
             // 
@@ -178,6 +196,14 @@
             // 
             this.txtLoaiC.Location = new System.Drawing.Point(85, 109);
             this.txtLoaiC.Name = "txtLoaiC";
+            this.txtLoaiC.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtLoaiC.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtLoaiC.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtLoaiC.Properties.AppearanceFocused.Options.UseFont = true;
+            this.txtLoaiC.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.txtLoaiC.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtLoaiC.Properties.Mask.EditMask = "n0";
+            this.txtLoaiC.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtLoaiC.Size = new System.Drawing.Size(216, 20);
             this.txtLoaiC.TabIndex = 4;
             // 
@@ -185,6 +211,14 @@
             // 
             this.txtLoaiB.Location = new System.Drawing.Point(85, 81);
             this.txtLoaiB.Name = "txtLoaiB";
+            this.txtLoaiB.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtLoaiB.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtLoaiB.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtLoaiB.Properties.AppearanceFocused.Options.UseFont = true;
+            this.txtLoaiB.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.txtLoaiB.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtLoaiB.Properties.Mask.EditMask = "n0";
+            this.txtLoaiB.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtLoaiB.Size = new System.Drawing.Size(216, 20);
             this.txtLoaiB.TabIndex = 3;
             // 
@@ -192,6 +226,14 @@
             // 
             this.txtLoaiA.Location = new System.Drawing.Point(85, 53);
             this.txtLoaiA.Name = "txtLoaiA";
+            this.txtLoaiA.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtLoaiA.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtLoaiA.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtLoaiA.Properties.AppearanceFocused.Options.UseFont = true;
+            this.txtLoaiA.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.txtLoaiA.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtLoaiA.Properties.Mask.EditMask = "n0";
+            this.txtLoaiA.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtLoaiA.Size = new System.Drawing.Size(216, 20);
             this.txtLoaiA.TabIndex = 2;
             // 
@@ -243,33 +285,63 @@
             this.dtNgayThayDoi.EditValue = null;
             this.dtNgayThayDoi.Location = new System.Drawing.Point(85, 137);
             this.dtNgayThayDoi.Name = "dtNgayThayDoi";
+            this.dtNgayThayDoi.Properties.Appearance.Options.UseTextOptions = true;
+            this.dtNgayThayDoi.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.dtNgayThayDoi.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.dtNgayThayDoi.Properties.AppearanceFocused.Options.UseFont = true;
+            this.dtNgayThayDoi.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.dtNgayThayDoi.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.dtNgayThayDoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtNgayThayDoi.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dtNgayThayDoi.Size = new System.Drawing.Size(216, 20);
-            this.dtNgayThayDoi.TabIndex = 6;
+            this.dtNgayThayDoi.TabIndex = 10;
             // 
             // txtLoaiCMoi
             // 
             this.txtLoaiCMoi.Location = new System.Drawing.Point(85, 109);
             this.txtLoaiCMoi.Name = "txtLoaiCMoi";
+            this.txtLoaiCMoi.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtLoaiCMoi.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtLoaiCMoi.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtLoaiCMoi.Properties.AppearanceFocused.Options.UseFont = true;
+            this.txtLoaiCMoi.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.txtLoaiCMoi.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtLoaiCMoi.Properties.Mask.EditMask = "n0";
+            this.txtLoaiCMoi.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtLoaiCMoi.Size = new System.Drawing.Size(216, 20);
-            this.txtLoaiCMoi.TabIndex = 4;
+            this.txtLoaiCMoi.TabIndex = 9;
             // 
             // txtLoaiBMoi
             // 
             this.txtLoaiBMoi.Location = new System.Drawing.Point(85, 81);
             this.txtLoaiBMoi.Name = "txtLoaiBMoi";
+            this.txtLoaiBMoi.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtLoaiBMoi.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtLoaiBMoi.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtLoaiBMoi.Properties.AppearanceFocused.Options.UseFont = true;
+            this.txtLoaiBMoi.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.txtLoaiBMoi.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtLoaiBMoi.Properties.Mask.EditMask = "n0";
+            this.txtLoaiBMoi.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtLoaiBMoi.Size = new System.Drawing.Size(216, 20);
-            this.txtLoaiBMoi.TabIndex = 3;
+            this.txtLoaiBMoi.TabIndex = 8;
             // 
             // txtLoaiAMoi
             // 
             this.txtLoaiAMoi.Location = new System.Drawing.Point(85, 53);
             this.txtLoaiAMoi.Name = "txtLoaiAMoi";
+            this.txtLoaiAMoi.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtLoaiAMoi.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtLoaiAMoi.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtLoaiAMoi.Properties.AppearanceFocused.Options.UseFont = true;
+            this.txtLoaiAMoi.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.txtLoaiAMoi.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtLoaiAMoi.Properties.Mask.EditMask = "n0";
+            this.txtLoaiAMoi.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtLoaiAMoi.Size = new System.Drawing.Size(216, 20);
-            this.txtLoaiAMoi.TabIndex = 2;
+            this.txtLoaiAMoi.TabIndex = 7;
             // 
             // labelControl7
             // 
@@ -313,7 +385,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.gcDonGiaXL.Location = new System.Drawing.Point(12, 247);
-            this.gcDonGiaXL.LookAndFeel.SkinName = "Money Twins";
+            this.gcDonGiaXL.LookAndFeel.SkinName = "Blue";
             this.gcDonGiaXL.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gcDonGiaXL.MainView = this.gvDonGiaXL;
             this.gcDonGiaXL.Name = "gcDonGiaXL";
@@ -322,7 +394,7 @@
             this.lDonGiaXL,
             this.btnXoaLuoi});
             this.gcDonGiaXL.Size = new System.Drawing.Size(947, 243);
-            this.gcDonGiaXL.TabIndex = 48;
+            this.gcDonGiaXL.TabIndex = 16;
             this.gcDonGiaXL.UseEmbeddedNavigator = true;
             this.gcDonGiaXL.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDonGiaXL});
@@ -503,7 +575,7 @@
             this.btnThoat.Location = new System.Drawing.Point(565, 218);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(85, 23);
-            this.btnThoat.TabIndex = 53;
+            this.btnThoat.TabIndex = 15;
             this.btnThoat.Text = "&Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
@@ -514,7 +586,7 @@
             this.btnThemMoi.Location = new System.Drawing.Point(97, 218);
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.Size = new System.Drawing.Size(85, 23);
-            this.btnThemMoi.TabIndex = 49;
+            this.btnThemMoi.TabIndex = 11;
             this.btnThemMoi.Text = "&Thêm mới";
             this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
             // 
@@ -526,7 +598,7 @@
             this.btnXoa.Location = new System.Drawing.Point(448, 218);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(85, 23);
-            this.btnXoa.TabIndex = 52;
+            this.btnXoa.TabIndex = 14;
             this.btnXoa.Text = "&Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -537,7 +609,7 @@
             this.btnXoaTrang.Location = new System.Drawing.Point(331, 218);
             this.btnXoaTrang.Name = "btnXoaTrang";
             this.btnXoaTrang.Size = new System.Drawing.Size(85, 23);
-            this.btnXoaTrang.TabIndex = 51;
+            this.btnXoaTrang.TabIndex = 13;
             this.btnXoaTrang.Text = "Xóa &trắng";
             this.btnXoaTrang.Click += new System.EventHandler(this.btnXoaTrang_Click);
             // 
@@ -548,7 +620,7 @@
             this.btnSuaChua.Location = new System.Drawing.Point(214, 218);
             this.btnSuaChua.Name = "btnSuaChua";
             this.btnSuaChua.Size = new System.Drawing.Size(85, 23);
-            this.btnSuaChua.TabIndex = 50;
+            this.btnSuaChua.TabIndex = 12;
             this.btnSuaChua.Text = "&Thay đổi giá";
             this.btnSuaChua.Click += new System.EventHandler(this.btnSuaChua_Click);
             // 

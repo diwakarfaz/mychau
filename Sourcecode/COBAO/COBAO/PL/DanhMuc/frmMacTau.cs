@@ -43,6 +43,7 @@ namespace COBAO.PL.DanhMuc
 
         private void LoadDataSource()
         {
+            txtMaMacTau.Select();
             txtMaMacTau.Text = txtTenMacTau.Text = null;
             cbbMaCT.EditValue = cbbMaLuongXL.EditValue = null;
             dglxlp = new DonGiaLuongXLProvider();
@@ -193,6 +194,7 @@ namespace COBAO.PL.DanhMuc
                 cbbMaCT.EditValue = mact = (Guid)mt.MaCT;
                 cbbMaLuongXL.EditValue = madongiaxl = (Guid)mt.MaLuongXL;
                 txtMaMacTau.Enabled = false;
+                txtTenMacTau.Focus();
                 btnSuaChua.Enabled = btnXoa.Enabled = true;
                 btnThemMoi.Enabled = false;
             }

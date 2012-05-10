@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.cbbMaTaiXe = new DevExpress.XtraEditors.LookUpEdit();
             this.txtSoNgay = new DevExpress.XtraEditors.TextEdit();
             this.txtTenTaiXe = new DevExpress.XtraEditors.TextEdit();
             this.cbbTrangThai = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -52,9 +53,9 @@
             this.btnSuaChua = new DevExpress.XtraEditors.SimpleButton();
             this.btnThemMoi = new DevExpress.XtraEditors.SimpleButton();
             this.dxValid = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.cbbMaTaiXe = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbMaTaiXe.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenTaiXe.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbTrangThai.Properties)).BeginInit();
@@ -64,7 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcNgayCong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.leChungLoai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbMaTaiXe.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -84,6 +84,26 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(963, 77);
             this.panelControl1.TabIndex = 15;
+            // 
+            // cbbMaTaiXe
+            // 
+            this.cbbMaTaiXe.Location = new System.Drawing.Point(92, 12);
+            this.cbbMaTaiXe.Name = "cbbMaTaiXe";
+            this.cbbMaTaiXe.Properties.AppearanceFocused.BackColor = System.Drawing.Color.Cornsilk;
+            this.cbbMaTaiXe.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.cbbMaTaiXe.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.cbbMaTaiXe.Properties.AppearanceFocused.Options.UseFont = true;
+            this.cbbMaTaiXe.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.cbbMaTaiXe.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cbbMaTaiXe.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbbMaTaiXe.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenChungLoaiXe", "Chọn chủng loại xe", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.cbbMaTaiXe.Properties.DisplayMember = "TenChungLoaiXe";
+            this.cbbMaTaiXe.Properties.NullText = "";
+            this.cbbMaTaiXe.Properties.ValueMember = "MaChungLoaiXe";
+            this.cbbMaTaiXe.Size = new System.Drawing.Size(144, 20);
+            this.cbbMaTaiXe.TabIndex = 10;
             // 
             // txtSoNgay
             // 
@@ -105,6 +125,10 @@
             this.cbbTrangThai.Name = "cbbTrangThai";
             this.cbbTrangThai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbbTrangThai.Properties.Items.AddRange(new object[] {
+            "Họp tổ",
+            "Ốm",
+            "Phép"});
             this.cbbTrangThai.Size = new System.Drawing.Size(142, 20);
             this.cbbTrangThai.TabIndex = 3;
             // 
@@ -313,26 +337,6 @@
             this.btnThemMoi.TabIndex = 12;
             this.btnThemMoi.Text = "&Ghi nhận";
             // 
-            // cbbMaTaiXe
-            // 
-            this.cbbMaTaiXe.Location = new System.Drawing.Point(92, 12);
-            this.cbbMaTaiXe.Name = "cbbMaTaiXe";
-            this.cbbMaTaiXe.Properties.AppearanceFocused.BackColor = System.Drawing.Color.Cornsilk;
-            this.cbbMaTaiXe.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.cbbMaTaiXe.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.cbbMaTaiXe.Properties.AppearanceFocused.Options.UseFont = true;
-            this.cbbMaTaiXe.Properties.AppearanceFocused.Options.UseTextOptions = true;
-            this.cbbMaTaiXe.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.cbbMaTaiXe.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbbMaTaiXe.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenChungLoaiXe", "Chọn chủng loại xe", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.cbbMaTaiXe.Properties.DisplayMember = "TenChungLoaiXe";
-            this.cbbMaTaiXe.Properties.NullText = "";
-            this.cbbMaTaiXe.Properties.ValueMember = "MaChungLoaiXe";
-            this.cbbMaTaiXe.Size = new System.Drawing.Size(144, 20);
-            this.cbbMaTaiXe.TabIndex = 10;
-            // 
             // frmNgayCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,6 +356,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbMaTaiXe.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenTaiXe.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbTrangThai.Properties)).EndInit();
@@ -361,7 +366,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcNgayCong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.leChungLoai)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbMaTaiXe.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

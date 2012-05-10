@@ -34,6 +34,7 @@ namespace COBAO.PL.DanhMuc
 
         private void LoadDataSource()
         {
+            txtMaTinhChat.Select();
             tcp = new TinhChatProvider();
             gcTinhChat.DataSource = tcp.GetAll();
             txtMaTinhChat.Text = matinhchat = null;
@@ -181,6 +182,7 @@ namespace COBAO.PL.DanhMuc
                 matinhchat = txtMaTinhChat.Text = tc.MaTinhChat;
                 tentinhchat = txtTenTinhChat.Text = tc.TenTinhChat;
                 txtMaTinhChat.Enabled = false;
+                txtTenTinhChat.Focus();
                 btnSuaChua.Enabled = btnXoa.Enabled = true;
                 btnThemMoi.Enabled = false;
             }

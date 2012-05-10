@@ -5,11 +5,10 @@ using System.Text;
 
 namespace COBAO.DAL
 {
-    public class HienThiChiTietKhamXet
+    class HienThiThuongTruc
     {
-    
-        public Guid MaKhamXet{get;set;}
-        public string MaDM { get; set; }
+        public Guid MaTram { get; set; }
+        public string TenTram { get; set; }
         public string MaTaiXeChinh { get; set; }
         public string TenTaiXeChinh { get; set; }
         public string MaTaiXePhu { get; set; }
@@ -18,7 +17,9 @@ namespace COBAO.DAL
         public string GioBatDau { get; set; }
         public string NgayKetThuc { get; set; }
         public string GioKetThuc { get; set; }
-        public string ThoiGianKhamXet { get; set; }
+        public string ThoiGianTruc { get; set; }
         public string GioCaBa { get; set; }
+
+        public Guid MaThuongTruc { get; set; }
     }
 }
