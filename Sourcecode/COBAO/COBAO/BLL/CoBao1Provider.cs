@@ -81,5 +81,18 @@ namespace COBAO.BLL
                 return 0;
             }
         }
+        public CoBao GetSoGetCoBaoBySoCoBao(string socobao)
+        {
+            try
+            {
+                return (from sql in Db.CoBaos
+                        where sql.SoCoBao.Equals(socobao)
+                        select sql).Single();
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }

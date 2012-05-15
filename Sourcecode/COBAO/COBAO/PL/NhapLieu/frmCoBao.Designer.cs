@@ -101,7 +101,6 @@
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.txtGioLuuTruTheoTauChinh = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.theoTauBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
@@ -111,7 +110,6 @@
             this.txtGioCaBa = new DevExpress.XtraEditors.TextEdit();
             this.txtGioLamViec = new DevExpress.XtraEditors.TextEdit();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.theoTauTableAdapter = new COBAO.DAL.COBAODataSetTableAdapters.TheoTauTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.cOBAODataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hanhTrinhBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValid)).BeginInit();
@@ -151,7 +149,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtGioTheoTau.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGioLuuTruTheoTauPhu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGioLuuTruTheoTauChinh.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.theoTauBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtThoiGianBBH.Properties)).BeginInit();
@@ -974,6 +971,7 @@
             this.cbbTheoTauChinh.Properties.ValueMember = "MaTaiXe";
             this.cbbTheoTauChinh.Size = new System.Drawing.Size(204, 20);
             this.cbbTheoTauChinh.TabIndex = 4;
+            this.cbbTheoTauChinh.EditValueChanged += new System.EventHandler(this.cbbTheoTauChinh_EditValueChanged);
             this.cbbTheoTauChinh.TextChanged += new System.EventHandler(this.cbbMaTaiChinh_TextChanged);
             // 
             // labelControl2
@@ -1065,11 +1063,6 @@
             this.labelControl10.Size = new System.Drawing.Size(50, 13);
             this.labelControl10.TabIndex = 19;
             this.labelControl10.Text = "Tài chính";
-            // 
-            // theoTauBindingSource
-            // 
-            this.theoTauBindingSource.DataMember = "TheoTau";
-            this.theoTauBindingSource.DataSource = this.cOBAODataSet;
             // 
             // groupControl1
             // 
@@ -1185,10 +1178,6 @@
             this.labelControl19.TabIndex = 8;
             this.labelControl19.Text = "Giờ ca ba";
             // 
-            // theoTauTableAdapter
-            // 
-            this.theoTauTableAdapter.ClearBeforeFill = true;
-            // 
             // frmCoBao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1252,7 +1241,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtGioTheoTau.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGioLuuTruTheoTauPhu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGioLuuTruTheoTauChinh.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.theoTauBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -1347,8 +1335,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.TextEdit txtGioLuuTruTheoTauChinh;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private System.Windows.Forms.BindingSource theoTauBindingSource;
-        private DAL.COBAODataSetTableAdapters.TheoTauTableAdapter theoTauTableAdapter;
         private DevExpress.XtraEditors.TextEdit txtGioTheoTau;
         private DevExpress.XtraEditors.LabelControl labelControl14;
     }

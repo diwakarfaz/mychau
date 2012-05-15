@@ -153,63 +153,63 @@
         <classShapeMoniker Id="3107499d-d386-46bd-a298-74ebdecce82f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7 : 12.4459724589844); (7.09375 : 12.4459724589844); (7.09375 : 11.609375); (9.21875 : 11.609375); (9.21875 : 11.8442203776042); (11.734375 : 11.8442203776042); (11.734375 : 8.1404443359375); (12.75 : 8.1404443359375); (12.75 : 8.1170068359375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7 : 12.4459724589844); (7.09375 : 12.4459724589844); (7.09375 : 11.609375); (9.21875 : 11.609375); (9.21875 : 11.8442203776042); (11.734375 : 11.8442203776042); (11.734375 : 8.1404443359375); (12.75 : 8.1404443359375); (12.75 : 8.1170068359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/DauMay/DauMay_CoBao" />
       <nodes>
         <classShapeMoniker Id="3d24f3a5-dfe7-42a2-8c54-79fd62954ee9" />
         <classShapeMoniker Id="fb3e776b-97db-4608-a825-d60429ed64fa" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.625 : 10.0344962565104); (2.875 : 10.0344962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.625 : 10.0344962565104); (2.875 : 10.0344962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/Tram/Tram_Doi" />
       <nodes>
         <classShapeMoniker Id="2c9e07bc-018d-458f-b963-7138f7d1b0c7" />
         <classShapeMoniker Id="716750b9-7bfc-4520-b794-13d1d67183c0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(13.75 : 6.61620198567708); (14.125 : 6.61620198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(13.75 : 6.61620198567708); (14.125 : 6.61620198567708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/CoBao/CoBao_HanhTrinh" />
       <nodes>
         <classShapeMoniker Id="fb3e776b-97db-4608-a825-d60429ed64fa" />
         <classShapeMoniker Id="56d8a344-fc34-420b-a104-ada0dbb03169" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.875 : 14.2973453776042); (15.125 : 14.2973453776042); (15.125 : 7.98240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.875 : 14.2973453776042); (15.125 : 14.2973453776042); (15.125 : 7.98240397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/Ga/Ga_HanhTrinh" />
       <nodes>
         <classShapeMoniker Id="94bc7469-29c9-4428-bc84-e19a5903e441" />
         <classShapeMoniker Id="56d8a344-fc34-420b-a104-ada0dbb03169" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(10.3125 : 11.6554996744792); (10.3125 : 11.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(10.3125 : 11.6554996744792); (10.3125 : 11.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/KhamXet/KhamXet_ChiTietKhamXet" />
       <nodes>
         <classShapeMoniker Id="eee7b3ba-24bd-4e6a-b713-69f712bbf454" />
         <classShapeMoniker Id="2ef65e46-3d9b-4965-bd14-46ec2735a256" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7 : 12.0681469726562); (7.109375 : 12.0681469726562); (7.109375 : 11.609375); (9.234375 : 11.609375); (9.234375 : 11.859375); (10.875002 : 11.859375); (10.875002 : 11.6554996744792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7 : 12.0681469726562); (7.109375 : 12.0681469726562); (7.109375 : 11.609375); (9.234375 : 11.609375); (9.234375 : 11.859375); (10.875002 : 11.859375); (10.875002 : 11.6554996744792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/DauMay/DauMay_KhamXet" />
       <nodes>
         <classShapeMoniker Id="3d24f3a5-dfe7-42a2-8c54-79fd62954ee9" />
         <classShapeMoniker Id="eee7b3ba-24bd-4e6a-b713-69f712bbf454" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.875 : 12.0681469726562); (5 : 12.0681469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.875 : 12.0681469726562); (5 : 12.0681469726562)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/LoaiDauMay/LoaiDauMay_DauMay" />
       <nodes>
         <classShapeMoniker Id="5bbd9886-0669-4438-bb65-3bc9afd08d1a" />
         <classShapeMoniker Id="3d24f3a5-dfe7-42a2-8c54-79fd62954ee9" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(9.375 : 7.70595540364583); (11.75 : 7.70595540364583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(9.375 : 7.70595540364583); (11.75 : 7.70595540364583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/MacTau/MacTau_CoBao" />
       <nodes>
         <classShapeMoniker Id="7a81eded-c0ee-4b4c-9ef2-5ca77963ec9c" />
         <classShapeMoniker Id="fb3e776b-97db-4608-a825-d60429ed64fa" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.125 : 7.59699625651042); (7.375 : 7.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.125 : 7.59699625651042); (7.375 : 7.59699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/CongTy/CongTy_MacTau" />
       <nodes>
         <classShapeMoniker Id="a97da560-ba40-48f9-b4dd-e3dfc655a0fd" />
@@ -223,42 +223,42 @@
         <classShapeMoniker Id="7a81eded-c0ee-4b4c-9ef2-5ca77963ec9c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 8.62865068164063); (2.984375 : 8.62865068164063); (2.984375 : 7.484375); (5.109375 : 7.484375); (5.109375 : 6.984375); (9.109375 : 6.984375); (9.109375 : 4.484375); (12.75 : 4.484375); (12.75 : 5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 8.62865068164063); (2.984375 : 8.62865068164063); (2.984375 : 7.484375); (5.109375 : 7.484375); (5.109375 : 6.984375); (9.109375 : 6.984375); (9.109375 : 4.484375); (12.75 : 4.484375); (12.75 : 5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/NhanVien/NhanVien_CoBao" />
       <nodes>
         <classShapeMoniker Id="704b2673-a991-4a4f-82f0-baf2d191b86f" />
         <classShapeMoniker Id="fb3e776b-97db-4608-a825-d60429ed64fa" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 7.73159912109375); (2.9375 : 7.73159912109375); (2.9375 : 9.71799967447917); (7.09375 : 9.71799967447917); (7.09375 : 9.3125); (10.375 : 9.3125); (10.375 : 9.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 7.73159912109375); (2.9375 : 7.73159912109375); (2.9375 : 9.71799967447917); (7.09375 : 9.71799967447917); (7.09375 : 9.3125); (10.375 : 9.3125); (10.375 : 9.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/NhanVien/NhanVien_KhamXet" />
       <nodes>
         <classShapeMoniker Id="704b2673-a991-4a4f-82f0-baf2d191b86f" />
         <classShapeMoniker Id="eee7b3ba-24bd-4e6a-b713-69f712bbf454" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 6.19314697265625); (3 : 6.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 6.19314697265625); (3 : 6.19314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/DonGiaLuongBoSung/DonGiaLuongBoSung_NhatKyThayDoiDonGiaBoSung" />
       <nodes>
         <classShapeMoniker Id="07a6c5f4-48df-4057-80c2-051cb3518e1e" />
         <classShapeMoniker Id="19e57500-4b85-4591-95a2-f9b6241fb868" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 7.23159912109375); (3 : 7.23159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 7.23159912109375); (3 : 7.23159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/NhanVien/NhanVien_NhatKyThayDoiDonGiaBoSung" />
       <nodes>
         <classShapeMoniker Id="704b2673-a991-4a4f-82f0-baf2d191b86f" />
         <classShapeMoniker Id="19e57500-4b85-4591-95a2-f9b6241fb868" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7 : 6.16189447265625); (9.125 : 6.16189447265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7 : 6.16189447265625); (9.125 : 6.16189447265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/DonGiaLuongXL/DonGiaLuongXL_NhatKyThayDoiGiaXL" />
       <nodes>
         <classShapeMoniker Id="7a9c777e-09f2-4bd7-bc28-e8d9961206fc" />
         <classShapeMoniker Id="ef241c22-ea7f-415d-8fdb-c21183b5c890" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.281252 : 7); (2.281252 : 6.9375); (2.9375 : 6.9375); (2.9375 : 5.4375); (9.03125 : 5.4375); (9.03125 : 5.86620198567708); (9.125 : 5.86620198567708)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.281252 : 7); (2.281252 : 6.9375); (2.9375 : 6.9375); (2.9375 : 5.4375); (9.03125 : 5.4375); (9.03125 : 5.86620198567708); (9.125 : 5.86620198567708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/NhanVien/NhanVien_NhatKyThayDoiGiaXL" />
       <nodes>
         <classShapeMoniker Id="704b2673-a991-4a4f-82f0-baf2d191b86f" />
@@ -272,77 +272,77 @@
         <classShapeMoniker Id="2ef65e46-3d9b-4965-bd14-46ec2735a256" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(9.125 : 9.40625); (11.75 : 9.40625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(9.125 : 9.40625); (11.75 : 9.40625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/TaiXe/TaiXe_ChiTietThuongTruc" />
       <nodes>
         <classShapeMoniker Id="0497ac50-8fae-46c0-9d83-ad027c4a07a4" />
         <classShapeMoniker Id="e27095be-b83d-4143-9d2e-c88bd349300f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(9.125 : 10.4683748372396); (9.3125 : 10.4683748372396); (9.3125 : 11.7179996744792); (11.6875 : 11.7179996744792); (11.6875 : 11.8910953776042); (12.75 : 11.8910953776042); (12.75 : 11.8285953776042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(9.125 : 10.4683748372396); (9.3125 : 10.4683748372396); (9.3125 : 11.7179996744792); (11.6875 : 11.7179996744792); (11.6875 : 11.8910953776042); (12.75 : 11.8910953776042); (12.75 : 11.8285953776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/TaiXe/TaiXe_CoBaoLaiTau" />
       <nodes>
         <classShapeMoniker Id="0497ac50-8fae-46c0-9d83-ad027c4a07a4" />
         <classShapeMoniker Id="3107499d-d386-46bd-a298-74ebdecce82f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.07759365384615 : 11.5304996744792); (8.07759365384615 : 11.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.07759365384615 : 11.5304996744792); (8.07759365384615 : 11.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/TaiXe/TaiXe_HopPhepOm" />
       <nodes>
         <classShapeMoniker Id="0497ac50-8fae-46c0-9d83-ad027c4a07a4" />
         <classShapeMoniker Id="2e8e9cf7-aef4-4d55-9b99-b8f98e59eff4" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(12.218748 : 8.1170068359375); (12.218748 : 8.3670068359375); (14 : 8.3670068359375); (14 : 12.8854484049479); (13.625 : 12.8854484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(12.218748 : 8.1170068359375); (12.218748 : 8.3670068359375); (14 : 8.3670068359375); (14 : 12.8854484049479); (13.625 : 12.8854484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/CoBao/CoBao_TheoTau" />
       <nodes>
         <classShapeMoniker Id="fb3e776b-97db-4608-a825-d60429ed64fa" />
         <classShapeMoniker Id="87e2d698-402f-444c-8c3b-ceace0d01afa" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.60129682692308 : 11.5304996744792); (8.60129682692308 : 11.5929996744792); (9.1875 : 11.5929996744792); (9.1875 : 11.8125); (11.3125 : 11.8125); (11.3125 : 12.8854484049479); (11.625 : 12.8854484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.60129682692308 : 11.5304996744792); (8.60129682692308 : 11.5929996744792); (9.1875 : 11.5929996744792); (9.1875 : 11.8125); (11.3125 : 11.8125); (11.3125 : 12.8854484049479); (11.625 : 12.8854484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/TaiXe/TaiXe_TheoTau" />
       <nodes>
         <classShapeMoniker Id="0497ac50-8fae-46c0-9d83-ad027c4a07a4" />
         <classShapeMoniker Id="87e2d698-402f-444c-8c3b-ceace0d01afa" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5 : 8.91429768880208); (11.75 : 8.91429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5 : 8.91429768880208); (11.75 : 8.91429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/ThuongTruc/ThuongTruc_ChiTietThuongTruc" />
       <nodes>
         <classShapeMoniker Id="433fa035-9cb9-4d8e-886a-68b412752f0c" />
         <classShapeMoniker Id="e27095be-b83d-4143-9d2e-c88bd349300f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 8.23159912109375); (3 : 8.23159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 8.23159912109375); (3 : 8.23159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/NhanVien/NhanVien_ThuongTruc" />
       <nodes>
         <classShapeMoniker Id="704b2673-a991-4a4f-82f0-baf2d191b86f" />
         <classShapeMoniker Id="433fa035-9cb9-4d8e-886a-68b412752f0c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.625 : 9.39024983723958); (3 : 9.39024983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.625 : 9.39024983723958); (3 : 9.39024983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/Tram/Tram_ThuongTruc" />
       <nodes>
         <classShapeMoniker Id="2c9e07bc-018d-458f-b963-7138f7d1b0c7" />
         <classShapeMoniker Id="433fa035-9cb9-4d8e-886a-68b412752f0c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 13.5969962565104); (5.8125 : 13.5969962565104); (5.8125 : 13.3125); (7.0625 : 13.3125); (7.0625 : 11.5929996744792); (9.15625 : 11.5929996744792); (9.15625 : 11.8125); (11.5625 : 11.8125); (11.5625 : 11.9375); (13.9166666666667 : 11.9375 : JumpStart); (14.0833333333333 : 11.9375 : JumpEnd); (14.593748 : 11.9375); (14.593748 : 7.98240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 13.5969962565104); (5.8125 : 13.5969962565104); (5.8125 : 13.3125); (7.0625 : 13.3125); (7.0625 : 11.5929996744792); (9.15625 : 11.5929996744792); (9.15625 : 11.8125); (11.5625 : 11.8125); (11.5625 : 11.9375); (13.9166666666667 : 11.9375 : JumpStart); (14.0833333333333 : 11.9375 : JumpEnd); (14.593748 : 11.9375); (14.593748 : 7.98240397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/TinhChat/TinhChat_HanhTrinh" />
       <nodes>
         <classShapeMoniker Id="2dfe6d1c-3e47-4ff5-b050-07e3db70d66a" />
         <classShapeMoniker Id="56d8a344-fc34-420b-a104-ada0dbb03169" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7 : 10.4431469726563); (7.125 : 10.4431469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7 : 10.4431469726563); (7.125 : 10.4431469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/To/To_TaiXe" />
       <nodes>
         <classShapeMoniker Id="ae68b0ab-ba13-4e79-94c7-7ed7d8a9d07c" />
         <classShapeMoniker Id="0497ac50-8fae-46c0-9d83-ad027c4a07a4" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.875 : 10.4431469726563); (5 : 10.4431469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.875 : 10.4431469726563); (5 : 10.4431469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/COBAOLINQDataContext/Doi/Doi_To" />
       <nodes>
         <classShapeMoniker Id="716750b9-7bfc-4520-b794-13d1d67183c0" />

@@ -62,5 +62,19 @@ namespace COBAO.BLL
         {
             return Db.sp_SelectTheoTausByAndSoCoBao(entity.SoCoBao).ToList();
         }
+
+        public TheoTau GetTheoTauTheoSoCoBao(string socobao, bool tai)
+        {
+            try
+            {
+                return (from theotau in Db.TheoTaus
+                        where theotau.SoCoBao.Equals(socobao) && theotau.Tai == tai
+                        select theotau).Single();
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }

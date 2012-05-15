@@ -145,5 +145,11 @@ namespace COBAO.PL
             rpthcblc.ShowPreviewDialog();
         }
 
+        private void btnTongHopLuongCNLT_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            rpTinhLuong rpluong = new rpTinhLuong();
+            rpluong.ShowPreviewDialog();
+        }
+
     }
 }
