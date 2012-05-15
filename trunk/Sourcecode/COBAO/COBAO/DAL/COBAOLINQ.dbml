@@ -1239,4 +1239,8 @@
   <Function Name="dbo.sp_SelectTramsAll" Method="sp_SelectTramsAll">
     <ElementType IdRef="ID24" />
   </Function>
+  <Function Name="dbo.sp_SelectCoBaosByAndSoCoBao" Method="sp_SelectCoBaosByAndSoCoBao">
+    <Parameter Name="SoCoBao" Parameter="soCoBao" Type="System.String" DbType="VarChar(8)" />
+    <ElementType IdRef="ID3" />
+  </Function>
 </Database>

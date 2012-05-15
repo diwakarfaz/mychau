@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using COBAO.PL;
+using COBAO.BLL;
 
 namespace COBAO
 {

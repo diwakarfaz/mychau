@@ -1570,6 +1570,13 @@ namespace COBAO.DAL
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<Tram>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectCoBaosByAndSoCoBao")]
+		public ISingleResult<CoBao> sp_SelectCoBaosByAndSoCoBao([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoCoBao", DbType="VarChar(8)")] string soCoBao)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), soCoBao);
+			return ((ISingleResult<CoBao>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ChiTietKhamXet")]

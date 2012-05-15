@@ -270,10 +270,10 @@
             // xrThang
             // 
             this.xrThang.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Italic);
-            this.xrThang.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 28.20832F);
+            this.xrThang.LocationFloat = new DevExpress.Utils.PointFloat(0F, 28.20832F);
             this.xrThang.Name = "xrThang";
             this.xrThang.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrThang.SizeF = new System.Drawing.SizeF(730F, 23F);
+            this.xrThang.SizeF = new System.Drawing.SizeF(750.0001F, 23F);
             this.xrThang.StylePriority.UseFont = false;
             this.xrThang.StylePriority.UseTextAlignment = false;
             this.xrThang.Text = "xrThang";
@@ -282,10 +282,10 @@
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold);
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 0F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(730F, 28.20832F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(750F, 28.20832F);
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.StylePriority.UseTextAlignment = false;
             this.xrLabel1.Text = "BIỂU TỔNG HỢP THỜI GIAN LAO ĐỘNG CỦA CÔNG NHÂN LÁI TÀU";

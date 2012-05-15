@@ -13,6 +13,8 @@ using DevExpress.XtraEditors.DXErrorProvider;
 using DevExpress.XtraBars.Alerter;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Columns;
 
 namespace COBAO.PL.NhapLieu
 {
@@ -28,11 +30,14 @@ namespace COBAO.PL.NhapLieu
         List<HanhTrinh> listht;
         ConditionValidationRule ruleTrong;
         private AlertControl alert;
+        private bool dacocobao;
+        private CoBao cobao;
         #endregion
         #region form load
         public frmCoBao()
         {
             InitializeComponent();
+            dacocobao = false;
             cbp = new CoBao1Provider();
             htp = new HanhTrinhProvider();
             cbltp = new CoBaoLaiTauProvider();
@@ -45,10 +50,6 @@ namespace COBAO.PL.NhapLieu
         }
         private void frmCoBao_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'cOBAODataSet.TheoTau' table. You can move, or remove it, as needed.
-            this.theoTauTableAdapter.Fill(this.cOBAODataSet.TheoTau);
-            // TODO: This line of code loads data into the 'cOBAODataSet.TheoTau' table. You can move, or remove it, as needed.
-            this.theoTauTableAdapter.GetData();
             // TODO: This line of code loads data into the 'cOBAODataSet.HanhTrinh' table. You can move, or remove it, as needed.          
             hanhTrinhTableAdapter.GetData();
             LoadDataSource();
@@ -79,7 +80,8 @@ namespace COBAO.PL.NhapLieu
             cbbTheoTauChinh.Properties.DataSource = a;
             cbbMaTaiPhu.Properties.DataSource = new TaiXeProvider().GetAll();
             cbbTheoTauPhu.Properties.DataSource = new TaiXeProvider().GetAll();
-            txtGioLuuTruTheoTauChinh.Text = txtGioLuuTruTheoTauPhu.Text = txtGioTheoTau.Text = null;
+            txtGioLuuTruTheoTauChinh.Text = txtGioLuuTruTheoTauPhu.Text = "0h0";
+            txtGioTheoTau.Text = null;
             dxValid.Dispose();
             txtGioLamViec.Enabled = txtGioCaBa.Enabled = txtThoiGianBBH.Enabled = txtThoiGianTruc.Enabled = false;
             btnSuaChua.Enabled = btnXoa.Enabled = btnThemMoi.Enabled = false;
@@ -179,28 +181,7 @@ namespace COBAO.PL.NhapLieu
                         XtraMessageBox.Show(String.Format("Bạn chưa nhập hành trình", MessageBoxButtons.OK, MessageBoxIcon.Question));
                     }
                     else
-                    {                                              
-                        var a = new CoBao1Provider().GetAll();
-                        if (a != null)
-                        {
-                            foreach (var item in a)
-                                if (item.SoCoBao.Equals(txtSoCoBao.Text))
-                                {                                    
-                                    btnSuaChua.Enabled = btnXoa.Enabled = true;
-                                    break;
-                                }
-                                else
-                                {
-                                    btnThemMoi.Enabled = true;
-                                    btnSuaChua.Enabled = btnXoa.Enabled = false;
-                                }
-
-                        }
-                        else
-                        {
-                            btnThemMoi.Enabled = true;
-                            btnSuaChua.Enabled = btnXoa.Enabled = false;
-                        }
+                    {
                         #region tính giờ làm việc, giờ ca ba
                         string tam1, tam2;
                         int giolamviec, giocaba;
@@ -221,14 +202,36 @@ namespace COBAO.PL.NhapLieu
 
                         #region tính giờ bbh
                         int giobbh = 0;
+                        int truc = 0;
                         if (cbbXepLoai.EditValue.Equals("BBH"))
                         {
-                            giobbh = 360;
+                            string tam3, tam4;                            
+                            for (int i = 0; i < n - 2; i++)
+                            {
+                                int j = i + 1;                                    
+                                var ht1 = gvHanhTrinh.GetRow(i) as HanhTrinh;
+                                var ht2 = gvHanhTrinh.GetRow(j) as HanhTrinh;
+                                string giodi = ht1.GioDi.ToString();
+                                DateTime ngaydi = DateTime.Parse(ht1.NgayDi.ToString());
+                                string gioden = ht2.GioDen.ToString();
+                                DateTime ngayden = DateTime.Parse(ht2.NgayDen.ToString());
+                                tam3 = ngaydi.ToShortDateString() + " " + giodi.ToString();
+                                tam4 = ngayden.ToShortDateString() + " " + gioden.ToString();
+                                ngaydi = DateTime.Parse(tam3);
+                                ngayden = DateTime.Parse(tam4);
+                                TimeSpan tinh1 = ngayden.Subtract(ngaydi);                                   
+                                giobbh += (int)tinh1.TotalMinutes;                                
+                            }
+                            for (int l = 0; l < n - 1; l++)
+                            {
+                                var ht3 = gvHanhTrinh.GetRow(l) as HanhTrinh;
+                                if (ht3.ThoiGianDung != null)
+                                    truc += (int)ht3.ThoiGianDung;
+                            }
+                            giobbh = giobbh - truc;
+                            txtThoiGianBBH.Text = clsFuntion.PhutRaGio(giobbh);
                             txtThoiGianBBH.Enabled = true;
                         }
-
-                        txtThoiGianBBH.Text = clsFuntion.PhutRaGio(giobbh);
-
                         #endregion
 
                         #region tính giờ trực
@@ -251,6 +254,19 @@ namespace COBAO.PL.NhapLieu
                         #endregion
 
                         txtThoiGianTruc.Enabled = true;
+
+                        cobao = new CoBao();
+                        cobao = new CoBao1Provider().GetSoGetCoBaoBySoCoBao(txtSoCoBao.Text.Trim());
+                        if (cobao != null)
+                        {
+                            btnSuaChua.Enabled = true;
+                            btnThemMoi.Enabled = false;
+                        }
+                        else
+                        {
+                            btnSuaChua.Enabled = false;
+                            btnThemMoi.Enabled = true;
+                        }
                         dxValid.Validate();
                     }
                 }
@@ -268,7 +284,7 @@ namespace COBAO.PL.NhapLieu
             var SelectCmdtxt = (from ht in db.HanhTrinhs
                                 where ht.SoCoBao.Equals(txtSoCoBao.Text.Trim())
                                 select ht).ToList();
-            hanhTrinhBindingSource.DataSource = SelectCmdtxt.ToList();            
+            hanhTrinhBindingSource.DataSource = SelectCmdtxt.ToList();
         }
 
         #region xóa cơ báo
@@ -287,6 +303,10 @@ namespace COBAO.PL.NhapLieu
                     foreach (var item in b)
                         if (item.SoCoBao == txtSoCoBao.Text.Trim())
                             htp.Delete(item);
+                    var c = new TheoTauProvider().GetAll();
+                    foreach (var item in c)
+                        if (item.SoCoBao == txtSoCoBao.Text.Trim())
+                            ttp.Delete(item);
                     CoBao cb = (from cb1 in db.CoBaos
                                 where cb1.SoCoBao.Equals(txtSoCoBao.Text.Trim())
                                 select cb1).Single();
@@ -305,120 +325,177 @@ namespace COBAO.PL.NhapLieu
         #region thêm mới
         private void btnThemMoi_Click(object sender, EventArgs e)
         {
-            if (cbbTheoTauChinh.EditValue == null)
+            try
             {
-                cbbTheoTauPhu.EditValue = txtGioLuuTruTheoTauChinh.Text = txtGioLuuTruTheoTauPhu.Text = txtGioTheoTau.Text = null;
-            }
-            else if (txtGioTheoTau.Text.Trim().Length == 0)
-            {
-                ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
-                dxValid.SetValidationRule(txtGioTheoTau, ruleTrong);
-                dxValid.Validate();
-            }
-            else
-            {
-                #region luu cobao
-                DateTime ngaydau = DateTime.Parse(DateTime.Parse(dtNgayNhanMay.EditValue.ToString()).ToShortDateString() + " " + DateTime.Parse(tmGioNhanMay.EditValue.ToString()).ToShortTimeString());
-                DateTime ngaycuoi = DateTime.Parse(DateTime.Parse(dtNgayGiaoMay.EditValue.ToString()).ToShortDateString() + " " + DateTime.Parse(tmGioGiaoMay.EditValue.ToString()).ToShortTimeString());
-                CoBao cb = new CoBao
+                dxValid.Dispose();
+                ruleTrong.ConditionOperator = ConditionOperator.IsNotBlank;
+                if (cbbTheoTauChinh.EditValue == null && cbbTheoTauPhu.EditValue == null)
                 {
-                    SoCoBao = txtSoCoBao.Text.Trim(),
-                    MaDM = cbbMaDM.EditValue.ToString(),
-                    MaMacTau = cbbMaMacTau.EditValue.ToString(),
-                    MaNV = COBAOMessage.nhanvien.MaNV,
-                    NgayGioNhanMay = ngaydau,
-                    NgayGioGiaoMay = ngaycuoi,
-                    XepLoai = cbbXepLoai.EditValue.ToString(),
-                    LyDoXL = txtLyDo.Text.Trim(),
-                    GioLamViec = clsFuntion.GioRaPhut(txtGioLamViec.Text.Trim()),
-                    GioCaBa = clsFuntion.GioRaPhut(txtGioCaBa.Text.Trim()),
-                    ThoiGianBBH = clsFuntion.GioRaPhut(txtThoiGianBBH.Text.Trim()),
-                    ThoiGianTruc = clsFuntion.GioRaPhut(txtThoiGianTruc.Text.Trim())
-                };
-                cbp.Insert(cb);
-                #endregion
-                #region luu cobaolaitau
-                CoBaoLaiTau cblt = new CoBaoLaiTau { SoCoBao = txtSoCoBao.Text.Trim(), MaTaiXe = cbbMaTaiChinh.EditValue.ToString(), Tai = true, GioLuuTru = clsFuntion.GioRaPhut(txtLuuTruTaiChinh.Text.Trim()) };
-                cbltp.Insert(cblt);
-                CoBaoLaiTau cblt1 = new CoBaoLaiTau { SoCoBao = txtSoCoBao.Text.Trim(), MaTaiXe = cbbMaTaiPhu.EditValue.ToString(), Tai = false, GioLuuTru = clsFuntion.GioRaPhut(txtLuuTruTaiPhu.Text.Trim()) };
-                cbltp.Insert(cblt1);
-                #endregion
-                #region luu hanh trinh
-                int n = gvHanhTrinh.RowCount;
-                for (int i = 0; i < n - 1; i++)
-                {
-                    var ht = gvHanhTrinh.GetRow(i) as HanhTrinh;
-                    ht.MaHanhTrinh = new Guid();
-                    ht.SoCoBao = txtSoCoBao.Text.ToString();
-                    htp.Insert(ht);
+                    txtGioTheoTau.Text = txtGioLuuTruTheoTauChinh.Text = txtGioLuuTruTheoTauPhu.Text = null;
                 }
-                #endregion
-                LoadDataSource();
-                clsFuntion.ShowMess(Text, COBAOMessage.THEMTHANHCONG);
+                if ((cbbTheoTauPhu.EditValue != null && txtGioTheoTau.Text.Trim().Length == 0) || (cbbTheoTauChinh.EditValue != null && txtGioTheoTau.Text.Trim().Length == 0))
+                {
+                    ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
+                    dxValid.SetValidationRule(txtGioTheoTau, ruleTrong);
+                    dxValid.Validate();
+                }
+                else if ((txtGioTheoTau.Text.Trim().Length != 0) && (clsFuntion.GioRaPhut(txtGioTheoTau.Text) > clsFuntion.GioRaPhut(txtGioLamViec.Text)))
+                {
+                    XtraMessageBox.Show(String.Format("Giờ theo tàu phải <= giờ làm việc", MessageBoxButtons.OK, MessageBoxIcon.Question));
+                    txtGioTheoTau.Text = null;
+                    txtGioTheoTau.Focus();
+                }
+                else
+                {
+                    #region luu cobao
+                    DateTime ngaydau = DateTime.Parse(DateTime.Parse(dtNgayNhanMay.EditValue.ToString()).ToShortDateString() + " " + DateTime.Parse(tmGioNhanMay.EditValue.ToString()).ToShortTimeString());
+                    DateTime ngaycuoi = DateTime.Parse(DateTime.Parse(dtNgayGiaoMay.EditValue.ToString()).ToShortDateString() + " " + DateTime.Parse(tmGioGiaoMay.EditValue.ToString()).ToShortTimeString());
+                    CoBao cb = new CoBao
+                    {
+                        SoCoBao = txtSoCoBao.Text.Trim(),
+                        MaDM = cbbMaDM.EditValue.ToString(),
+                        MaMacTau = cbbMaMacTau.EditValue.ToString(),
+                        MaNV = COBAOMessage.nhanvien.MaNV,
+                        NgayGioNhanMay = ngaydau,
+                        NgayGioGiaoMay = ngaycuoi,
+                        XepLoai = cbbXepLoai.EditValue.ToString(),
+                        LyDoXL = txtLyDo.Text.Trim(),
+                        GioLamViec = clsFuntion.GioRaPhut(txtGioLamViec.Text.Trim()),
+                        GioCaBa = clsFuntion.GioRaPhut(txtGioCaBa.Text.Trim()),
+                        ThoiGianBBH = clsFuntion.GioRaPhut(txtThoiGianBBH.Text.Trim()),
+                        ThoiGianTruc = clsFuntion.GioRaPhut(txtThoiGianTruc.Text.Trim())
+                    };
+                    cbp.Insert(cb);
+                    #endregion
+                    #region luu cobaolaitau
+                    CoBaoLaiTau cblt = new CoBaoLaiTau { SoCoBao = txtSoCoBao.Text.Trim(), MaTaiXe = cbbMaTaiChinh.EditValue.ToString(), Tai = true, GioLuuTru = clsFuntion.GioRaPhut(txtLuuTruTaiChinh.Text.Trim()) };
+                    cbltp.Insert(cblt);
+                    CoBaoLaiTau cblt1 = new CoBaoLaiTau { SoCoBao = txtSoCoBao.Text.Trim(), MaTaiXe = cbbMaTaiPhu.EditValue.ToString(), Tai = false, GioLuuTru = clsFuntion.GioRaPhut(txtLuuTruTaiPhu.Text.Trim()) };
+                    cbltp.Insert(cblt1);
+                    #endregion
+                    #region luu theotau
+                    if (cbbTheoTauChinh.EditValue != null)
+                    {
+                        TheoTau tt = new TheoTau { SoCoBao = txtSoCoBao.Text.Trim(), MaTaiXe = cbbTheoTauChinh.EditValue.ToString(), Tai = true, GioLuuTru = clsFuntion.GioRaPhut(txtGioLuuTruTheoTauChinh.Text.Trim()), GioTheoTau = clsFuntion.GioRaPhut(txtGioTheoTau.Text.Trim()) };
+                        ttp.Insert(tt);
+                    }
+                    if (cbbTheoTauPhu.EditValue != null)
+                    {
+                        TheoTau tt1 = new TheoTau { SoCoBao = txtSoCoBao.Text.Trim(), MaTaiXe = cbbTheoTauPhu.EditValue.ToString(), Tai = false, GioLuuTru = clsFuntion.GioRaPhut(txtGioLuuTruTheoTauPhu.Text.Trim()), GioTheoTau = clsFuntion.GioRaPhut(txtGioTheoTau.Text.Trim()) };
+                        ttp.Insert(tt1);
+                    }
+                    #endregion
+                    #region luu hanh trinh
+                    int n = gvHanhTrinh.RowCount;
+                    for (int i = 0; i < n - 1; i++)
+                    {
+                        var ht = gvHanhTrinh.GetRow(i) as HanhTrinh;
+                        ht.MaHanhTrinh = new Guid();
+                        ht.SoCoBao = txtSoCoBao.Text.ToString();
+                        htp.Insert(ht);
+                    }
+                    #endregion
+                    LoadDataSource();
+                    clsFuntion.ShowMess(Text, COBAOMessage.THEMTHANHCONG);
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Lỗi: " + ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion
         #region sửa cơ báo
         private void btnSuaChua_Click(object sender, EventArgs e)
         {
-            if (cbbTheoTauChinh.EditValue == null)
+            try
             {
-                cbbTheoTauPhu.EditValue = txtGioLuuTruTheoTauChinh.Text = txtGioLuuTruTheoTauPhu.Text = txtGioTheoTau.Text = null;
-            }
-            else if (txtGioTheoTau.Text.Trim().Length == 0)
-            {
-                ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
-                dxValid.SetValidationRule(txtGioTheoTau, ruleTrong);
-                dxValid.Validate();
-            }
-            else
-            {
-                DateTime ngaydau = DateTime.Parse(DateTime.Parse(dtNgayNhanMay.EditValue.ToString()).ToShortDateString() + " " + DateTime.Parse(tmGioNhanMay.EditValue.ToString()).ToShortTimeString());
-                DateTime ngaycuoi = DateTime.Parse(DateTime.Parse(dtNgayGiaoMay.EditValue.ToString()).ToShortDateString() + " " + DateTime.Parse(tmGioGiaoMay.EditValue.ToString()).ToShortTimeString());
-                CoBao cb = new CoBao
-                {
-                    SoCoBao = txtSoCoBao.Text.Trim(),
-                    MaDM = cbbMaDM.EditValue.ToString(),
-                    MaMacTau = cbbMaMacTau.EditValue.ToString(),
-                    MaNV = COBAOMessage.nhanvien.MaNV,
-                    NgayGioNhanMay = ngaydau,
-                    NgayGioGiaoMay = ngaycuoi,
-                    XepLoai = cbbXepLoai.EditValue.ToString(),
-                    LyDoXL = txtLyDo.Text.Trim(),
-                    GioLamViec = clsFuntion.GioRaPhut(txtGioLamViec.Text.Trim()),
-                    GioCaBa = clsFuntion.GioRaPhut(txtGioCaBa.Text.Trim()),
-                    ThoiGianBBH = clsFuntion.GioRaPhut(txtThoiGianBBH.Text.Trim()),
-                    ThoiGianTruc = clsFuntion.GioRaPhut(txtThoiGianTruc.Text.Trim())
-                };
-                cbp.Update(cb);
-                ruleTrong.ConditionOperator = ConditionOperator.IsBlank;
-                #region luu cobaolaitau
-                var a = new CoBaoLaiTauProvider().GetAll();
-                foreach (var item in a)
-                    if (item.SoCoBao == txtSoCoBao.Text.Trim())
-                        cbltp.Delete(item);
-                CoBaoLaiTau cblt = new CoBaoLaiTau { SoCoBao = txtSoCoBao.Text.Trim(), MaTaiXe = cbbMaTaiChinh.EditValue.ToString(), Tai = true, GioLuuTru = clsFuntion.GioRaPhut(txtLuuTruTaiChinh.Text.Trim()) };
-                cbltp.Insert(cblt);
-                CoBaoLaiTau cblt1 = new CoBaoLaiTau { SoCoBao = txtSoCoBao.Text.Trim(), MaTaiXe = cbbMaTaiPhu.EditValue.ToString(), Tai = false, GioLuuTru = clsFuntion.GioRaPhut(txtLuuTruTaiPhu.Text.Trim()) };
-                cbltp.Insert(cblt1);
-                #endregion
-                #region luu hanh trinh
-                var b = new HanhTrinhProvider().GetAll();
-                foreach (var item in b)
-                    if (item.SoCoBao == txtSoCoBao.Text.Trim())
-                        htp.Delete(item);
 
-                int n = gvHanhTrinh.RowCount;
-                for (int i = 0; i < n - 1; i++)
+                dxValid.Dispose();
+                ruleTrong.ConditionOperator = ConditionOperator.IsNotBlank;
+                if (cbbTheoTauChinh.EditValue == null && cbbTheoTauPhu.EditValue == null)
                 {
-                    var ht = gvHanhTrinh.GetRow(i) as HanhTrinh;
-                    ht.MaHanhTrinh = new Guid();
-                    ht.SoCoBao = txtSoCoBao.Text.ToString();
-                    htp.Insert(ht);
+                    txtGioTheoTau.Text = txtGioLuuTruTheoTauChinh.Text = txtGioLuuTruTheoTauPhu.Text = null;
                 }
-                #endregion
-                LoadDataSource();
-                clsFuntion.ShowMess(Text, COBAOMessage.SUACHUATHANHCONG);
+                if ((cbbTheoTauPhu.EditValue != null && txtGioTheoTau.Text.Trim().Length == 0) || (cbbTheoTauChinh.EditValue != null && txtGioTheoTau.Text.Trim().Length == 0))
+                {
+                    ruleTrong.ErrorText = COBAOMessage.KHONGDUOCTRONG;
+                    dxValid.SetValidationRule(txtGioTheoTau, ruleTrong);
+                    dxValid.Validate();
+                }
+                else if ((txtGioTheoTau.Text.Trim().Length != 0) && (clsFuntion.GioRaPhut(txtGioTheoTau.Text) > clsFuntion.GioRaPhut(txtGioLamViec.Text)))
+                {
+                    XtraMessageBox.Show(String.Format("Giờ theo tàu phải <= giờ làm việc", MessageBoxButtons.OK, MessageBoxIcon.Question));
+                    txtGioTheoTau.Text = null;
+                    txtGioTheoTau.Focus();
+                }
+                else
+                {
+                    DateTime ngaydau = DateTime.Parse(DateTime.Parse(dtNgayNhanMay.EditValue.ToString()).ToShortDateString() + " " + DateTime.Parse(tmGioNhanMay.EditValue.ToString()).ToShortTimeString());
+                    DateTime ngaycuoi = DateTime.Parse(DateTime.Parse(dtNgayGiaoMay.EditValue.ToString()).ToShortDateString() + " " + DateTime.Parse(tmGioGiaoMay.EditValue.ToString()).ToShortTimeString());
+                    CoBao cb = new CoBao
+                    {
+                        SoCoBao = txtSoCoBao.Text.Trim(),
+                        MaDM = cbbMaDM.EditValue.ToString(),
+                        MaMacTau = cbbMaMacTau.EditValue.ToString(),
+                        MaNV = COBAOMessage.nhanvien.MaNV,
+                        NgayGioNhanMay = ngaydau,
+                        NgayGioGiaoMay = ngaycuoi,
+                        XepLoai = cbbXepLoai.EditValue.ToString(),
+                        LyDoXL = txtLyDo.Text.Trim(),
+                        GioLamViec = clsFuntion.GioRaPhut(txtGioLamViec.Text.Trim()),
+                        GioCaBa = clsFuntion.GioRaPhut(txtGioCaBa.Text.Trim()),
+                        ThoiGianBBH = clsFuntion.GioRaPhut(txtThoiGianBBH.Text.Trim()),
+                        ThoiGianTruc = clsFuntion.GioRaPhut(txtThoiGianTruc.Text.Trim())
+                    };
+                    cbp.Update(cb);
+                    ruleTrong.ConditionOperator = ConditionOperator.IsBlank;
+                    #region luu cobaolaitau
+                    var a = new CoBaoLaiTauProvider().GetAll();
+                    foreach (var item in a)
+                        if (item.SoCoBao == txtSoCoBao.Text.Trim())
+                            cbltp.Delete(item);
+                    CoBaoLaiTau cblt = new CoBaoLaiTau { SoCoBao = txtSoCoBao.Text.Trim(), MaTaiXe = cbbMaTaiChinh.EditValue.ToString(), Tai = true, GioLuuTru = clsFuntion.GioRaPhut(txtLuuTruTaiChinh.Text.Trim()) };
+                    cbltp.Insert(cblt);
+                    CoBaoLaiTau cblt1 = new CoBaoLaiTau { SoCoBao = txtSoCoBao.Text.Trim(), MaTaiXe = cbbMaTaiPhu.EditValue.ToString(), Tai = false, GioLuuTru = clsFuntion.GioRaPhut(txtLuuTruTaiPhu.Text.Trim()) };
+                    cbltp.Insert(cblt1);
+                    #endregion
+                    #region luu hanh trinh
+                    var b = new HanhTrinhProvider().GetAll();
+                    foreach (var item in b)
+                        if (item.SoCoBao == txtSoCoBao.Text.Trim())
+                            htp.Delete(item);
+
+                    int n = gvHanhTrinh.RowCount;
+                    for (int i = 0; i < n - 1; i++)
+                    {
+                        var ht = gvHanhTrinh.GetRow(i) as HanhTrinh;
+                        ht.MaHanhTrinh = new Guid();
+                        ht.SoCoBao = txtSoCoBao.Text.ToString();
+                        htp.Insert(ht);
+                    }
+                    var c = new TheoTauProvider().GetAll();
+                    foreach (var item in c)
+                        if (item.SoCoBao == txtSoCoBao.Text.Trim())
+                            ttp.Delete(item);
+                    if (cbbTheoTauChinh.EditValue != null)
+                    {
+                        TheoTau tt = new TheoTau { SoCoBao = txtSoCoBao.Text.Trim(), MaTaiXe = cbbTheoTauChinh.EditValue.ToString(), Tai = true, GioLuuTru = clsFuntion.GioRaPhut(txtGioLuuTruTheoTauChinh.Text.Trim()), GioTheoTau = clsFuntion.GioRaPhut(txtGioTheoTau.Text.Trim()) };
+                        ttp.Insert(tt);
+                    }
+                    if (cbbTheoTauPhu.EditValue != null)
+                    {
+                        TheoTau tt1 = new TheoTau { SoCoBao = txtSoCoBao.Text.Trim(), MaTaiXe = cbbTheoTauPhu.EditValue.ToString(), Tai = false, GioLuuTru = clsFuntion.GioRaPhut(txtGioLuuTruTheoTauPhu.Text.Trim()), GioTheoTau = clsFuntion.GioRaPhut(txtGioTheoTau.Text.Trim()) };
+                        ttp.Insert(tt1);
+                    }
+                    #endregion
+                    LoadDataSource();
+                    clsFuntion.ShowMess(Text, COBAOMessage.SUACHUATHANHCONG);
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Lỗi: " + ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion
@@ -431,42 +508,71 @@ namespace COBAO.PL.NhapLieu
         #region thay đổi hiển thị số cơ báo
         private void txtSoCoBao_TextChanged(object sender, EventArgs e)
         {
+            cobao = new CoBao();
+            cobao = new CoBao1Provider().GetSoGetCoBaoBySoCoBao(txtSoCoBao.Text.Trim());
             var SelectCmdtxt = (from ht in db.HanhTrinhs
                                 where ht.SoCoBao.Equals(txtSoCoBao.Text.Trim())
                                 orderby ht.TrangThaiGa descending, ht.NgayDi ascending, ht.GioDi ascending, ht.NgayDen ascending, ht.GioDen ascending
                                 select ht).ToList();
             hanhTrinhBindingSource.DataSource = SelectCmdtxt.ToList();
-            var a = new CoBao1Provider().GetAll();
-            foreach (var item in a)
-                if (item.SoCoBao.Equals(txtSoCoBao.Text))
+            if (cobao != null)
+            {
+                try
                 {
-                    cbbMaDM.EditValue = item.MaDM;
-                    cbbMaMacTau.EditValue = item.MaMacTau;
-                    var taichinh = (from cblt1 in db.CoBaoLaiTaus
-                                    where cblt1.SoCoBao.Equals(item.SoCoBao) && cblt1.Tai.Equals(true)
-                                    select cblt1).Single();
-                    cbbMaTaiChinh.EditValue = taichinh.MaTaiXe;
-                    txtLuuTruTaiChinh.Text = clsFuntion.PhutRaGio((int)taichinh.GioLuuTru);
-                    var taiphu = (from cblt2 in db.CoBaoLaiTaus
-                                  where cblt2.SoCoBao.Equals(item.SoCoBao) && cblt2.Tai.Equals(false)
-                                  select cblt2).Single();
-                    cbbMaTaiPhu.EditValue = taiphu.MaTaiXe;
-                    txtLuuTruTaiPhu.Text = clsFuntion.PhutRaGio((int)taiphu.GioLuuTru);
-                    cbbXepLoai.EditValue = item.XepLoai;
-                    txtLyDo.Text = item.LyDoXL;
-                    dtNgayGiaoMay.EditValue = item.NgayGioGiaoMay.ToShortDateString();
-                    tmGioGiaoMay.EditValue = item.NgayGioGiaoMay.ToShortTimeString();
-                    dtNgayNhanMay.EditValue = item.NgayGioNhanMay.ToShortDateString();
-                    tmGioNhanMay.EditValue = item.NgayGioNhanMay.ToShortTimeString();
-                    txtGioLamViec.Text = clsFuntion.PhutRaGio((int)item.GioLamViec);
-                    txtGioCaBa.Text = clsFuntion.PhutRaGio((int)item.GioCaBa);
-                    txtThoiGianBBH.Text = clsFuntion.PhutRaGio((int)item.ThoiGianBBH);
-                    txtThoiGianTruc.Text = clsFuntion.PhutRaGio((int)item.ThoiGianTruc);
-                    btnXoa.Enabled = true;
-                    //btnSuaChua.Enabled = true;
-                    //break;
+                    cbbMaDM.EditValue = cobao.MaDM;
                 }
+                catch { }
+                cbbMaMacTau.EditValue = cobao.MaMacTau;
+                cbbXepLoai.EditValue = cobao.XepLoai;
+                txtLyDo.Text = cobao.LyDoXL;
+                dtNgayGiaoMay.EditValue = cobao.NgayGioGiaoMay.ToShortDateString();
+                tmGioGiaoMay.EditValue = cobao.NgayGioGiaoMay.ToShortTimeString();
+                dtNgayNhanMay.EditValue = cobao.NgayGioNhanMay.ToShortDateString();
+                tmGioNhanMay.EditValue = cobao.NgayGioNhanMay.ToShortTimeString();
+                txtGioLamViec.Text = clsFuntion.PhutRaGio((int)cobao.GioLamViec);
+                txtGioCaBa.Text = clsFuntion.PhutRaGio((int)cobao.GioCaBa);
+                txtThoiGianBBH.Text = clsFuntion.PhutRaGio((int)cobao.ThoiGianBBH);
+                txtThoiGianTruc.Text = clsFuntion.PhutRaGio((int)cobao.ThoiGianTruc);
 
+                var taichinh = new CoBaoLaiTauProvider().GetCoBaoLaiTheoSoCoBao(cobao.SoCoBao, true);
+                cbbMaTaiChinh.EditValue = taichinh.MaTaiXe;
+                txtLuuTruTaiChinh.Text = clsFuntion.PhutRaGio((int)taichinh.GioLuuTru);
+                var taiphu = new CoBaoLaiTauProvider().GetCoBaoLaiTheoSoCoBao(cobao.SoCoBao, false);
+                cbbMaTaiPhu.EditValue = taiphu.MaTaiXe;
+                txtLuuTruTaiPhu.Text = clsFuntion.PhutRaGio((int)taiphu.GioLuuTru);
+
+                var theotauchinh = new TheoTauProvider().GetTheoTauTheoSoCoBao(cobao.SoCoBao, true);
+                if (theotauchinh != null)
+                {
+                    cbbTheoTauChinh.EditValue = theotauchinh.MaTaiXe;
+                    txtGioLuuTruTheoTauChinh.Text = clsFuntion.PhutRaGio((int)theotauchinh.GioLuuTru);
+                    txtGioTheoTau.Text = clsFuntion.PhutRaGio((int)theotauchinh.GioTheoTau);
+                }
+                var theotauphu = new TheoTauProvider().GetTheoTauTheoSoCoBao(cobao.SoCoBao, false);
+                if (theotauphu != null)
+                {
+                    cbbTheoTauPhu.EditValue = theotauphu.MaTaiXe;
+                    txtGioLuuTruTheoTauPhu.Text = clsFuntion.PhutRaGio((int)theotauphu.GioLuuTru);
+                    txtGioTheoTau.Text = clsFuntion.PhutRaGio((int)theotauphu.GioTheoTau);
+                }
+                if (taichinh != null)
+                {
+                    btnSuaChua.Enabled = btnXoa.Enabled = true;
+                }
+                dacocobao = true;
+            }
+            else
+            {
+                cbbMaDM.EditValue = cbbMaMacTau.EditValue = cbbMaTaiChinh.EditValue = cbbMaTaiPhu.EditValue = null;
+                cbbTheoTauChinh.EditValue = cbbTheoTauPhu.EditValue = cbbXepLoai.EditValue = null;
+                txtLyDo.EditValue = "";
+                txtGioLamViec.Text = txtLuuTruTaiChinh.Text = txtLuuTruTaiPhu.Text = txtGioCaBa.Text = txtThoiGianTruc.Text = txtThoiGianBBH.Text = "0h0";
+                dtNgayGiaoMay.EditValue = dtNgayNhanMay.EditValue = tmGioNhanMay.EditValue = tmGioGiaoMay.EditValue = null;
+                txtGioLuuTruTheoTauChinh.Text = txtGioLuuTruTheoTauPhu.Text = "0h0";
+                txtGioTheoTau.Text = null;
+                btnSuaChua.Enabled = btnXoa.Enabled = false;
+                dacocobao = false;
+            }
         }
         #endregion
 
@@ -539,7 +645,7 @@ namespace COBAO.PL.NhapLieu
                     }
             }
             catch { }
-        }    
+        }
 
         private void cbbMaTaiChinh_TextChanged(object sender, EventArgs e)
         {
@@ -564,40 +670,81 @@ namespace COBAO.PL.NhapLieu
             }
         }
 
-         private void gvHanhTrinh_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        private void gvHanhTrinh_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
-
             GridView view = sender as GridView;
-            DataRowView row = e.Row as DataRowView;
+            if (view == null) return;
+            view.ClearColumnErrors();
+            GridColumn MaGa = view.Columns["MaGa"];
+            GridColumn TrangThai = view.Columns["TrangThaiGa"];
+            GridColumn MaTinhChat = view.Columns["MaTinhChat"];
+            GridColumn NgayDen = view.Columns["NgayDen"];
+            GridColumn NgayDi = view.Columns["NgayDi"];
+            GridColumn GioDen = view.Columns["GioDen"];
+            GridColumn GioDi = view.Columns["GioDi"];
+            if (view.GetRowCellValue(e.RowHandle, MaGa) is DBNull)
+            {
+                e.Valid = false;
+                view.SetColumnError(MaGa, "Chưa chọn ga");
+            }
+            if (view.GetRowCellValue(e.RowHandle, TrangThai) is DBNull)
+            {
+                e.Valid = false;
+                view.SetColumnError(TrangThai, "Chưa chọn trạng thái ga");
+            }
+            if (view.GetRowCellValue(e.RowHandle, MaTinhChat) is DBNull)
+            {
+                e.Valid = false;
+                view.SetColumnError(MaTinhChat, "Chưa chọn tính chất");
+            }
+            
+            DateTime? iNgayDen = null;
             try
             {
-                view.ClearColumnErrors();
-                if (((DateTime)row["NgayDen"]).Date > ((DateTime)row["NgayDi"]).Date)
+                iNgayDen = (DateTime)view.GetRowCellValue(e.RowHandle, NgayDen);
+                if (iNgayDen != null)
+                {
+                    if (((DateTime)iNgayDen).Date < dtNgayNhanMay.DateTime.Date)
+                    {
+                        e.Valid = false;
+                        view.SetColumnError(NgayDen, "Không được nhỏ hơn ngày nhận máy!");
+                    }
+
+                    if (((DateTime)iNgayDen).Date > dtNgayGiaoMay.DateTime.Date)
+                    {
+                        e.Valid = false;
+                        view.SetColumnError(NgayDen, "Không được lớn hơn ngày giao máy!");
+                    }
+
+                }
+            }
+            catch { }
+            try
+            {
+                var iNgayDi = (DateTime)view.GetRowCellValue(e.RowHandle, NgayDi);
+                var iGioDen = DateTime.Parse("1/1/2012 " + view.GetRowCellValue(e.RowHandle, GioDen).ToString());
+                var iGioDi = DateTime.Parse("1/1/2012 " + view.GetRowCellValue(e.RowHandle, GioDi).ToString());
+                if (iNgayDi.Date < dtNgayNhanMay.DateTime.Date || iNgayDi.Date > dtNgayGiaoMay.DateTime.Date)
                 {
                     e.Valid = false;
-                    view.SetColumnError(view.Columns["NgayDi"], "Ngày đi không được nhỏ hơn ngày đến", ErrorType.Critical);
-                    view.FocusedColumn = view.Columns["NgayDi"];
+                    view.SetColumnError(NgayDi, "Không được nhỏ hơn ngày nhận máy hay lớn hơn ngày giao máy!");
                 }
-            }
-            catch
-            {
-
-            }
-            try
-            {
-                if (((DateTime)row["NgayDen"]).Date == ((DateTime)row["NgayDi"]).Date)
+                if (iNgayDi.Date < ((DateTime)iNgayDen).Date)
                 {
-                    view.SetColumnError(view.Columns["NgayDi"], "", ErrorType.None);
-                    if (((DateTime.Parse("1/1/2012 " + row["GioDen"].ToString())) >= (DateTime.Parse("1/1/2012 " + row["GioDi"].ToString()))))
+                    e.Valid = false;
+                    view.SetColumnError(NgayDi, "Không được nhỏ hơn ngày đến");
+                }               
+                if (iNgayDi.Date == ((DateTime)iNgayDen).Date)
+                {
+                    if (iGioDen > iGioDi)
+                    {
                         e.Valid = false;
-                    view.SetColumnError(view.Columns["GioDi"], "Giờ đi không được nhỏ hơn giờ đến", ErrorType.Critical);
-                    view.FocusedColumn = view.Columns["GioDi"];
+                        view.SetColumnError(GioDi, "lỗi");
+                    }
                 }
+              
             }
-            catch
-            {
-                view.ClearColumnErrors();
-            }
+            catch { }           
         }
 
         private void gvHanhTrinh_InvalidRowException(object sender, DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventArgs e)
@@ -616,8 +763,16 @@ namespace COBAO.PL.NhapLieu
                 cbbTheoTauChinh.Properties.DataSource = new TaiXeProvider().TaiChinh(true);
         }
 
+        private void cbbTheoTauChinh_EditValueChanged(object sender, EventArgs e)
+        {
+            if (cbbTheoTauChinh.EditValue != null)
+            {
+                var a = new TaiXeProvider().theotauphu(cbbMaTaiChinh.EditValue.ToString(), cbbMaTaiPhu.EditValue.ToString(), cbbTheoTauChinh.EditValue.ToString());
+                cbbTheoTauPhu.Properties.DataSource = a;
+            }
+            else
+                cbbTheoTauPhu.Properties.DataSource = new TaiXeProvider().GetAll();
+        }
 
-            
-      
     }
 }

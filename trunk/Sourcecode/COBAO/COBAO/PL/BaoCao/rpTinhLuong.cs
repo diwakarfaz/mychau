@@ -4,18 +4,17 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using DevExpress.XtraReports.UI;
-using COBAO.BLL;
 using COBAO.DAL;
-
+using COBAO.BLL;
 namespace COBAO.PL.BaoCao
 {
-    public partial class rptTongHopThoiGianLaoDong :XtraReport
+    public partial class rpTinhLuong : DevExpress.XtraReports.UI.XtraReport
     {
         DateTime dt;
         private int STT;
         private object dataSource;
         private COBAOLINQDataContext db;
-        public rptTongHopThoiGianLaoDong()
+        public rpTinhLuong()
         {
             InitializeComponent();
             STT = 0;
@@ -26,27 +25,27 @@ namespace COBAO.PL.BaoCao
             new XRBinding("Text", dataSource, "TenTaiXe")});
             xrTenDoi.DataBindings.AddRange(new XRBinding[] {
             new XRBinding("Text", dataSource, "TenDoi")});
-            xrMaTo.DataBindings.AddRange(new XRBinding[] {
+            xrTenTo.DataBindings.AddRange(new XRBinding[] {
             new XRBinding("Text", dataSource, "TenTo")});
             xrGioDiTau.DataBindings.AddRange(new XRBinding[] {
             new XRBinding("Text", dataSource, "GioDiTau")});
-            xrThuongTruc.DataBindings.AddRange(new XRBinding[] {
-            new XRBinding("Text", dataSource, "GioThuongTruc")});
-            xrKhamXet.DataBindings.AddRange(new XRBinding[] {
-            new XRBinding("Text", dataSource, "GioKhamXet")});
-            xrTheoTau.DataBindings.AddRange(new XRBinding[] {
-            new XRBinding("Text", dataSource, "GioTheoTau")});
-            xrHop.DataBindings.AddRange(new XRBinding[] {
-            new XRBinding("Text", dataSource, "Hop")});
-            xrTong.DataBindings.AddRange(new XRBinding[]{
-            new XRBinding("Text", dataSource, "TongGio")});
-            xrPhep.DataBindings.AddRange(new XRBinding[]{
-            new XRBinding("Text", dataSource,"Phep")});
-            xrOm.DataBindings.AddRange(new XRBinding[]{
-            new XRBinding("Text", dataSource,"Om")});
+            xrTongSoCoBao.DataBindings.AddRange(new XRBinding[] {
+            new XRBinding("Text", dataSource, "TongSoCoBao")});
+            xrTongSoGioHop.DataBindings.AddRange(new XRBinding[] {
+            new XRBinding("Text", dataSource, "TongSoGioHop")});
+            xrTongSoNgayNghi.DataBindings.AddRange(new XRBinding[] {
+            new XRBinding("Text", dataSource, "TongSoNgayNghi")});
+            xrTongLuong.DataBindings.AddRange(new XRBinding[] {
+            new XRBinding("Text", dataSource, "TongLuong")});      
         }
 
-        private void rptTongHopThoiGianLaoDong_ParametersRequestSubmit(object sender, DevExpress.XtraReports.Parameters.ParametersRequestEventArgs e)
+        private void Detail_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            STT++;
+            xrSTT.Text = STT.ToString();
+        }
+
+        private void rpTinhLuong_ParametersRequestSubmit(object sender, DevExpress.XtraReports.Parameters.ParametersRequestEventArgs e)
         {
             try { dt = (DateTime)prThang.Value; }
             catch { }
@@ -68,26 +67,21 @@ namespace COBAO.PL.BaoCao
                                   TenDoi = doi.TenDoi,
                                   TenTo = to.TenTo,
                                   GioDiTau = new CoBao1Provider().giolv(taixe.MaTaiXe, dt.Month, dt.Year) ,
-                                  GioThuongTruc = new ThuongTrucProvider().giothuongtruc(taixe.MaTaiXe, dt.Month, dt.Year),
-                                  GioKhamXet = new KhamXetProvider().giokhamxet(taixe.MaTaiXe, dt.Month, dt.Year),
-                                  GioTheoTau = new CoBao1Provider().giotheotau(taixe.MaTaiXe, dt.Month, dt.Year),       
-                                  Hop = new HopPhepOmProvider().giohop(taixe.MaTaiXe, dt.Month, dt.Year),
-                                  TongGio = new TaiXeProvider().Giolam(taixe.MaTaiXe, dt.Month, dt.Year),
-                                  Phep = new HopPhepOmProvider().NgayCong(taixe.MaTaiXe, "Phép", dt.Month, dt.Year),          
-                                  Om = new HopPhepOmProvider().NgayCong(taixe.MaTaiXe, "Ốm", dt.Month,dt.Year),
+                                  TongSoCoBao = (from cb in db.CoBaos
+                                                 join cblt in db.CoBaoLaiTaus on cb.SoCoBao equals cblt.SoCoBao
+                                                 where cblt.MaTaiXe.Equals(taixe.MaTaiXe) && cb.NgayGioNhanMay.Month.Equals(dt.Month)
+                                                 && cb.NgayGioNhanMay.Year.Equals(dt.Year)
+                                                 select cb).Count(),
+                                  TongSoGioHop = new HopPhepOmProvider().giohop(taixe.MaTaiXe, dt.Month, dt.Year),
+                                  TongSoNgayNghi = new HopPhepOmProvider().NgayNghi(taixe.MaTaiXe, dt.Month, dt.Year),
+                                  TongLuong= new TaiXeProvider().luong(taixe.MaTaiXe, dt.Month, dt.Year)                                
                              };
-                
+
             }
             catch { }
             try { DataSource = dataSource; }
             catch { }
             STT = 0;
-        }
-
-        private void Detail_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
-        {
-            STT++;
-            xrSTT.Text = STT.ToString();
         }
 
     }

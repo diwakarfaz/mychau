@@ -85,6 +85,12 @@
     <Compile Include="BLL\NhanVienProvider.cs" />
     <Compile Include="BLL\NhatKyDonGiaLuongXLProvider.cs" />
     <Compile Include="BLL\NhatKyLuongBoSungProvider.cs" />
+    <Compile Include="BLL\sa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BLL\sa.Designer.cs">
+      <DependentUpon>sa.cs</DependentUpon>
+    </Compile>
     <Compile Include="BLL\TaiXeProvider.cs" />
     <Compile Include="BLL\TheoTauProvider.cs" />
     <Compile Include="BLL\ThuongTrucProvider.cs" />
@@ -106,6 +112,12 @@
     </Compile>
     <Compile Include="DAL\HienThiChiTietKhamXet.cs" />
     <Compile Include="DAL\HienThiThuongTruc.cs" />
+    <Compile Include="PL\BaoCao\rpTinhLuong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PL\BaoCao\rpTinhLuong.Designer.cs">
+      <DependentUpon>rpTinhLuong.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\BaoCao\rpTongHopCoBaoLoaiC.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -249,6 +261,12 @@
     <None Include="DAL\COBAOLINQ.dbml.layout">
       <DependentUpon>COBAOLINQ.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="BLL\sa.resx">
+      <DependentUpon>sa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\BaoCao\rpTinhLuong.resx">
+      <DependentUpon>rpTinhLuong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\BaoCao\rpTongHopCoBaoLoaiC.resx">
       <DependentUpon>rpTongHopCoBaoLoaiC.cs</DependentUpon>
     </EmbeddedResource>

@@ -66,5 +66,20 @@ namespace COBAO.BLL
                 return 0;
             }
         }
+        public int NgayNghi(string mataixe, int thang, int nam)
+        {
+            try
+            {
+                long gio = (from ngaycong in Db.HopPhepOms
+                            where (ngaycong.NgayBatDau.Month == thang && ngaycong.NgayBatDau.Year == nam
+                                    && ngaycong.MaTaiXe == mataixe && ngaycong.TrangThai != "Họp tổ")
+                            select (long)ngaycong.SoNgay).Sum();
+                return (int)gio;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
     }
 }

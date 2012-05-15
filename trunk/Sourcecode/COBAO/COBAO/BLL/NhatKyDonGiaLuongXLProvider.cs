@@ -55,9 +55,7 @@ namespace COBAO.BLL
                 return null;
             }
             
-        }
-
-
+        }      
 
         internal void DeleteMaNK(Guid mankdglxl)
         {

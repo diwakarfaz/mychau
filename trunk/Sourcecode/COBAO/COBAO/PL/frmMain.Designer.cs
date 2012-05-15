@@ -53,6 +53,7 @@
             this.btnQLLuongBS = new DevExpress.XtraBars.BarButtonItem();
             this.btnTinhChat = new DevExpress.XtraBars.BarButtonItem();
             this.btnTongHopGioLaoDong = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCoBaoLoaiC = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -69,7 +70,7 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btnCoBaoLoaiC = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTongHopLuongCNLT = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -107,9 +108,10 @@
             this.btnQLLuongBS,
             this.btnTinhChat,
             this.btnTongHopGioLaoDong,
-            this.btnCoBaoLoaiC});
+            this.btnCoBaoLoaiC,
+            this.btnTongHopLuongCNLT});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 26;
+            this.ribbon.MaxItemId = 27;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -278,6 +280,13 @@
             this.btnTongHopGioLaoDong.Name = "btnTongHopGioLaoDong";
             this.btnTongHopGioLaoDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTongHopGioLaoDong_ItemClick);
             // 
+            // btnCoBaoLoaiC
+            // 
+            this.btnCoBaoLoaiC.Caption = "Bảng tổng hợp cơ báo loại C";
+            this.btnCoBaoLoaiC.Id = 25;
+            this.btnCoBaoLoaiC.Name = "btnCoBaoLoaiC";
+            this.btnCoBaoLoaiC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCoBaoLoaiC_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -309,6 +318,7 @@
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.btnTongHopGioLaoDong);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnCoBaoLoaiC);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnTongHopLuongCNLT);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "ribbonPageGroup7";
             // 
@@ -392,12 +402,12 @@
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Blue";
             // 
-            // btnCoBaoLoaiC
+            // btnTongHopLuongCNLT
             // 
-            this.btnCoBaoLoaiC.Caption = "Bảng tổng hợp cơ báo loại C";
-            this.btnCoBaoLoaiC.Id = 25;
-            this.btnCoBaoLoaiC.Name = "btnCoBaoLoaiC";
-            this.btnCoBaoLoaiC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCoBaoLoaiC_ItemClick);
+            this.btnTongHopLuongCNLT.Caption = "Tổng hợp lương khoán chuyến của CNLT";
+            this.btnTongHopLuongCNLT.Id = 26;
+            this.btnTongHopLuongCNLT.Name = "btnTongHopLuongCNLT";
+            this.btnTongHopLuongCNLT.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTongHopLuongCNLT_ItemClick);
             // 
             // frmMain
             // 
@@ -463,5 +473,6 @@
         private DevExpress.XtraBars.BarButtonItem btnTongHopGioLaoDong;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.BarButtonItem btnCoBaoLoaiC;
+        private DevExpress.XtraBars.BarButtonItem btnTongHopLuongCNLT;
     }
 }
